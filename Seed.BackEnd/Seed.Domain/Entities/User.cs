@@ -8,14 +8,16 @@ namespace Seed.Domain.Entities
 {
     public class User : BaseEntity
     {
-        public string? FullName { get; set; } // Nullable string
-        public string? Email { get; set; } // Nullable string
-        public string? PhoneNumber { get; set; } // Nullable string
-        public string? Address { get; set; } // Nullable string
-        public string? Username { get; set; } // Nullable string
-        public string? PasswordHash { get; set; } // Nullable string
-        public string? ProfilePictureUrl { get; set; } // Nullable string
-        public DateTime? DateOfBirth { get; set; } // Nullable DateTime
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Address { get; set; }
+        public string Username { get; set; }
+        public string PasswordHash { get; set; }
+        public string? ProfilePictureUrl { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public bool IsEmailConfirmed { get; set; }
+        public int Role { get; set; }//1 admin, 2 manager,3 veterinarian, 4 staff, 5 customer
 
         // Relationships
         public virtual ICollection<Order>? Orders { get; set; } // Nullable relationship
