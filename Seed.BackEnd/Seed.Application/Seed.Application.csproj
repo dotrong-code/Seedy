@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DTOs\ProductCategory\Read\" />
+    <Folder Include="DTOs\ProductCategory\Update\" />
+    <Folder Include="DTOs\Product\Update\" />
+    <Folder Include="DTOs\Product\Read\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Seed.Domain\Seed.Domain.csproj" />
+    <ProjectReference Include="..\Seed.Infrastructure\Seed.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
