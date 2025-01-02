@@ -2,6 +2,8 @@
 using Seed.Infrastructure.Implement.Repositories.Generic;
 using Seed.Infrastructure.Interfaces.IRepositories.IGeneric;
 using Seed.Infrastructure.Interfaces;
+using Seed.Application.Implement.Service;
+using Seed.Application.Interface.IService;
 
 namespace Seed.Host.Starup
 {
@@ -18,6 +20,11 @@ namespace Seed.Host.Starup
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             // Common
 
+            #endregion
+            #region Service
+            services.AddTransient<IAuthService, AuthService>();
+            #endregion
+            #region Repositories
             #endregion
 
             return services; // Ensure the IServiceCollection is returned
