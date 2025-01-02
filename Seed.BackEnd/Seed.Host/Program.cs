@@ -1,5 +1,12 @@
-var builder = WebApplication.CreateBuilder(args);
 
+using Microsoft.EntityFrameworkCore;
+using Seed.Infrastructure.DB;
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<SeedContext>(opt =>
+{
+    // Set up your database connection string
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("MyDb"));
+});
 // Add services to the container.
 
 builder.Services.AddControllers();

@@ -20,7 +20,7 @@ namespace Seed.Domain.Entities
         public DateTime UpdateDate { get; set; }
         public string UpdateBy { get; set; }
         public string ImageMappingsJson { get; set; } = "{}";
-        public virtual ICollection<UserEmail> UserEmails { get; set; }
+        public ICollection<UserEmail> UserEmails { get; set; }
 
     }
 }

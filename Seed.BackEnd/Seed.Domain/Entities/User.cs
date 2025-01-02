@@ -17,10 +17,15 @@ namespace Seed.Domain.Entities
         public string? ProfilePictureUrl { get; set; }
         public DateTime DateOfBirth { get; set; }
         public bool IsEmailConfirmed { get; set; }
+        public bool IsEmployee { get; set; } = false;
+        public int Points { get; set; } = 0;
         public int Role { get; set; }//1 admin, 2 manager,3 veterinarian, 4 staff, 5 customer
 
         // Relationships
-        public virtual ICollection<Order>? Orders { get; set; } // Nullable relationship
-        public virtual ICollection<Cart>? Carts { get; set; } // Nullable relationship
+        public ICollection<Order>? Orders { get; set; } // Nullable relationship
+        public ICollection<Cart>? Carts { get; set; } // Nullable relationship
+        public ICollection<PointsHistory> PointsHistories { get; set; }
+        public ICollection<Payment> Payments { get; set; }
+        public ICollection<UserEmail> UserEmails { get; set; }
     }
 }
