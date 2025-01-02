@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic.Core;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Seed.Infrastructure.Common;
 using Seed.Infrastructure.DB;
 using Seed.Infrastructure.Interfaces.IRepositories.IGeneric;
 
@@ -11,107 +14,108 @@ namespace Seed.Infrastructure.Implement.Repositories.Generic
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        protected readonly SeedContext _context;
+        protected readonly DbSet<T> _dbSet; 
+        private readonly SeedContext _context;
 
         public GenericRepository(SeedContext context)
         {
-            _context = context ?? new SeedContext(); // Ensures that context is initialized
-        }
-
-        public List<T> GetAll()
-        {
-            return _context.Set<T>().ToList();
+            _context = context;
+            _dbSet = context.Set<T>();
         }
 
         public async Task<List<T>> GetAllAsync()
         {
-            return await _context.Set<T>().ToListAsync();
+            return await _dbSet.AsNoTracking().ToListAsync();
         }
 
-        public void Create(T entity)
+        public async Task<T> GetByIdAsync(object id)
         {
-            _context.Add(entity);
-            //   _context.SaveChanges();
+            return await _dbSet.FindAsync(id);
         }
 
-        public async Task<int> CreateAsync(T entity)
+        public async Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> filter)
         {
-            _context.Add(entity);
-            return await _context.SaveChangesAsync();
+            return await _dbSet.AsNoTracking().FirstOrDefaultAsync(filter);
         }
 
-        public void Update(T entity)
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> filter)
         {
-            var tracker = _context.Attach(entity);
-            tracker.State = EntityState.Modified;
-            _context.SaveChanges();
+            return await _dbSet.AnyAsync(filter);
         }
 
-        public async Task<int> UpdateAsync(T entity)
+        public async Task<int> CountAsync(Expression<Func<T, bool>> filter)
         {
-            var tracker = _context.Attach(entity);
-            tracker.State = EntityState.Modified;
-            return await _context.SaveChangesAsync();
+            return await _dbSet.CountAsync(filter);
         }
 
-        public bool Remove(T entity)
+        public async Task AddAsync(T entity)
         {
-            _context.Remove(entity);
-            _context.SaveChanges();
-            return true;
+            await _dbSet.AddAsync(entity);
         }
 
-        public async Task<bool> RemoveAsync(T entity)
+        public async Task AddRangeAsync(IEnumerable<T> entities)
         {
-            _context.Remove(entity);
-            await _context.SaveChangesAsync();
-            return true;
+            await _dbSet.AddRangeAsync(entities);
         }
 
-        public T GetById(int id)
+        public async Task UpdateAsync(T entity)
         {
-            return _context.Set<T>().Find(id);
+            _dbSet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public async Task UpdateRangeAsync(IEnumerable<T> entities)
         {
-            return await _context.Set<T>().FindAsync(id);
+            _dbSet.UpdateRange(entities);
         }
 
-        public T GetById(string code)
+        public async Task DeleteAsync(object id)
         {
-            return _context.Set<T>().Find(code);
+            var entity = await GetByIdAsync(id);
+            if (entity != null)
+            {
+                _dbSet.Remove(entity);
+            }
         }
 
-        public async Task<T> GetByIdAsync(string code)
+        public async Task DeleteAsync(T entity)
         {
-            return await _context.Set<T>().FindAsync(code);
+            _dbSet.Remove(entity);
         }
 
-        public T GetById(Guid code)
+        public async Task DeleteRangeAsync(IEnumerable<T> entities)
         {
-            return _context.Set<T>().Find(code);
+            _dbSet.RemoveRange(entities);
         }
 
-        public async Task<T> GetByIdAsync(Guid code)
+        public async Task<Pagination<TResult>> ToPaginationAsync<TResult>(
+            int pageIndex,
+            int pageSize,
+            Expression<Func<T, bool>>? filter = null,
+            Func<IQueryable<T>, IQueryable<T>>? include = null,
+            Expression<Func<T, object>>? orderBy = null,
+            bool ascending = true,
+            Expression<Func<T, TResult>> selector = null)
         {
-            return await _context.Set<T>().FindAsync(code);
-        }
+            IQueryable<T> query = _dbSet.AsNoTracking();
 
-        public int Save()
-        {
-            return _context.SaveChanges();
-        }
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
 
-        public async Task<int> SaveAsync()
-        {
-            return await _context.SaveChangesAsync();
-        }
+            if (include != null)
+            {
+                query = include(query);
+            }
 
-        public async Task<T> GetByAsync(string type, string value)
-        {
-            return await _context.Set<T>()
-                .FirstOrDefaultAsync(x => EF.Property<string>(x, type) == value);
+            orderBy ??= x => EF.Property<object>(x, "Id");
+
+            query = ascending ? query.OrderBy(orderBy) : query.OrderByDescending(orderBy);
+
+            var projectedQuery = query.Select(selector);
+
+            return await Pagination<TResult>.ToPagedList(projectedQuery, pageIndex, pageSize);
         }
     }
 }
