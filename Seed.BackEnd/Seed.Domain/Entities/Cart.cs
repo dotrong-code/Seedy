@@ -9,11 +9,9 @@ namespace Seed.Domain.Entities
 {
     public class Cart : BaseEntity
     {
-        public Guid? UserId { get; set; } // Nullable to allow any user
-
-
-        // Relationships
-        public virtual User User { get; set; } // Navigation property
-        public virtual ICollection<CartItem> CartItems { get; set; }
+        public Guid? UserID { get; set; } // Foreign key to User
+        public string Email { get; set; }  // Optional for guest users
+        public ICollection<CartItem> CartItems { get; set; }
+        public User User { get; set; }
     }
 }
