@@ -1,4 +1,6 @@
-﻿namespace Seed.Host.Starup
+﻿using Seed.Infrastructure.Middleware;
+
+namespace Seed.Host.Starup
 {
     public static class MiddlewareConfiguration
     {
