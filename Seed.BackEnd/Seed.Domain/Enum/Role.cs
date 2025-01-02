@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Seed.Domain.Enum
 {
-    public enum ErrorType
+    public enum Role
     {
-        Failure = 0,
-        Validation = 1,
-        NotFound = 2,
-        Conflict =3
+        Admin,
+        User,
+        Staff,
+        Customer
     }
 }
