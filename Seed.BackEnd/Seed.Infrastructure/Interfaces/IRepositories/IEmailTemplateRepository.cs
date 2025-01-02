@@ -8,9 +8,7 @@ using Seed.Infrastructure.Interfaces.IRepositories.IGeneric;
 
 namespace Seed.Infrastructure.Interfaces.IRepositories
 {
-    public interface IUserRepository : IGenericRepository<User>
+    public interface IEmailTemplateRepository : IGenericRepository<EmailTemplate>
     {
-        Task<bool> EmailExistsAsync(string email);
-        Task<bool> UserNameExistsAsync(string userName);
     }
 }
