@@ -19,7 +19,7 @@ namespace Seed.Domain.Entities
         public bool IsEmailConfirmed { get; set; }
         public bool IsEmployee { get; set; } = false;
         public int Points { get; set; } = 0;
-        public int Role { get; set; }//1 admin, 2 manager,3 veterinarian, 4 staff, 5 customer
+        public int Role { get; set; }//1 admin, 2 guess, 3 staff, 4 customer
 
         // Relationships
         public ICollection<Order>? Orders { get; set; } // Nullable relationship

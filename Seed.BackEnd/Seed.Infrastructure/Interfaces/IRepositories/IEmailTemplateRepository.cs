@@ -10,5 +10,10 @@ namespace Seed.Infrastructure.Interfaces.IRepositories
 {
     public interface IEmailTemplateRepository : IGenericRepository<EmailTemplate>
     {
+        public Task<EmailTemplate> GetEmailTemplateByTypeAsync(string type);
+
+
+        public Task<dynamic> SaveEmailSending(UserEmail userEmail);
+        public Task AddEmailTemplateAsync(EmailTemplate emailTemplate);
     }
 }

@@ -24,7 +24,7 @@ namespace Seed.Infrastructure.Common
         public IProductCategoryRepository ProductCategoryRepository { get; private set; }
         public ICartRepository CartRepository { get; private set; }
         public ICartItemRepository CartItemRepository { get; private set; }
-
+        public IEmailTemplateRepository EmailTemplateRepository { get; private set; }
 
         public UnitOfWork(SeedContext context)
         {
@@ -37,6 +37,7 @@ namespace Seed.Infrastructure.Common
             PaymentRepository = new PaymentRepository(_context);
             ProductRepository = new ProductRepository(_context);
             OrderTrackingRepository = new OrderTrackingRepository(_context);
+            PaymentRepository = new PaymentRepository(_context);
         }
 
         public int Complete()

@@ -12,5 +12,6 @@ namespace Seed.Infrastructure.Interfaces.IRepositories
     {
         Task<bool> EmailExistsAsync(string email);
         Task<bool> UserNameExistsAsync(string userName);
+        Task<User> GetUserByEmailAndPasswordAsync(string email, string password);
     }
 }
