@@ -14,16 +14,25 @@ namespace Seed.Infrastructure.Implement.Repositories
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
         public UserRepository(SeedContext context) : base(context) { }
-        // Kiểm tra xem Email đã tồn tại hay chưa
-        public async Task<bool> EmailExistsAsync(string email)
-        {
-            return await _dbSet.AsNoTracking().AnyAsync(user => user.Email == email);
-        }
-
-        // Kiểm tra xem Username đã tồn tại hay chưa
+        #region bool
         public async Task<bool> UserNameExistsAsync(string userName)
         {
-            return await _dbSet.AsNoTracking().AnyAsync(user => user.Username == userName);
+            // Check if any user exists with the specified username
+            return await _context.Users.AnyAsync(x => x.Username == userName);
         }
+
+        public async Task<bool> EmailExistsAsync(string email)
+        {
+            // Check if any user exists with the specified email
+            var result = await _context.Users.AnyAsync(x => x.Email == email);
+            return result;
+        }
+        #endregion
+        // Get user by email and password
+        public async Task<User> GetUserByEmailAndPasswordAsync(string email, string password)
+        {
+            return await _context.Users.FirstOrDefaultAsync(x => x.Email.Equals(email) && x.PasswordHash.Equals(password) && x.IsEmailConfirmed);
+        }
+
     }
 }
