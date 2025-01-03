@@ -482,3 +482,5 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+# Firebase keys
+Seed.Host/Keys/*.json

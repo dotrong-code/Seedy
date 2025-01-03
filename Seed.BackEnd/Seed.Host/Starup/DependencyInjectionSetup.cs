@@ -11,6 +11,9 @@ using Seed.Infrastructure.Implement.Repositories;
 using Seed.Infrastructure.Interfaces.IRepositories;
 using Seed.Domain.Entities;
 using Seed.Application.DTOs.User.Register;
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
+using Google.Cloud.Storage.V1;
 
 namespace Seed.Host.Starup
 {
@@ -18,7 +21,25 @@ namespace Seed.Host.Starup
     {
         public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
+            var credentialPath = Path.Combine(Directory.GetCurrentDirectory(), "Keys",
+                "koiveterinaryservicecent-925db-firebase-adminsdk-vus2r-bd418169a6.json");
 
+            try
+            {
+                // Initialize Firebase with the credentials from the JSON file
+                FirebaseApp.Create(new AppOptions()
+                {
+                    Credential = GoogleCredential.FromFile(credentialPath)
+                });
+            }
+            catch (Exception ex)
+            {
+                // Log or handle the exception as necessary
+                throw new Exception("Failed to initialize Firebase.", ex);
+            }
+
+            // Register the Google Cloud Storage client and Firebase related services
+            services.AddSingleton(StorageClient.Create(GoogleCredential.FromFile(credentialPath)));
 
             #region Validator
             services.AddTransient<IValidator<LoginRequest>, LoginValidator>();
