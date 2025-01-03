@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using Google.Apis.Auth;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using Seed.Application.Common.Result;
 using Seed.Application.DTOs.Common;
 using Seed.Application.DTOs.EmailTemplate;
@@ -49,21 +52,6 @@ namespace Seed.Application.Implement.Service
             _emailService = emailService;
             _emailTemplateService = emailTemplateService;
 
-        }
-
-        public Task<Result> ConfirmEmail(Guid userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<User> FindOrCreateUser(GoogleJsonWebSignature.Payload payload)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GenerateJwtToken(string email, int Role, double expirationMinutes)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task<Result> SignIn(LoginRequest loginRequest)
@@ -179,6 +167,64 @@ namespace Seed.Application.Implement.Service
         private string HashPassword(string password)
         {
             return BCrypt.Net.BCrypt.HashPassword(password);
+        }
+        public async Task<Result> ConfirmEmail(Guid userId)
+        {
+            var user = await _unitOfWork.UserRepository.GetByIdAsync(userId);
+            if (user == null)
+            {
+                return Result.Failure(Error.NotFound("UserNotFound", "User not found."));
+            }
+
+            user.IsEmailConfirmed = true;
+            await _unitOfWork.UserRepository.UpdateAsync(user);
+
+            return Result.Success();
+        }
+
+        public string GenerateJwtToken(string email, int Role, double expirationMinutes)//them tham so role de phan quyen
+        {
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            // add role to author
+            var role = Role switch
+            {
+                1 => "Admin",
+                2 => "User",
+                3 => "Staff",
+                4 => "Customer",
+            };
+            var claims = new[]
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, email),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.Role, role)// claim role
+            };
+
+            var token = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
+                claims: claims,
+                expires: DateTime.Now.AddMinutes(expirationMinutes),
+                signingCredentials: credentials);
+
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+        public async Task<User> FindOrCreateUser(GoogleJsonWebSignature.Payload payload)
+        {
+            var user = await _unitOfWork.UserRepository.GetByAsync("Email", payload.Email);
+            if (user == null)
+            {
+                user = new User
+                {
+                    Id = Guid.NewGuid(),
+                    Email = payload.Email,
+                    FullName = payload.Name,
+                };
+                await _unitOfWork.UserRepository.CreateAsync(user);
+            }
+            return user;
         }
     }
 }

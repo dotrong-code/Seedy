@@ -10,6 +10,7 @@ using Seed.Application.DTOs.User.Login;
 using Seed.Infrastructure.Implement.Repositories;
 using Seed.Infrastructure.Interfaces.IRepositories;
 using Seed.Domain.Entities;
+using Seed.Application.DTOs.User.Register;
 
 namespace Seed.Host.Starup
 {
@@ -18,8 +19,10 @@ namespace Seed.Host.Starup
         public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
 
+
             #region Validator
             services.AddTransient<IValidator<LoginRequest>, LoginValidator>();
+            services.AddTransient<IValidator<RegisterRequest>, RegisterValidator>();
             #endregion
             #region Common
 
@@ -34,9 +37,15 @@ namespace Seed.Host.Starup
             #region Service
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<ITokenService, TokenService>();
+            services.AddTransient<IEmailTemplateService, EmailTemplateService>();
+            services.AddTransient<IFirebaseService, FirebaseService>();
+            services.AddTransient<IEmailService, EmailService>();
+
             #endregion
             #region Repositories
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IFirebaseRepository, FirebaseRepository>();
+            services.AddTransient<IEmailTemplateRepository, EmailTemplateRepository>();
             #endregion
             #region GenericRepositories
             services.AddTransient<IGenericRepository<User>, GenericRepository<User>>();

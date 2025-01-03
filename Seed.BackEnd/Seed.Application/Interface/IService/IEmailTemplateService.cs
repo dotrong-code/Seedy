@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Seed.Application.Common.Result;
+using Seed.Application.DTOs.EmailTemplate;
 using Seed.Domain.Entities;
 
 namespace Seed.Application.Interface.IService

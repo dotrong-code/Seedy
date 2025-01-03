@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Google.Apis.Auth;
-using Microsoft.AspNetCore.Identity.Data;
 using Seed.Application.Common.Result;
 using Seed.Application.DTOs.User.Login;
+using Seed.Application.DTOs.User.Register;
 using Seed.Domain.Entities;
 
 namespace Seed.Application.Interface.IService

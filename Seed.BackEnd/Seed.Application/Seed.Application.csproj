@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\ProductCategory\Read\" />
-    <Folder Include="DTOs\ProductCategory\Update\" />
-    <Folder Include="DTOs\Product\Update\" />
-    <Folder Include="DTOs\Product\Read\" />
-    <Folder Include="DTOs\User\Register\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FirebaseAdmin" Version="3.1.0" />
     <PackageReference Include="Google.Apis.Auth" Version="1.68.0" />
     <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
