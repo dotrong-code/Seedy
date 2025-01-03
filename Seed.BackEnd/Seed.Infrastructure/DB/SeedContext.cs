@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Seed.Domain.Entities;
+using Seed.Infrastructure.DB.Configuration;
 
 namespace Seed.Infrastructure.DB
 {
@@ -34,6 +35,7 @@ namespace Seed.Infrastructure.DB
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             #region Entity Configurations
+            modelBuilder.ApplyConfiguration(new EmailTemplateConfiguration());
             #endregion
             #region Table Mappings
             modelBuilder.Entity<User>().ToTable("User");
