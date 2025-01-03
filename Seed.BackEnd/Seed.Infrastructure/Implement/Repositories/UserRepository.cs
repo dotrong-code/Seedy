@@ -25,5 +25,11 @@ namespace Seed.Infrastructure.Implement.Repositories
         {
             return await _dbSet.AsNoTracking().AnyAsync(user => user.Username == userName);
         }
+        // Get user by email and password
+        public async Task<User> GetUserByEmailAndPasswordAsync(string email, string password)
+        {
+            return await _dbSet.AsNoTracking()
+                .FirstOrDefaultAsync(user => user.Email == email && user.PasswordHash == password);
+        }
     }
 }

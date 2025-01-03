@@ -48,7 +48,7 @@ namespace Seed.Infrastructure.Implement.Repositories.Generic
             return await _dbSet.CountAsync(filter);
         }
 
-        public async Task AddAsync(T entity)
+        public async Task<int> AddAsync(T entity)
         {
             await _dbSet.AddAsync(entity);
         }

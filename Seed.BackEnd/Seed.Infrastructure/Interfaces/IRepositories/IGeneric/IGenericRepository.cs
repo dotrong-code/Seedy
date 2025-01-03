@@ -15,7 +15,7 @@ namespace Seed.Infrastructure.Interfaces.IRepositories.IGeneric
         Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> filter);
         Task<bool> AnyAsync(Expression<Func<T, bool>> filter);
         Task<int> CountAsync(Expression<Func<T, bool>> filter);
-        Task AddAsync(T entity);
+        Task<int> AddAsync(T entity);
         Task AddRangeAsync(IEnumerable<T> entities);
         Task UpdateAsync(T entity);
         Task UpdateRangeAsync(IEnumerable<T> entities);
