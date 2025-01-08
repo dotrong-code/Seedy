@@ -8,6 +8,7 @@ using FluentValidation;
 using Seed.Application.DTOs.Common;
 using Seed.Domain.Entities;
 using Seed.Infrastructure.Common;
+using Seed.Infrastructure.DTOs.Common.Message;
 
 namespace Seed.Application.Common.Validator.Abstract
 {

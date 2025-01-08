@@ -7,6 +7,7 @@ using Seed.Infrastructure.Interfaces.IRepositories;
 using Seed.Infrastructure.Interfaces;
 using Seed.Infrastructure.DB;
 using Seed.Infrastructure.Implement.Repositories;
+using Google.Cloud.Storage.V1;
 
 namespace Seed.Infrastructure.Common
 {
@@ -25,8 +26,9 @@ namespace Seed.Infrastructure.Common
         public ICartRepository CartRepository { get; private set; }
         public ICartItemRepository CartItemRepository { get; private set; }
         public IEmailTemplateRepository EmailTemplateRepository { get; private set; }
+        public IFirebaseRepository FirebaseRepository { get; private set; }
 
-        public UnitOfWork(SeedContext context)
+        public UnitOfWork(SeedContext context, StorageClient storageClient)
         {
             _context = context;
             UserRepository = new UserRepository(_context);
@@ -38,6 +40,7 @@ namespace Seed.Infrastructure.Common
             ProductRepository = new ProductRepository(_context);
             OrderTrackingRepository = new OrderTrackingRepository(_context);
             PaymentRepository = new PaymentRepository(_context);
+            FirebaseRepository = new FirebaseRepository(storageClient);
         }
 
         public int Complete()

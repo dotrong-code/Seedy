@@ -16,6 +16,7 @@ using Seed.Application.DTOs.User.Login;
 using Seed.Application.DTOs.User.Register;
 using Seed.Application.Interface.IService;
 using Seed.Domain.Entities;
+using Seed.Infrastructure.DTOs.Common.Message;
 using Seed.Infrastructure.Interfaces;
 
 namespace Seed.Application.Implement.Service
@@ -137,7 +138,7 @@ namespace Seed.Application.Implement.Service
             }
 
 
-            var activationLink = $"https://localhost:7283/api/Auth/confirm?userId={newUser.Id}";
+            var activationLink = $"https://localhost:7179/api/Auth/confirm?userId={newUser.Id}";
 
             // Send activation email
             var emailBodyResult = await _emailTemplateService.GenerateEmailWithActivationLink("VerifyEmail", activationLink);
