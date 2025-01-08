@@ -1,10 +1,14 @@
 ﻿
 using Seed.Application.DTOs.Common;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+namespace Seed.Infrastructure.DTOs.Common.Message
+{
 
 
     public static class UserErrorMessage
@@ -63,3 +67,4 @@ using System.Threading.Tasks;
 
     }
 
+}
