@@ -14,6 +14,12 @@ using Seed.Application.DTOs.User.Register;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Storage.V1;
+using Seed.Infrastructure.DTOs.Product.Create;
+using Seed.Application.Common.Validator.ProductVali;
+using Seed.Application.Common.Validator.ProductCategoryVali;
+using Seed.Infrastructure.DTOs.Product.Update;
+using Seed.Infrastructure.DTOs.ProductCategory.Create;
+using Seed.Infrastructure.DTOs.ProductCategory.Update;
 
 namespace Seed.Host.Starup
 {
@@ -44,6 +50,12 @@ namespace Seed.Host.Starup
             #region Validator
             services.AddTransient<IValidator<LoginRequest>, LoginValidator>();
             services.AddTransient<IValidator<RegisterRequest>, RegisterValidator>();
+            services.AddTransient<IValidator<RegisterRequest>, RegisterValidator>();
+//ProductVali
+            services.AddTransient<IValidator<AddProductRequest>, AddProductValidator>();
+            services.AddTransient<IValidator<UpdateProductRequest>, UpdateProductValidator>();
+            services.AddTransient<IValidator<AddProductCategoryRequest>, AddProductCategoryValidator>();
+            services.AddTransient<IValidator<UpdateProductCategoryRequest>, UpdateProductCategoryValidator>();
             #endregion
             #region Common
 
@@ -61,15 +73,23 @@ namespace Seed.Host.Starup
             services.AddTransient<IEmailTemplateService, EmailTemplateService>();
             services.AddTransient<IFirebaseService, FirebaseService>();
             services.AddTransient<IEmailService, EmailService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IProductCategoryService, ProductCategoryService>();
 
             #endregion
             #region Repositories
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IFirebaseRepository, FirebaseRepository>();
             services.AddTransient<IEmailTemplateRepository, EmailTemplateRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
             #endregion
             #region GenericRepositories
             services.AddTransient<IGenericRepository<User>, GenericRepository<User>>();
+            services.AddTransient<IGenericRepository<Product>, GenericRepository<Product>>();
+            services
+                .AddTransient<IGenericRepository<ProductCategoryRepository>,
+                    GenericRepository<ProductCategoryRepository>>();
             #endregion
             return services; // Ensure the IServiceCollection is returned
         }

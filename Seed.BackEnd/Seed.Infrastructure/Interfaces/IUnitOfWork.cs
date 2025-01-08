@@ -12,6 +12,8 @@ namespace Seed.Infrastructure.Interfaces
         IUserRepository UserRepository { get; }
         IEmailTemplateRepository EmailTemplateRepository { get; }
         IFirebaseRepository FirebaseRepository { get; }
+        IProductCategoryRepository ProductCategoryRepository { get; }
+        IProductRepository ProductRepository { get; }
         int Complete();
     }
 }
