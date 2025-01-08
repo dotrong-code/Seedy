@@ -8,7 +8,7 @@ namespace Seed.Domain.Entities
 {
     public class Product : BaseEntity
     {
-        public Guid? ProductCategoryId { get; set; } // Foreign key to ProductCategory
+        public Guid ProductCategoryId { get; set; } // Foreign key to ProductCategory
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
