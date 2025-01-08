@@ -9,6 +9,8 @@ using Seed.Application.Interface.IService;
 
 namespace Seed.Host.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
