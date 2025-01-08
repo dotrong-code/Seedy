@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
-namespace Seed.Application.DTOs.Product.Create
+namespace Seed.Infrastructure.DTOs.Product.Create
 {
-    public class CreateProductDTO_Request
+    public class AddProductRequest
     {
-        public Guid ProductCategoryId { get; set; } // Foreign key to ProductCategory
+        public Guid ProductCategoryId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int StockQuantity { get; set; }
-        public string ImageUrl { get; set; }
+        public IFormFile ImageFile { get; set; }
     }
 }
