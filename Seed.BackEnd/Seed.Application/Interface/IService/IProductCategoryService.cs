@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Seed.Application.Common.Result;
+using Seed.Infrastructure.DTOs.ProductCategory.Create;
+using Seed.Infrastructure.DTOs.ProductCategory.Delete;
+using Seed.Infrastructure.DTOs.ProductCategory.Read;
+using Seed.Infrastructure.DTOs.ProductCategory.Update;
 
 namespace Seed.Application.Interface.IService
 {

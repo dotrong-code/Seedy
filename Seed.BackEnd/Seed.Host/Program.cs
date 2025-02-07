@@ -78,6 +78,16 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        });
+});
 
 builder.Services.RegisterServices();
 var app = builder.Build();
@@ -95,5 +105,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MigrateDatabases();
 app.MapControllers();
+
+app.UseCors("AllowAll");
 
 app.Run();

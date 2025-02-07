@@ -44,7 +44,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Seed.Domain\Seed.Domain.csproj" />
+    <ProjectReference Include="..\Seed.Domain\Seed.Domain.csproj">
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
 
 </Project>
