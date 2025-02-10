@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35521.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seed.Domain", "Seed.Domain\Seed.Domain.csproj", "{23569062-8969-4C8D-85BB-3EB4C9CA4232}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seed.Domain", "Seed.Domain\Seed.Domain.csproj", "{23569062-8969-4C8D-85BB-3EB4C9CA4232}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seed.Infrastructure", "Seed.Infrastructure\Seed.Infrastructure.csproj", "{0AEE1D10-2D8E-4257-B360-5BE22B327835}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seed.Infrastructure", "Seed.Infrastructure\Seed.Infrastructure.csproj", "{0AEE1D10-2D8E-4257-B360-5BE22B327835}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seed.Application", "Seed.Application\Seed.Application.csproj", "{FBCC9CEA-FC8E-4274-8DA1-36CCB7776E80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seed.Application", "Seed.Application\Seed.Application.csproj", "{FBCC9CEA-FC8E-4274-8DA1-36CCB7776E80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seed.Host", "Seed.Host\Seed.Host.csproj", "{77078417-1292-4C03-A6B1-287588FFF61A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seed.Host", "Seed.Host\Seed.Host.csproj", "{77078417-1292-4C03-A6B1-287588FFF61A}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{CCB9208E-B47B-487D-A537-8AED56DB6B3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{77078417-1292-4C03-A6B1-287588FFF61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77078417-1292-4C03-A6B1-287588FFF61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77078417-1292-4C03-A6B1-287588FFF61A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCB9208E-B47B-487D-A537-8AED56DB6B3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCB9208E-B47B-487D-A537-8AED56DB6B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCB9208E-B47B-487D-A537-8AED56DB6B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCB9208E-B47B-487D-A537-8AED56DB6B3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F8D1006-554A-4330-B3D8-D5A20C52F231}
 	EndGlobalSection
 EndGlobal
