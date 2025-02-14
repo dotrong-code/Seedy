@@ -9,10 +9,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Seed.Host/Seed.Host.csproj", "Seed.Host/"]
-COPY ["Seed.Application/Seed.Application.csproj", "Seed.Application/"]
-COPY ["Seed.Domain/Seed.Domain.csproj", "Seed.Domain/"]
-COPY ["Seed.Infrastructure/Seed.Infrastructure.csproj", "Seed.Infrastructure/"]
+COPY Seed.Host/Seed.Host.csproj Seed.Host/
+COPY Seed.Application/Seed.Application.csproj Seed.Application/
+COPY Seed.Domain/Seed.Domain.csproj Seed.Domain/
+COPY Seed.Infrastructure/Seed.Infrastructure.csproj Seed.Infrastructure/
 RUN dotnet restore "./Seed.Host/Seed.Host.csproj"
 COPY . .
 WORKDIR "/src/Seed.Host"

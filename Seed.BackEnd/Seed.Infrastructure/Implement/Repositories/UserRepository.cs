@@ -32,7 +32,7 @@ namespace Seed.Infrastructure.Implement.Repositories
         // Get user by email and password
         public async Task<User> GetUserByEmailAndPasswordAsync(string email, string password)
         {
-            return await _context.Users.FirstOrDefaultAsync(x => x.Email.Equals(email) && x.PasswordHash.Equals(password) && x.IsEmailConfirmed);
+            return await _context.Users.FirstOrDefaultAsync(x => x.Email.Equals(email) && x.PasswordHash.Equals(password));
         }
         public async Task<User> GetUserByIdAsync(Guid id)
         {

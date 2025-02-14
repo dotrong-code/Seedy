@@ -138,7 +138,7 @@ namespace Seed.Application.Implement.Service
             }
 
 
-            var activationLink = $"https://localhost:7179/api/Auth/confirm?userId={newUser.Id}";
+            var activationLink = $"https://seedbe-cdhggmh7h0hef3ff.eastasia-01.azurewebsites.net/api/Auth/confirm?userId={newUser.Id}";
 
             // Send activation email
             var emailBodyResult = await _emailTemplateService.GenerateEmailWithActivationLink("VerifyEmail", activationLink);

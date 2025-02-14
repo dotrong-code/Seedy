@@ -43,7 +43,7 @@ namespace Seed.Host.Controllers
 
             if (result.IsSuccess)
             {
-                return Redirect("https://localhost:7179/Account/SignIn");
+                return Redirect("https://seedui-cme0btdxb7h6c8ah.eastasia-01.azurewebsites.net/Account/SignIn");
             }
 
             return (IActionResult)ResultExtensions.ToProblemDetails(result);

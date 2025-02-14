@@ -20,6 +20,7 @@ using Seed.Application.Common.Validator.ProductCategoryVali;
 using Seed.Infrastructure.DTOs.Product.Update;
 using Seed.Infrastructure.DTOs.ProductCategory.Create;
 using Seed.Infrastructure.DTOs.ProductCategory.Update;
+using Seed.Infrastructure.DTOs.User.Update;
 
 namespace Seed.Host.Starup
 {
@@ -51,7 +52,8 @@ namespace Seed.Host.Starup
             services.AddTransient<IValidator<LoginRequest>, LoginValidator>();
             services.AddTransient<IValidator<RegisterRequest>, RegisterValidator>();
             services.AddTransient<IValidator<RegisterRequest>, RegisterValidator>();
-//ProductVali
+            services.AddTransient<IValidator<UpdateUserRequest>, UpdateUserValidator>();
+            //ProductVali
             services.AddTransient<IValidator<AddProductRequest>, AddProductValidator>();
             services.AddTransient<IValidator<UpdateProductRequest>, UpdateProductValidator>();
             services.AddTransient<IValidator<AddProductCategoryRequest>, AddProductCategoryValidator>();
@@ -69,6 +71,7 @@ namespace Seed.Host.Starup
             #endregion
             #region Service
             services.AddTransient<IAuthService, AuthService>();
+            services.AddTransient<IUserService, UserService>();
             services.AddTransient<ITokenService, TokenService>();
             services.AddTransient<IEmailTemplateService, EmailTemplateService>();
             services.AddTransient<IFirebaseService, FirebaseService>();
