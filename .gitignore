@@ -13,6 +13,10 @@
 *.userosscache
 *.sln.docstates
 
+
+#firebase key
+Seed.BackEnd/Seed.Host/Keys/
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
