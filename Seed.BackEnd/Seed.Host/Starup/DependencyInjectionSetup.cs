@@ -78,6 +78,7 @@ namespace Seed.Host.Starup
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
+            services.AddTransient<ICartService, CartService>();
 
             #endregion
             #region Repositories
@@ -86,10 +87,13 @@ namespace Seed.Host.Starup
             services.AddTransient<IEmailTemplateRepository, EmailTemplateRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
+            services.AddTransient<ICartRepository, CartRepository>();
+            services.AddTransient<ICartItemRepository, CartItemRepository>();
             #endregion
             #region GenericRepositories
             services.AddTransient<IGenericRepository<User>, GenericRepository<User>>();
             services.AddTransient<IGenericRepository<Product>, GenericRepository<Product>>();
+            services.AddTransient<IGenericRepository<Cart>, GenericRepository<Cart>>();
             services
                 .AddTransient<IGenericRepository<ProductCategoryRepository>,
                     GenericRepository<ProductCategoryRepository>>();

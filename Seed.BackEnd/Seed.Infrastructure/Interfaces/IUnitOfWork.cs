@@ -14,6 +14,8 @@ namespace Seed.Infrastructure.Interfaces
         IFirebaseRepository FirebaseRepository { get; }
         IProductCategoryRepository ProductCategoryRepository { get; }
         IProductRepository ProductRepository { get; }
+        ICartItemRepository CartItemRepository { get; }
+        ICartRepository CartRepository { get; }
         int Complete();
     }
 }
