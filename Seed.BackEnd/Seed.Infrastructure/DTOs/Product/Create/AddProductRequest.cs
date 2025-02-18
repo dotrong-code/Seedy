@@ -14,6 +14,6 @@ namespace Seed.Infrastructure.DTOs.Product.Create
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int StockQuantity { get; set; }
-        public IFormFile ImageFile { get; set; }
+        public IFormFile? ImageFile { get; set; }
     }
 }

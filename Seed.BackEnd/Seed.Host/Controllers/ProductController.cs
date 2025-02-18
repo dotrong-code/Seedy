@@ -42,13 +42,14 @@ namespace Seed.Host.Controllers
         }
         // Add a new product
         [HttpPost("add")]
-        public async Task<IResult> AddProduct(AddProductRequest addProductRequest)
+        public async Task<IResult> AddProduct([FromForm] AddProductRequest addProductRequest)
         {
             var result = await _productService.AddProductAsync(addProductRequest);
             return result.IsSuccess
                 ? ResultExtensions.ToSuccessDetails(result, "Product added successfully")
                 : ResultExtensions.ToProblemDetails(result);
         }
+
 
         // Update a product
         [HttpPut("update")]

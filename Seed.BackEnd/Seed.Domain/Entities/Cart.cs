@@ -11,6 +11,7 @@ namespace Seed.Domain.Entities
     {
         public Guid? UserID { get; set; } // Foreign key to User
         public string Email { get; set; }  // Optional for guest users
+        [JsonIgnore]
         public ICollection<CartItem> CartItems { get; set; }
         public User User { get; set; }
     }

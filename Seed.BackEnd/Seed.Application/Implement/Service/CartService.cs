@@ -13,11 +13,56 @@ namespace Seed.Application.Implement.Service
     public class CartService : ICartService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IFirebaseService _firebaseService;
 
-        public CartService(IUnitOfWork unitOfWork)
+        public CartService(IUnitOfWork unitOfWork, IFirebaseService firebaseService)
         {
             _unitOfWork = unitOfWork;
+            _firebaseService = firebaseService;
         }
+        public async Task<Result> GetCartDetailsAsync(Guid userId)
+        {
+            var cart = await _unitOfWork.CartRepository.GetCartWithItemsAsync(userId);
+            if (cart == null)
+            {
+                return Result.Failure(Error.NotFound("CART_NOT_FOUND", "User does not have a cart."));
+            }
+
+            var cartItemsDictionary = new Dictionary<Guid, ProductCartItemDto>();
+
+            foreach (var item in cart.CartItems.Where(item => !item.IsDeleted && item.Product != null))
+            {
+                string imageUrl = item.Product.ImageUrl;
+
+                // Ensure Product Image URL is not empty before requesting from Firebase
+                
+                var imageRequest = new GetImageRequest(imageUrl ?? string.Empty);
+                var imageResult = await _unitOfWork.FirebaseRepository.GetImageAsync(imageRequest);
+
+                    
+
+                cartItemsDictionary[item.Id] = new ProductCartItemDto
+                {
+                    ProductId = item.Product.Id,
+                    ProductName = item.Product.Name,
+                    ProductPrice = item.Product.Price,
+                    ProductImageUrl = imageResult.ImageUrl ?? string.Empty, // Use the retrieved Firebase URL
+                    ProductStockQuantity = item.Product.StockQuantity,
+                    Quantity = item.Quantity
+                };
+            }
+
+            var cartDetailsDto = new CartDetailsDto
+            {
+                CartID = cart.Id,
+                UserID = cart.UserID,
+                CartItems = cartItemsDictionary
+            };
+
+            return Result.SuccessWithObject(cartDetailsDto);
+        }
+
+
 
         public async Task<Result> GetCartByUserIdAsync(Guid userId)
         {
@@ -31,18 +76,46 @@ namespace Seed.Application.Implement.Service
             return cartItems != null ? Result.SuccessWithObject(cartItems) : Result.Failure(Error.NotFound("NO_ITEMS", "No items in cart"));
         }
 
-        public async Task<Result> AddToCartAsync(AddCartItemRequest request)
+        public async Task<Result> AddToCartAsync(Guid userId, Guid productId, int quantity)
         {
-            var cartItem = new CartItem { CartId = request.CartId, ProductId = request.ProductId, Quantity = request.Quantity };
+            // Lấy Cart của user
+            var cart = await _unitOfWork.CartRepository.GetCartByUserIdAsync(userId);
+            if (cart == null)
+            {
+                return Result.Failure(Error.NotFound("CART_NOT_FOUND", "User does not have a cart."));
+            }
+
+            var cartItem = new CartItem
+            {
+                CartId = cart.Id, // 🆕 Tự lấy CartId
+                ProductId = productId,
+                Quantity = quantity
+            };
+
             var added = await _unitOfWork.CartRepository.AddCartItemAsync(cartItem);
             return added ? Result.Success() : Result.Failure(Error.Failure("ADD_FAILED", "Failed to add item to cart"));
         }
 
-        public async Task<Result> UpdateCartItemAsync(UpdateCartItemRequest request)
+        public async Task<Result> UpdateCartItemAsync(Guid userId, Guid cartItemId, int quantity)
         {
-            var updated = await _unitOfWork.CartRepository.UpdateCartItemQuantityAsync(request.CartItemId, request.Quantity);
+            // Lấy Cart của user
+            var cart = await _unitOfWork.CartRepository.GetCartByUserIdAsync(userId);
+            if (cart == null)
+            {
+                return Result.Failure(Error.NotFound("CART_NOT_FOUND", "User does not have a cart."));
+            }
+
+            var cartItem = await _unitOfWork.CartRepository.GetCartItemByIdAsync(cartItemId);
+            if (cartItem == null || cartItem.CartId != cart.Id)
+            {
+                return Result.Failure(Error.NotFound("CART_ITEM_NOT_FOUND", "Item not found in user's cart."));
+            }
+
+            cartItem.Quantity = quantity;
+            var updated = await _unitOfWork.CartRepository.UpdateCartItemQuantityAsync(cartItemId, quantity);
             return updated ? Result.Success() : Result.Failure(Error.Failure("UPDATE_FAILED", "Failed to update cart item"));
         }
+
 
         public async Task<Result> RemoveCartItemAsync(Guid cartItemId)
         {

@@ -20,6 +20,11 @@ namespace Seed.Infrastructure.Implement.Repositories
             _context = context;
         }
 
+        public async Task<int> CreateCartAsync(Cart cart)
+        {
+            await _context.Carts.AddAsync(cart);
+            return await _context.SaveChangesAsync(); // Trả về số dòng bị ảnh hưởng
+        }
         public async Task<Cart> GetCartByUserIdAsync(Guid userId)
         {
             return await _context.Carts.Include(c => c.CartItems).FirstOrDefaultAsync(c => c.UserID == userId);
@@ -57,6 +62,17 @@ namespace Seed.Infrastructure.Implement.Repositories
             var cartItems = await _context.CartItems.Where(c => c.Cart.UserID == userId).ToListAsync();
             _context.CartItems.RemoveRange(cartItems);
             return await _context.SaveChangesAsync() > 0;
+        }
+        public async Task<CartItem> GetCartItemByIdAsync(Guid cartItemId)
+        {
+            return await _context.CartItems.FirstOrDefaultAsync(c => c.Id == cartItemId);
+        }
+        public async Task<Cart> GetCartWithItemsAsync(Guid userId)
+        {
+            return await _context.Carts
+                .Include(c => c.CartItems)
+                    .ThenInclude(ci => ci.Product) // Load luôn thông tin Product
+                .FirstOrDefaultAsync(c => c.UserID == userId);
         }
     }
 }

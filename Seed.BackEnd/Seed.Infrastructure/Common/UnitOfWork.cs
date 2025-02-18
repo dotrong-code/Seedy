@@ -41,6 +41,9 @@ namespace Seed.Infrastructure.Common
             OrderTrackingRepository = new OrderTrackingRepository(_context);
             PaymentRepository = new PaymentRepository(_context);
             FirebaseRepository = new FirebaseRepository(storageClient);
+            ProductCategoryRepository = new ProductCategoryRepository(_context);
+            EmailTemplateRepository = new EmailTemplateRepository(_context);
+
         }
 
         public int Complete()

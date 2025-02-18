@@ -137,7 +137,20 @@ namespace Seed.Application.Implement.Service
                 return Result.Failure(UserErrorMessage.UserNoCreated());
             }
 
+            // **Tạo giỏ hàng (Cart) cho người dùng mới**
+            var newCart = new Cart
+            {
+                Id = Guid.NewGuid(),
+                UserID = newUser.Id,
+                Email = newUser.Email,
+                CartItems = new List<CartItem>()
+            };
 
+            var createCartResult = await _unitOfWork.CartRepository.CreateCartAsync(newCart);
+            if (createCartResult == 0)
+            {
+                return Result.Failure(Error.Failure("CartCreationFailed", "Failed to create user cart."));
+            }
             var activationLink = $"https://seedbe-cdhggmh7h0hef3ff.eastasia-01.azurewebsites.net/api/Auth/confirm?userId={newUser.Id}";
 
             // Send activation email

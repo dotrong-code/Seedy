@@ -10,11 +10,14 @@ namespace Seed.Infrastructure.Interfaces.IRepositories
 {
     public interface ICartRepository : IGenericRepository<Cart>
     {
+        Task<int> CreateCartAsync(Cart cart);
         Task<Cart> GetCartByUserIdAsync(Guid userId);
         Task<IEnumerable<CartItem>> GetCartItemsByUserIdAsync(Guid userId);
         Task<bool> AddCartItemAsync(CartItem cartItem);
         Task<bool> UpdateCartItemQuantityAsync(Guid cartItemId, int quantity);
         Task<bool> RemoveCartItemAsync(Guid cartItemId);
         Task<bool> ClearCartAsync(Guid userId);
+        Task<CartItem> GetCartItemByIdAsync(Guid cartItemId);
+        Task<Cart> GetCartWithItemsAsync(Guid userId);
     }
 }

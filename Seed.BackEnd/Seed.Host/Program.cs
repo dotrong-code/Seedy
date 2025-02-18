@@ -2,11 +2,16 @@
 using System.Text;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Seed.Host.Starup;
 using Seed.Infrastructure.DB;
+
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SeedContext>(opt =>
 {
@@ -14,7 +19,11 @@ builder.Services.AddDbContext<SeedContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("MyDb"));
 });
 //authorize
-
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.Never;
+});
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -92,6 +101,9 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.RegisterServices();
+builder.Services.AddHttpClient();
+builder.Services.AddTransient<PaymentController>(); // Ensure the controller is registered properly
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -102,6 +114,20 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 }
 var logger = app.Services.GetRequiredService<ILogger<Program>>();
 logger.LogInformation("App is starting...");
+app.UseExceptionHandler(errorApp =>
+{
+    errorApp.Run(async context =>
+    {
+        var exceptionHandlerPathFeature =
+            context.Features.Get<IExceptionHandlerPathFeature>();
+        if (exceptionHandlerPathFeature?.Error != null)
+        {
+            Console.WriteLine($" Unhandled Exception: {exceptionHandlerPathFeature.Error}");
+        }
+        context.Response.StatusCode = 500;
+        await context.Response.WriteAsync("An unexpected error occurred.");
+    });
+});
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
