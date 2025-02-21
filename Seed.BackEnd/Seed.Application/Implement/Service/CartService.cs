@@ -32,7 +32,8 @@ namespace Seed.Application.Implement.Service
 
             foreach (var item in cart.CartItems.Where(item => !item.IsDeleted && item.Product != null))
             {
-                string imageUrl = item.Product.ImageUrl;
+                string imageUrl = null;
+                    //item.Product.Images;
 
                 // Ensure Product Image URL is not empty before requesting from Firebase
                 

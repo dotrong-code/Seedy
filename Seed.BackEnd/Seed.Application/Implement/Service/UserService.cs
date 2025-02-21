@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FirebaseAdmin.Auth;
-using FluentValidation;
+﻿using FluentValidation;
 using Seed.Application.Common.Result;
 using Seed.Application.DTOs.Common;
-using Seed.Application.DTOs.Firebase.AddImage;
 using Seed.Application.Interface.IService;
 using Seed.Infrastructure.Common;
 using Seed.Infrastructure.DTOs.Common.Message;
 using Seed.Infrastructure.DTOs.Paging;
-using Seed.Infrastructure.DTOs.User;
 using Seed.Infrastructure.DTOs.User.Get;
 using Seed.Infrastructure.DTOs.User.Update;
 
@@ -69,11 +61,11 @@ namespace Seed.Application.Implement.Service
                 var userResponse = new GetUserResponse
                 {
                     Id = user.Id,
-                    FullName = user.FullName,
-                    Email = user.Email,
-                    UserName = user.UserName,
-                    PhoneNumber = user.PhoneNumber,
-                    Address = user.Address,
+                    FullName = user.FullName ?? "",
+                    Email = user.Email ?? "",
+                    UserName = user.UserName ?? "",
+                    PhoneNumber = user.PhoneNumber ?? "",
+                    Address = user.Address ?? "",
                     DateOfBirth = user.DateOfBirth,
                     Role = user.Role,
                     ProfilePictureUrl = userImg.ImageUrl ?? string.Empty
@@ -137,20 +129,20 @@ namespace Seed.Application.Implement.Service
             var getimg = new GetImageRequest(user.ProfilePictureUrl ?? string.Empty);
             var UserImg = await _unitOfWork.FirebaseRepository.GetImageAsync(getimg);
             /*============================================lay anh==========================================================*/
-            
+
             var response = new GetUserResponse
             {
                 Id = user.Id,
-                FullName = user.FullName,
-                UserName = user.Username,
-                Email = user.Email,
-                
-                PhoneNumber = user.PhoneNumber,
+                FullName = user.FullName ?? "",
+                UserName = user.Username ?? "",
+                Email = user.Email ?? "",
+
+                PhoneNumber = user.PhoneNumber ?? "",
                 ProfilePictureUrl = UserImg.ImageUrl ?? string.Empty,
-                Address = user.Address,
+                Address = user.Address ?? "",
                 CreatedDate = user.CreatedDate,
-                DateOfBirth = user.DateOfBirth,
-                Role = user.Role
+                DateOfBirth = user.DateOfBirth ?? DateTime.MinValue,
+                Role = user.Role ?? 0
             };
             return Result.SuccessWithObject(response);
         }
@@ -187,6 +179,6 @@ namespace Seed.Application.Implement.Service
             }
             var response = new UpdateID { Id = user.Id };
             return Result.SuccessWithObject(response);
-        } 
+        }
     }
 }

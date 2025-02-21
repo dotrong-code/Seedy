@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Seed.Domain.Entities;
 using Seed.Infrastructure.DB;
 using Seed.Infrastructure.DTOs.User.Get;
@@ -66,7 +61,7 @@ namespace Seed.Infrastructure.Implement.Repositories
                 query = query.Where(u => u.Address.Contains(address));
 
             if (dateOfBirth.HasValue)
-                query = query.Where(u => u.DateOfBirth.Date == dateOfBirth.Value.Date);
+                query = query.Where(u => u.DateOfBirth == dateOfBirth.Value.Date);
 
             if (role.HasValue)
                 query = query.Where(u => u.Role == role.Value);
@@ -84,15 +79,15 @@ namespace Seed.Infrastructure.Implement.Repositories
                 .Select(u => new GetUserResponse
                 {
                     Id = u.Id,
-                    FullName = u.FullName,
-                    UserName = u.Username, // Chỉnh sửa tên thuộc tính thành chữ hoa
-                    Email = u.Email,
-                    PhoneNumber = u.PhoneNumber,
-                    ProfilePictureUrl = u.ProfilePictureUrl,
-                    Address = u.Address,
-                    DateOfBirth = u.DateOfBirth,
+                    FullName = u.FullName ?? "",
+                    UserName = u.Username ?? "", // Chỉnh sửa tên thuộc tính thành chữ hoa
+                    Email = u.Email ?? "",
+                    PhoneNumber = u.PhoneNumber ?? "",
+                    ProfilePictureUrl = u.ProfilePictureUrl ?? "",
+                    Address = u.Address ?? "",
+                    DateOfBirth = u.DateOfBirth ?? DateTime.MinValue,
                     CreatedDate = u.CreatedDate,
-                    Role = u.Role
+                    Role = u.Role ?? 0
                 })
                 .ToListAsync();
 

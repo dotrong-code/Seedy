@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Management;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Seed.Domain.Entities;
 using Seed.Infrastructure.DB.Configuration;
 
@@ -29,6 +23,9 @@ namespace Seed.Infrastructure.DB
         public DbSet<UserEmail> UserEmails { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<PointsHistory> PointsHistorys { get; set; }
+        public DbSet<SetProduct> SetProducts { get; set; }
+        public DbSet<Set> Sets { get; set; }
+        public DbSet<Occasion> Occasions { get; set; }
 
 
         #endregion
@@ -36,6 +33,13 @@ namespace Seed.Infrastructure.DB
         {
             #region Entity Configurations
             modelBuilder.ApplyConfiguration(new EmailTemplateConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new OccasionConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductCategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new SetConfiguration());
+            modelBuilder.ApplyConfiguration(new SetProductConfiguration());
+
             #endregion
             #region Table Mappings
             modelBuilder.Entity<User>().ToTable("User");
@@ -51,10 +55,14 @@ namespace Seed.Infrastructure.DB
             modelBuilder.Entity<Role>().ToTable("Role");
             modelBuilder.Entity<PointsHistory>().ToTable("PointsHistory");
             modelBuilder.Entity<OrderTracking>().ToTable("OrderTracking");
+            modelBuilder.Entity<SetProduct>().ToTable("SetProduct");
+            modelBuilder.Entity<Set>().ToTable("Set");
+            modelBuilder.Entity<Occasion>().ToTable("Occasion");
+
             #endregion
             #region Relationships and Additional Configuration
             //UserEmail
-            
+
             modelBuilder.Entity<UserEmail>()
                 .HasKey(ue => new { ue.UserID, ue.EmailTemplateId });
 
@@ -139,7 +147,31 @@ namespace Seed.Infrastructure.DB
                 .HasOne(p => p.ProductCategory)
                 .WithMany(pc => pc.Products)
                 .HasForeignKey(p => p.ProductCategoryId)
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<SetProduct>()
+            .HasKey(sp => new { sp.SetId, sp.ProductId });
+
+            modelBuilder.Entity<SetProduct>()
+                .HasOne(sp => sp.Set)
+                .WithMany(s => s.SetProducts)
+                .HasForeignKey(sp => sp.SetId)
+                 .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<SetProduct>()
+                .HasOne(sp => sp.Product)
+                .WithMany(p => p.SetProducts)
+                .HasForeignKey(sp => sp.ProductId)
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Occasion>()
+                .HasMany(o => o.Sets)
+                .WithOne(s => s.Occasion)
+                .HasForeignKey(s => s.OccasionId)
                 .OnDelete(DeleteBehavior.SetNull);
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Occasion)
+                .WithMany(o => o.Products)
+                .HasForeignKey(p => p.OccasionId)
+                .OnDelete(DeleteBehavior.SetNull);
+
             #endregion
         }
     }
