@@ -1,26 +1,26 @@
-﻿using Seed.Infrastructure.Common;
-using Seed.Infrastructure.Implement.Repositories.Generic;
-using Seed.Infrastructure.Interfaces.IRepositories.IGeneric;
-using Seed.Infrastructure.Interfaces;
-using Seed.Application.Implement.Service;
-using Seed.Application.Interface.IService;
+﻿using FirebaseAdmin;
 using FluentValidation;
-using Seed.Application.Common.Validator.UserVali;
-using Seed.Application.DTOs.User.Login;
-using Seed.Infrastructure.Implement.Repositories;
-using Seed.Infrastructure.Interfaces.IRepositories;
-using Seed.Domain.Entities;
-using Seed.Application.DTOs.User.Register;
-using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Storage.V1;
-using Seed.Infrastructure.DTOs.Product.Create;
-using Seed.Application.Common.Validator.ProductVali;
 using Seed.Application.Common.Validator.ProductCategoryVali;
+using Seed.Application.Common.Validator.ProductVali;
+using Seed.Application.Common.Validator.UserVali;
+using Seed.Application.DTOs.User.Login;
+using Seed.Application.DTOs.User.Register;
+using Seed.Application.Implement.Service;
+using Seed.Application.Interface.IService;
+using Seed.Domain.Entities;
+using Seed.Infrastructure.Common;
+using Seed.Infrastructure.DTOs.Product.Create;
 using Seed.Infrastructure.DTOs.Product.Update;
 using Seed.Infrastructure.DTOs.ProductCategory.Create;
 using Seed.Infrastructure.DTOs.ProductCategory.Update;
 using Seed.Infrastructure.DTOs.User.Update;
+using Seed.Infrastructure.Implement.Repositories;
+using Seed.Infrastructure.Implement.Repositories.Generic;
+using Seed.Infrastructure.Interfaces;
+using Seed.Infrastructure.Interfaces.IRepositories;
+using Seed.Infrastructure.Interfaces.IRepositories.IGeneric;
 
 namespace Seed.Host.Starup
 {
@@ -79,6 +79,7 @@ namespace Seed.Host.Starup
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
             services.AddTransient<ICartService, CartService>();
+            services.AddTransient<ISetService, SetService>();
 
             #endregion
             #region Repositories
@@ -89,6 +90,7 @@ namespace Seed.Host.Starup
             services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
             services.AddTransient<ICartRepository, CartRepository>();
             services.AddTransient<ICartItemRepository, CartItemRepository>();
+            services.AddTransient<ISetRepository, SetRepository>();
             #endregion
             #region GenericRepositories
             services.AddTransient<IGenericRepository<User>, GenericRepository<User>>();

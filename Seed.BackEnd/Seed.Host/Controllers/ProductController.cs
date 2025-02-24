@@ -17,6 +17,7 @@ namespace Seed.Host.Controllers
     {
         private readonly IProductService _productService;
         private readonly IProductCategoryService _productCategoryService;
+
         public ProductController(IProductService productService, IProductCategoryService productCategoryService)
         {
             _productService = productService;
@@ -31,6 +32,17 @@ namespace Seed.Host.Controllers
                 ? ResultExtensions.ToSuccessDetails(result, "Products retrieved successfully")
                 : ResultExtensions.ToProblemDetails(result);
         }
+
+        [HttpGet("all")]
+        public async Task<IResult> GetAllProducts()
+        {
+            var result = await _productService.GetAllProduct();
+            return result.IsSuccess
+                ? ResultExtensions.ToSuccessDetails(result, "Products retrieved successfully")
+                : ResultExtensions.ToProblemDetails(result);
+
+        }
+
         // Get products with search criteria
         [HttpPost("search")]
         public async Task<IResult> GetProducts([FromBody] SearchProductRequest request)
@@ -115,5 +127,7 @@ namespace Seed.Host.Controllers
         }
 
         #endregion
+
+
     }
 }

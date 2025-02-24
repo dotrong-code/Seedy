@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Seed.Infrastructure.Interfaces.IRepositories;
-using Seed.Infrastructure.Interfaces;
+﻿using Google.Cloud.Storage.V1;
 using Seed.Infrastructure.DB;
 using Seed.Infrastructure.Implement.Repositories;
-using Google.Cloud.Storage.V1;
+using Seed.Infrastructure.Interfaces;
+using Seed.Infrastructure.Interfaces.IRepositories;
 
 namespace Seed.Infrastructure.Common
 {
@@ -27,6 +22,7 @@ namespace Seed.Infrastructure.Common
         public ICartItemRepository CartItemRepository { get; private set; }
         public IEmailTemplateRepository EmailTemplateRepository { get; private set; }
         public IFirebaseRepository FirebaseRepository { get; private set; }
+        public ISetRepository SetRepository { get; private set; }
 
         public UnitOfWork(SeedContext context, StorageClient storageClient)
         {
@@ -43,6 +39,7 @@ namespace Seed.Infrastructure.Common
             FirebaseRepository = new FirebaseRepository(storageClient);
             ProductCategoryRepository = new ProductCategoryRepository(_context);
             EmailTemplateRepository = new EmailTemplateRepository(_context);
+            SetRepository = new SetRepository(_context);
 
         }
 

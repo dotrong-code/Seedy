@@ -23,7 +23,7 @@ namespace Seed.Infrastructure.Implement.Repositories
                 })
                 .ToListAsync();
         }
-        public async Task<GetSetDetail> GetGetSetDetail(Guid Id)
+        public async Task<GetSetDetail> GetSetDetail(Guid Id)
         {
             return await _context.Sets
                 .Where(s => s.Id == Id)
