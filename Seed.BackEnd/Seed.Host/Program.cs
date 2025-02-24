@@ -21,6 +21,7 @@ builder.Services.AddDbContext<SeedContext>(opt =>
 //authorize
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
+    options.JsonSerializerOptions.PropertyNamingPolicy = null;
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.Never;
 });

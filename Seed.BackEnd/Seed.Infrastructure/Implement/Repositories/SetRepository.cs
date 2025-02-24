@@ -41,6 +41,10 @@ namespace Seed.Infrastructure.Implement.Repositories
                 .SingleOrDefaultAsync();
         }
 
+        public Task<GetSetDetail> GetGetSetDetail()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
