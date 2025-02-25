@@ -17,6 +17,9 @@
 #firebase key
 Seed.BackEnd/Seed.Host/Keys/
 
+#migration
+Seed.BackEnd/Seed.Infrastructure/Migrations
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
