@@ -17,6 +17,7 @@ namespace Seed.Application.Interface.IService
 
 
         Task<Result> GetCartDetailsAsync(Guid userId);
+        Task<Result> CreateCartByUserIdAsync(Guid userId, string email);
     }
 
 }

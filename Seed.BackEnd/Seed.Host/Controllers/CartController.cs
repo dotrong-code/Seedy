@@ -95,5 +95,15 @@ namespace Seed.Host.Controllers
                 ? ResultExtensions.ToSuccessDetails(result, "Cart cleared successfully")
                 : ResultExtensions.ToProblemDetails(result);
         }
+
+        [HttpPost("create")] // New endpoint for creating a cart by userId
+        public async Task<IResult> CreateCart(string email)
+        {
+            var currentUser = await TokenHelper.Instance.GetThisUserInfo(HttpContext);
+            var result = await _cartService.CreateCartByUserIdAsync(currentUser.UserId, email);
+            return result.IsSuccess
+                ? ResultExtensions.ToSuccessDetails(result, "Cart created successfully")
+                : ResultExtensions.ToProblemDetails(result);
+        }
     }
 }

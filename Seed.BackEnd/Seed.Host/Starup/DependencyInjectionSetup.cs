@@ -80,6 +80,8 @@ namespace Seed.Host.Starup
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
             services.AddTransient<ICartService, CartService>();
             services.AddTransient<ISetService, SetService>();
+            services.AddTransient<IViettelPostService, ViettelPostService>();
+
 
             #endregion
             #region Repositories

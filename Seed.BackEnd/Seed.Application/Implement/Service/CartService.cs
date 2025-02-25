@@ -129,5 +129,25 @@ namespace Seed.Application.Implement.Service
             var cleared = await _unitOfWork.CartRepository.ClearCartAsync(userId);
             return cleared ? Result.Success() : Result.Failure(Error.Failure("CLEAR_FAILED", "Failed to clear cart"));
         }
+        // CartService.cs
+        public async Task<Result> CreateCartByUserIdAsync(Guid userId, string email)
+        {
+            var existingCart = await _unitOfWork.CartRepository.GetCartByUserIdAsync(userId);
+            if (existingCart != null)
+            {
+                return Result.Failure(Error.Conflict("CART_ALREADY_EXISTS", "User already has a cart."));
+            }
+
+            var newCart = new Cart
+            {
+                Id = Guid.NewGuid(),
+                UserID = userId,
+                Email = email,
+                CartItems = new List<CartItem>()
+            };
+
+            var created = await _unitOfWork.CartRepository.CreateCartAsync(newCart);
+            return created > 0 ? Result.SuccessWithObject(newCart) : Result.Failure(Error.Failure("CREATE_FAILED", "Failed to create cart"));
+        }
     }
 }
