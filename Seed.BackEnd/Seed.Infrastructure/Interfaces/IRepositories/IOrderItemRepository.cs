@@ -10,5 +10,7 @@ namespace Seed.Infrastructure.Interfaces.IRepositories
 {
     public interface IOrderItemRepository : IGenericRepository<OrderItem>
     {
+        
+        Task CreateOrderItemAsync(OrderItem orderItem);
     }
 }

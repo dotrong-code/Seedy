@@ -80,7 +80,7 @@ namespace Seed.Host.Starup
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
             services.AddTransient<ICartService, CartService>();
             services.AddTransient<IViettelPostService, ViettelPostService>();
-
+            services.AddTransient<IOrderService, OrderService>();
             #endregion
             #region Repositories
             services.AddTransient<IUserRepository, UserRepository>();
@@ -90,6 +90,7 @@ namespace Seed.Host.Starup
             services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
             services.AddTransient<ICartRepository, CartRepository>();
             services.AddTransient<ICartItemRepository, CartItemRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
             #endregion
             #region GenericRepositories
             services.AddTransient<IGenericRepository<User>, GenericRepository<User>>();
@@ -98,6 +99,7 @@ namespace Seed.Host.Starup
             services
                 .AddTransient<IGenericRepository<ProductCategoryRepository>,
                     GenericRepository<ProductCategoryRepository>>();
+            services.AddTransient<IGenericRepository<Order>, GenericRepository<Order>>();
             #endregion
             return services; // Ensure the IServiceCollection is returned
         }
