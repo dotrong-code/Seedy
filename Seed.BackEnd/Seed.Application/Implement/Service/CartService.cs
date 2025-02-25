@@ -4,9 +4,6 @@ using Seed.Application.Interface.IService;
 using Seed.Domain.Entities;
 using Seed.Infrastructure.DTOs.Carts;
 using Seed.Infrastructure.Interfaces;
-using Seed.Infrastructure.Interfaces.IRepositories;
-using System;
-using System.Threading.Tasks;
 
 namespace Seed.Application.Implement.Service
 {
@@ -33,14 +30,14 @@ namespace Seed.Application.Implement.Service
             foreach (var item in cart.CartItems.Where(item => !item.IsDeleted && item.Product != null))
             {
                 string imageUrl = null;
-                    //item.Product.Images;
+                //item.Product.Images;
 
                 // Ensure Product Image URL is not empty before requesting from Firebase
-                
+
                 var imageRequest = new GetImageRequest(imageUrl ?? string.Empty);
                 var imageResult = await _unitOfWork.FirebaseRepository.GetImageAsync(imageRequest);
 
-                    
+
 
                 cartItemsDictionary[item.Id] = new ProductCartItemDto
                 {
@@ -94,7 +91,7 @@ namespace Seed.Application.Implement.Service
             };
 
             var added = await _unitOfWork.CartRepository.AddCartItemAsync(cartItem);
-            return added ? Result.Success() : Result.Failure(Error.Failure("ADD_FAILED", "Failed to add item to cart"));
+            return added ? Result.SuccessWithObject(new { Mess = "Add successfully" }) : Result.Failure(Error.Failure("ADD_FAILED", "Failed to add item to cart"));
         }
 
         public async Task<Result> UpdateCartItemAsync(Guid userId, Guid cartItemId, int quantity)
