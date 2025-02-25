@@ -167,5 +167,22 @@ namespace Seed.Application.Implement.Service
             return deleteResult ? Result.Success() : Result.Failure(ProductErrorMessage.ProductDeletionFailed());
         }
 
+        public async Task<Result> GetAllProduct()
+        {
+            var products = await _unitOfWork.ProductRepository.GetAllAsync();
+            if (products == null)
+            {
+                return Result.Failure(ProductErrorMessage.ProductNotFound());
+            }
+            var list = products.Select(p => new
+            {
+                p.Id,
+                p.Name,
+                p.Price,
+                p.ImageUrl
+            }).ToList();
+            return Result.SuccessWithObject(list);
+
+        }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Seed.Application.Common.Result;
+﻿using Seed.Application.Common.Result;
 using Seed.Infrastructure.DTOs.Product.Create;
 using Seed.Infrastructure.DTOs.Product.Read;
 using Seed.Infrastructure.DTOs.Product.Update;
@@ -17,5 +12,6 @@ namespace Seed.Application.Interface.IService
         Task<Result> DeleteProductAsync(Guid productId);
         Task<Result> GetProductByIdAsync(Guid id);
         Task<Result> GetProductsAsync(SearchProductRequest request);
+        Task<Result> GetAllProduct();
     }
 }

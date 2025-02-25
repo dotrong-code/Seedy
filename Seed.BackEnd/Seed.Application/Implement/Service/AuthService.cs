@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using FluentValidation;
+﻿using FluentValidation;
 using Google.Apis.Auth;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Seed.Application.Common;
 using Seed.Application.Common.Result;
 using Seed.Application.DTOs.Common;
 using Seed.Application.DTOs.EmailTemplate;
@@ -18,6 +12,9 @@ using Seed.Application.Interface.IService;
 using Seed.Domain.Entities;
 using Seed.Infrastructure.DTOs.Common.Message;
 using Seed.Infrastructure.Interfaces;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace Seed.Application.Implement.Service
 {
@@ -46,7 +43,7 @@ namespace Seed.Application.Implement.Service
             _unitOfWork = unitOfWork;
             _registerRequestValidator = registerRequestValidator;
             _loginRequestValidator = loginRequestValidator;
-            
+
             _passwordHasher = passwordHasher;
             _tokenService = tokenService;
             _configuration = configuration;
@@ -151,7 +148,7 @@ namespace Seed.Application.Implement.Service
             {
                 return Result.Failure(Error.Failure("CartCreationFailed", "Failed to create user cart."));
             }
-            var activationLink = $"https://seedbe-cdhggmh7h0hef3ff.eastasia-01.azurewebsites.net/api/Auth/confirm?userId={newUser.Id}";
+            var activationLink = $"{CommonObject.Domain}/api/Auth/confirm?userId={newUser.Id}";
 
             // Send activation email
             var emailBodyResult = await _emailTemplateService.GenerateEmailWithActivationLink("VerifyEmail", activationLink);

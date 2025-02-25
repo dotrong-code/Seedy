@@ -1,7 +1,7 @@
 ﻿using Google.Apis.Auth;
-using Microsoft.AspNetCore.Http;
 
 using Microsoft.AspNetCore.Mvc;
+using Seed.Application.Common;
 using Seed.Application.Common.Result;
 using Seed.Application.DTOs.User.Login;
 using Seed.Application.DTOs.User.Register;
@@ -43,7 +43,7 @@ namespace Seed.Host.Controllers
 
             if (result.IsSuccess)
             {
-                return Redirect("https://seedui-cme0btdxb7h6c8ah.eastasia-01.azurewebsites.net/Account/SignIn");
+                return Redirect($"{CommonObject.Domain}/Account/SignIn");
             }
 
             return (IActionResult)ResultExtensions.ToProblemDetails(result);
