@@ -24,6 +24,12 @@ namespace Seed.Infrastructure.Common
         public IFirebaseRepository FirebaseRepository { get; private set; }
         public ISetRepository SetRepository { get; private set; }
 
+        public async Task<int> SaveChangesAsync()
+        {
+            return await _context.SaveChangesAsync();
+        }
+
+
         public UnitOfWork(SeedContext context, StorageClient storageClient)
         {
             _context = context;
@@ -35,7 +41,6 @@ namespace Seed.Infrastructure.Common
             PaymentRepository = new PaymentRepository(_context);
             ProductRepository = new ProductRepository(_context);
             OrderTrackingRepository = new OrderTrackingRepository(_context);
-            PaymentRepository = new PaymentRepository(_context);
             FirebaseRepository = new FirebaseRepository(storageClient);
             ProductCategoryRepository = new ProductCategoryRepository(_context);
             EmailTemplateRepository = new EmailTemplateRepository(_context);

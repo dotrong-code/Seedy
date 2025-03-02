@@ -1,12 +1,9 @@
-﻿using System;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Seed.Application.Common.Result;
 using Seed.Application.DTOs.Common;
 using Seed.Application.Interface.IService;
 using Seed.Infrastructure.DTOs.ViettelPost;
+using System.Text;
 
 namespace Seed.Application.Implement.Service
 {
@@ -78,6 +75,7 @@ namespace Seed.Application.Implement.Service
                 }
 
                 var result = JsonConvert.DeserializeObject<ViettelProvinceResponse>(responseContent);
+                Console.WriteLine(result);
                 return Result.SuccessWithObject(result);
             }
             catch (Exception ex)

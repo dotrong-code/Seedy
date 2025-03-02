@@ -2,7 +2,6 @@
 using Seed.Application.Common.Result;
 using Seed.Application.Interface.IService;
 using Seed.Infrastructure.DTOs.ViettelPost;
-using System.Threading.Tasks;
 
 namespace Seed.Host.Controllers
 {
@@ -35,30 +34,38 @@ namespace Seed.Host.Controllers
                 : ResultExtensions.ToProblemDetails(result);
         }
         [HttpGet("provinces")]
-        public async Task<IActionResult> GetProvinces([FromHeader] string token)
+        public async Task<IResult> GetProvinces([FromHeader] string token)
         {
             var result = await _viettelPostService.GetProvincesAsync(token);
-            return result.IsSuccess ? Ok(result.Object) : BadRequest(result.Error);
+            return result.IsSuccess
+                ? ResultExtensions.ToSuccessDetails(result, "Getting successfully")
+                : ResultExtensions.ToProblemDetails(result);
         }
 
         [HttpGet("districts/{provinceId}")]
-        public async Task<IActionResult> GetDistricts(int provinceId, [FromHeader] string token)
+        public async Task<IResult> GetDistricts(int provinceId, [FromHeader] string token)
         {
             var result = await _viettelPostService.GetDistrictsAsync(provinceId, token);
-            return result.IsSuccess ? Ok(result.Object) : BadRequest(result.Error);
+            return result.IsSuccess
+                ? ResultExtensions.ToSuccessDetails(result, "Getting successfully")
+                : ResultExtensions.ToProblemDetails(result);
         }
 
         [HttpGet("wards/{districtId}")]
-        public async Task<IActionResult> GetWards(int districtId, [FromHeader] string token)
+        public async Task<IResult> GetWards(int districtId, [FromHeader] string token)
         {
             var result = await _viettelPostService.GetWardsAsync(districtId, token);
-            return result.IsSuccess ? Ok(result.Object) : BadRequest(result.Error);
+            return result.IsSuccess
+                ? ResultExtensions.ToSuccessDetails(result, "Getting successfully")
+                : ResultExtensions.ToProblemDetails(result);
         }
         [HttpPost("shipping-price")]
-        public async Task<IActionResult> GetShippingPrice([FromBody] ViettelShippingPriceRequest request, [FromHeader] string token)
+        public async Task<IResult> GetShippingPrice([FromBody] ViettelShippingPriceRequest request, [FromHeader] string token)
         {
             var result = await _viettelPostService.GetShippingPriceAsync(request, token);
-            return result.IsSuccess ? Ok(result.Object) : BadRequest(result.Error);
+            return result.IsSuccess
+                ? ResultExtensions.ToSuccessDetails(result, "Getting successfully")
+                : ResultExtensions.ToProblemDetails(result);
         }
     }
 }

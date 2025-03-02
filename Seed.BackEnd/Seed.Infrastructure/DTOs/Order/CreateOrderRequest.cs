@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Seed.Domain.Entities
+namespace Seed.Infrastructure.DTOs.Order
 {
-    public class Order : BaseEntity
+    public class CreateOrderRequest
     {
-        public Guid? UserID { get; set; }  // Nullable for guest orders
+        public Guid? UserID { get; set; }
         public string ReceiverFullName { get; set; }
         public string ReceiverAddress { get; set; }
         public string ReceiverPhone { get; set; }
@@ -21,9 +21,13 @@ namespace Seed.Domain.Entities
         public string OrderService { get; set; }
         public string OrderNote { get; set; }
         public decimal MoneyCollection { get; set; }
+        public List<OrderItemRequest> OrderItems { get; set; }
+    }
 
-        // Relationships
-        public ICollection<OrderItem> OrderItems { get; set; }
-        public User User { get; set; }
+    public class OrderItemRequest
+    {
+        public Guid ProductId { get; set; }
+        public int Quantity { get; set; }
+        public decimal Price { get; set; }
     }
 }

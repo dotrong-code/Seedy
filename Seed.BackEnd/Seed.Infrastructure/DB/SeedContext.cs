@@ -115,25 +115,15 @@ namespace Seed.Infrastructure.DB
                 .HasForeignKey(oi => oi.ProductId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            // OrderTracking relationships
-            modelBuilder.Entity<OrderTracking>()
-                .HasOne(ot => ot.Order)
-                .WithMany(o => o.OrderTrackings)
-                .HasForeignKey(ot => ot.OrderId)
-                .OnDelete(DeleteBehavior.Cascade);
 
             // Payment relationships
             modelBuilder.Entity<Payment>()
                 .HasOne(p => p.User)
                 .WithMany(u => u.Payments)
-                .HasForeignKey(p => p.UserID)
-                .OnDelete(DeleteBehavior.SetNull);
-
-            modelBuilder.Entity<Payment>()
-                .HasOne(p => p.Order)
-                .WithMany(o => o.Payments)
-                .HasForeignKey(p => p.OrderId)
+                .HasForeignKey(p => p.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+
 
             // PointsHistory relationships
             modelBuilder.Entity<PointsHistory>()
