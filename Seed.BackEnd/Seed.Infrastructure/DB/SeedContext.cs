@@ -22,7 +22,6 @@ namespace Seed.Infrastructure.DB
         public DbSet<ProductCategory> ProductCategories { get; set; } // Added ProductCategory DbSet
         public DbSet<EmailTemplate> EmailTemplates { get; set; }
         public DbSet<UserEmail> UserEmails { get; set; }
-        public DbSet<Role> Roles { get; set; }
         public DbSet<PointsHistory> PointsHistorys { get; set; }
         public DbSet<SetProduct> SetProducts { get; set; }
         public DbSet<Set> Sets { get; set; }
@@ -41,6 +40,9 @@ namespace Seed.Infrastructure.DB
             modelBuilder.ApplyConfiguration(new SetConfiguration());
             modelBuilder.ApplyConfiguration(new SetProductConfiguration());
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderItemConfiguration());
+            modelBuilder.ApplyConfiguration(new CartConfiguration());
 
             #endregion
             #region Table Mappings
