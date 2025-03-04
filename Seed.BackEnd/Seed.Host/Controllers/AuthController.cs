@@ -43,7 +43,7 @@ namespace Seed.Host.Controllers
 
             if (result.IsSuccess)
             {
-                return Redirect($"{CommonObject.Domain}/Account/SignIn");
+                return Redirect($"{CommonObject.Domain}/login");
             }
 
             return (IActionResult)ResultExtensions.ToProblemDetails(result);

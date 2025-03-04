@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Seed.Application.Common;
 using Seed.Host.Starup;
 using Seed.Infrastructure.DB;
 using System.Text;
@@ -13,6 +14,9 @@ using System.Text.Json.Serialization;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+CommonObject.Initialize(builder.Configuration);
+
 builder.Services.AddDbContext<SeedContext>(opt =>
 {
     // Set up your database connection string
@@ -102,7 +106,7 @@ builder.Services.AddCors(options =>
 
 builder.Services.RegisterServices();
 builder.Services.AddHttpClient();
-//builder.WebHost.UseUrls("http://0.0.0.0:5000");
+builder.WebHost.UseUrls("http://0.0.0.0:5000");
 
 var app = builder.Build();
 
