@@ -1,4 +1,4 @@
-
+﻿
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
@@ -19,13 +19,16 @@ builder.Services.AddDbContext<SeedContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("MyDb"));
 });
 //authorize
-builder.Services.AddControllers().AddJsonOptions(options =>
-{
-    options.JsonSerializerOptions.PropertyNamingPolicy = null;
-    options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
-    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-    options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.Never;
-});
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null; // Preserve exact casing
+        options.JsonSerializerOptions.PropertyNameCaseInsensitive = false; // Don’t ignore case when deserializing
+        options.JsonSerializerOptions.DictionaryKeyPolicy = null; // Preserve dictionary keys
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+        options.JsonSerializerOptions.MaxDepth = 64;
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -81,13 +84,8 @@ builder.Services.AddSwaggerGen(option =>
         }
     });
 });
-builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
-        options.JsonSerializerOptions.MaxDepth = 64;
-        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-    });
+
+
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddCors(options =>
 {
@@ -104,8 +102,8 @@ builder.Services.AddCors(options =>
 
 builder.Services.RegisterServices();
 builder.Services.AddHttpClient();
-builder.Services.AddTransient<PaymentController>(); // Ensure the controller is registered properly
-builder.WebHost.UseUrls("http://0.0.0.0:5000");
+//builder.WebHost.UseUrls("http://0.0.0.0:5000");
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

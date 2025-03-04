@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Seed.Infrastructure.DTOs.ViettelPost
 {
@@ -12,9 +13,13 @@ namespace Seed.Infrastructure.DTOs.ViettelPost
 
     public class DistrictData
     {
-        public int DISTRICT_ID { get; set; }
-        public string DISTRICT_VALUE { get; set; }
-        public string DISTRICT_NAME { get; set; }
-        public int PROVINCE_ID { get; set; }
+        [JsonProperty("DISTRICT_ID")]
+        public int DistrictId { get; set; }
+        [JsonProperty("DISTRICT_VALUE")]
+        public string DistrictValue { get; set; }
+        [JsonProperty("DISTRICT_NAME")]
+        public string DistrictName { get; set; }
+        [JsonProperty("PROVINCE_ID")]
+        public int ProvinceId { get; set; }
     }
 }

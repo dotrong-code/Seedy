@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Seed.Infrastructure.DTOs.ViettelPost
 {
@@ -12,8 +13,11 @@ namespace Seed.Infrastructure.DTOs.ViettelPost
 
     public class WardData
     {
-        public int WARDS_ID { get; set; }
-        public string WARDS_NAME { get; set; }
-        public int DISTRICT_ID { get; set; }
+        [JsonProperty("WARDS_ID")]
+        public int WardId { get; set; }
+        [JsonProperty("WARDS_NAME")]
+        public string WardName { get; set; }
+        [JsonProperty("DISTRICT_ID")]
+        public int DistrictId { get; set; }
     }
 }

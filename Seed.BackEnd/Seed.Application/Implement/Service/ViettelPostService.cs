@@ -32,7 +32,8 @@ namespace Seed.Application.Implement.Service
             }
 
             var result = JsonConvert.DeserializeObject<ViettelLoginResponse>(responseContent);
-            return Result.SuccessWithObject(result);
+            var extractedData = result?.Data;
+            return Result.SuccessWithObject(extractedData);
         }
 
         public async Task<Result> ConnectOwnerAsync(ViettelLoginRequest request, string token)
@@ -53,7 +54,8 @@ namespace Seed.Application.Implement.Service
             }
 
             var result = JsonConvert.DeserializeObject<ViettelLoginResponse>(responseContent);
-            return Result.SuccessWithObject(result);
+            var extractedData = result?.Data;
+            return Result.SuccessWithObject(extractedData);
         }
         #endregion
 
@@ -75,8 +77,8 @@ namespace Seed.Application.Implement.Service
                 }
 
                 var result = JsonConvert.DeserializeObject<ViettelProvinceResponse>(responseContent);
-                Console.WriteLine(result);
-                return Result.SuccessWithObject(result);
+                var extractedData = result?.Data;
+                return Result.SuccessWithObject(extractedData);
             }
             catch (Exception ex)
             {
@@ -101,7 +103,8 @@ namespace Seed.Application.Implement.Service
                 }
 
                 var result = JsonConvert.DeserializeObject<ViettelDistrictResponse>(responseContent);
-                return Result.SuccessWithObject(result);
+                var extractedData = result?.Data;
+                return Result.SuccessWithObject(extractedData);
             }
             catch (Exception ex)
             {
@@ -126,7 +129,8 @@ namespace Seed.Application.Implement.Service
                 }
 
                 var result = JsonConvert.DeserializeObject<ViettelWardResponse>(responseContent);
-                return Result.SuccessWithObject(result);
+                var extractedData = result?.Data;
+                return Result.SuccessWithObject(extractedData);
             }
             catch (Exception ex)
             {
@@ -158,7 +162,7 @@ namespace Seed.Application.Implement.Service
                 }
 
                 var result = JsonConvert.DeserializeObject<ViettelShippingPriceResponse>(responseContent);
-                return Result.SuccessWithObject(result);
+                return Result.SuccessWithObject(result.Result);
             }
             catch (Exception ex)
             {

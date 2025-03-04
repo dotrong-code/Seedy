@@ -15,5 +15,6 @@ namespace Seed.Infrastructure.Interfaces.IRepositories
         Task<List<Order>> GetOrdersByUserIdAsync(Guid userId);
         Task<int> UpdateOrderAsync(Order order);
         Task<bool> RemoveOrderAsync(Order order);
+        Task<List<Order>> GetOrdersWithDetailsByUserIdAsync(Guid userId);
     }
 }

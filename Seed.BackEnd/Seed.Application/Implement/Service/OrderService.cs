@@ -96,10 +96,77 @@ namespace Seed.Application.Implement.Service
             return Result.SuccessWithObject(order);
         }
 
+        
         public async Task<Result> GetOrdersByUserIdAsync(Guid userId)
         {
             var orders = await _unitOfWork.OrderRepository.GetOrdersByUserIdAsync(userId);
-            return Result.SuccessWithObject(orders);
+            if (orders == null || !orders.Any())
+            {
+                return Result.Failure(Error.Failure("NO_ORDERS_FOUND", "No orders found for this user."));
+            }
+
+            var orderResponses = orders.Select(o => new UserOrderResponse
+            {
+                OrderId = o.Id,
+                TotalPrice = o.TotalPrice,
+                CreatedDate = o.CreatedDate, // Giả sử BaseEntity có thuộc tính này
+                OrderNote = o.OrderNote,
+                ShippingFee = o.ShippingFee,
+                OrderService = o.OrderService
+            }).ToList();
+
+            return Result.SuccessWithObject(orderResponses);
+        }
+
+        public async Task<Result> GetOrderDetailsAsync(Guid orderId)
+        {
+            var order = await _unitOfWork.OrderRepository.GetOrderByIdAsync(orderId);
+            if (order == null)
+            {
+                return Result.Failure(OrderErrorMessage.OrderNotFound());
+            }
+
+            var orderDetails = new OrderDetailResponse
+            {
+                OrderId = order.Id,
+                TotalPrice = order.TotalPrice,
+                CreatedAt = order.CreatedDate,
+                OrderNote = order.OrderNote,
+                ShippingFee = order.ShippingFee,
+                OrderService = order.OrderService,
+                Items = order.OrderItems.Select(oi => new OrderItemDetailResponse
+                {
+                    ProductId = oi.ProductId ?? Guid.Empty,
+                    ProductName = oi.Product?.Name ?? "Unknown Product",
+                    ImageUrl = oi.Product?.ImageUrl ?? "/default-product.jpg",
+                    Price = oi.Price,
+                    Quantity = oi.Quantity
+                }).ToList()
+            };
+
+            return Result.SuccessWithObject(orderDetails);
+        }
+        public async Task<Result> GetOrdersWithDetailsByUserIdAsync(Guid userId)
+        {
+            // Lấy danh sách đơn hàng từ repository, bao gồm OrderItems và Product
+            var orders = await _unitOfWork.OrderRepository.GetOrdersWithDetailsByUserIdAsync(userId);
+
+            // Chuyển đổi sang DTO để định dạng dữ liệu cho FE
+            var orderDtos = orders.Select(o => new OrderDto
+            {
+                Id = o.Id,
+                CreatedDate = o.CreatedDate,
+                OrderItems = o.OrderItems.Select(oi => new OrderItemDto
+                {
+                    ProductId = oi.ProductId ?? Guid.Empty,
+                    ProductName = oi.Product.Name,
+                    ProductImageUrl = oi.Product.ImageUrl,
+                    Quantity = oi.Quantity,
+                    Price = oi.Price
+                }).ToList()
+            }).ToList();
+
+            return Result.SuccessWithObject(orderDtos);
         }
     }
 }

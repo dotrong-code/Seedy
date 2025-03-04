@@ -14,5 +14,8 @@ namespace Seed.Application.Interface.IService
         Task<Result> CreateOrderAsync(CreateOrderRequest request);
         Task<Result> GetOrderByIdAsync(Guid orderId);
         Task<Result> GetOrdersByUserIdAsync(Guid userId);
+
+        Task<Result> GetOrdersWithDetailsByUserIdAsync(Guid userId);
+        Task<Result> GetOrderDetailsAsync(Guid orderId);
     }
 }

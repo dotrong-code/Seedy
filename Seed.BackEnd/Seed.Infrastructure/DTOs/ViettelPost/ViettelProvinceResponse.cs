@@ -18,13 +18,13 @@ namespace Seed.Infrastructure.DTOs.ViettelPost
     public class ProvinceData
     {
         [JsonProperty("PROVINCE_ID")]
-        public int PROVINCE_ID { get; set; }
+        public int ProvinceId { get; set; }
 
         [JsonProperty("PROVINCE_CODE")]
-        public string PROVINCE_CODE { get; set; }
+        public string ProvinceCode { get; set; }
 
         [JsonProperty("PROVINCE_NAME")]
-        public string PROVINCE_NAME { get; set; }
+        public string ProvinceName { get; set; }
     }   
 }
     

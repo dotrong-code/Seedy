@@ -3,38 +3,65 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Seed.Infrastructure.DTOs.ViettelPost
 {
     public class ViettelShippingPriceResponse
     {
-        public ViettelAddressInfo SENDER_ADDRESS { get; set; }
-        public ViettelAddressInfo RECEIVER_ADDRESS { get; set; }
-        public List<ViettelShippingService> RESULT { get; set; }
+        [JsonProperty("SENDER_ADDRESS")]
+        public ViettelAddressInfo SenderAddress { get; set; }
+
+        [JsonProperty("RECEIVER_ADDRESS")]
+        public ViettelAddressInfo ReceiverAddress { get; set; }
+
+        [JsonProperty("RESULT")]
+        public List<ViettelShippingService> Result { get; set; }
     }
 
     public class ViettelAddressInfo
     {
-        public int PROVINCE_ID { get; set; }
-        public int DISTRICT_ID { get; set; }
-        public int WARD_ID { get; set; }
-        public string ADDRESS { get; set; }
+        [JsonProperty("PROVINCE_ID")]
+        public int ProvinceId { get; set; }
+
+        [JsonProperty("DISTRICT_ID")]
+        public int DistrictId { get; set; }
+
+        [JsonProperty("WARD_ID")]
+        public int WardId { get; set; }
+
+        [JsonProperty("ADDRESS")]
+        public string Address { get; set; }
     }
 
     public class ViettelShippingService
     {
-        public string MA_DV_CHINH { get; set; }
-        public string TEN_DICHVU { get; set; }
-        public decimal GIA_CUOC { get; set; }
-        public string THOI_GIAN { get; set; }
-        public int EXCHANGE_WEIGHT { get; set; }
-        public List<ViettelExtraService> EXTRA_SERVICE { get; set; }
+        [JsonProperty("MA_DV_CHINH")]
+        public string maDvChinh { get; set; }
+
+        [JsonProperty("TEN_DICHVU")]
+        public string tenDichVu { get; set; }
+
+        [JsonProperty("GIA_CUOC")]
+        public decimal giaCuoc { get; set; }
+
+        [JsonProperty("THOI_GIAN")]
+        public string thoiGian { get; set; }
+
+        [JsonProperty("EXCHANGE_WEIGHT")]
+        public int ExchangeWeight { get; set; }
+
+        [JsonProperty("EXTRA_SERVICE")]
+        public List<ViettelExtraService> ExtraServices { get; set; }
     }
 
     public class ViettelExtraService
     {
-        public string SERVICE_CODE { get; set; }
-        public string SERVICE_NAME { get; set; }
-        public string DESCRIPTION { get; set; }
+        [JsonProperty("SERVICE_CODE")]
+        public string serviceCode { get; set; }
+        [JsonProperty("SERVICE_NAME")]
+        public string serviceName { get; set; }
+        [JsonProperty("DESCRIPTION")]
+        public string description { get; set; }
     }
 }

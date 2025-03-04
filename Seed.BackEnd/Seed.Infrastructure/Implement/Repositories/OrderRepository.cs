@@ -25,8 +25,10 @@ namespace Seed.Infrastructure.Implement.Repositories
         {
             return await _context.Orders
                 .Include(o => o.OrderItems)
+                    .ThenInclude(oi => oi.Product) // ✅ Load luôn thông tin sản phẩm
                 .FirstOrDefaultAsync(o => o.Id == orderId);
         }
+
 
         public async Task<List<Order>> GetOrdersByUserIdAsync(Guid userId)
         {
@@ -46,6 +48,14 @@ namespace Seed.Infrastructure.Implement.Repositories
         {
             _context.Orders.Remove(order);
             return await _context.SaveChangesAsync() > 0;
+        }
+        public async Task<List<Order>> GetOrdersWithDetailsByUserIdAsync(Guid userId)
+        {
+            return await _context.Orders
+                .Include(o => o.OrderItems)
+                .ThenInclude(oi => oi.Product)
+                .Where(o => o.UserID == userId)
+                .ToListAsync();
         }
     }
 }

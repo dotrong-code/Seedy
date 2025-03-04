@@ -4,6 +4,7 @@ using Seed.Domain.Entities;
 using Seed.Application.Interface.IService;
 using Seed.Infrastructure.DTOs.Order;
 using Seed.Application.Common.Result;
+using Seed.Application.Common;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -34,12 +35,32 @@ public class OrderController : ControllerBase
             : ResultExtensions.ToProblemDetails(result);
     }
 
-    [HttpGet("user/{userId}")]
+    [HttpGet("user-orders")]
     public async Task<IResult> GetOrdersByUserId(Guid userId)
     {
-        var result = await _orderService.GetOrdersByUserIdAsync(userId);
+        var currentUser = await TokenHelper.Instance.GetThisUserInfo(HttpContext);
+        var result = await _orderService.GetOrdersByUserIdAsync(currentUser.UserId);
         return result.IsSuccess
             ? ResultExtensions.ToSuccessDetails(result, "Orders retrieved successfully")
             : ResultExtensions.ToProblemDetails(result);
     }
+
+    [HttpGet("details/{orderId}")]
+    public async Task<IResult> GetOrderDetails(Guid orderId)
+    {
+        var result = await _orderService.GetOrderDetailsAsync(orderId);
+        return result.IsSuccess
+            ? ResultExtensions.ToSuccessDetails(result, "Order details retrieved successfully")
+            : ResultExtensions.ToProblemDetails(result);
+    }
+    [HttpGet("user/details")]
+    public async Task<IResult> GetOrdersWithDetailsByUserId()
+    {
+        var currentUser = await TokenHelper.Instance.GetThisUserInfo(HttpContext);
+        var result = await _orderService.GetOrdersWithDetailsByUserIdAsync(currentUser.UserId);
+        return result.IsSuccess
+            ? ResultExtensions.ToSuccessDetails(result, "Orders retrieved successfully")
+            : ResultExtensions.ToProblemDetails(result);
+    }
+
 }

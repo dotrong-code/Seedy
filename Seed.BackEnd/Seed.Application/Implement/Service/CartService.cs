@@ -76,22 +76,42 @@ namespace Seed.Application.Implement.Service
 
         public async Task<Result> AddToCartAsync(Guid userId, Guid productId, int quantity)
         {
-            // Lấy Cart của user
-            var cart = await _unitOfWork.CartRepository.GetCartByUserIdAsync(userId);
+            // Lấy Cart của user, bao gồm danh sách CartItems
+            var cart = await _unitOfWork.CartRepository.GetCartWithItemsAsync(userId);
             if (cart == null)
             {
                 return Result.Failure(Error.NotFound("CART_NOT_FOUND", "User does not have a cart."));
             }
 
-            var cartItem = new CartItem
-            {
-                CartId = cart.Id, // 🆕 Tự lấy CartId
-                ProductId = productId,
-                Quantity = quantity
-            };
+            // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+            var existingCartItem = cart.CartItems
+                .FirstOrDefault(ci => ci.ProductId == productId && !ci.IsDeleted);
 
-            var added = await _unitOfWork.CartRepository.AddCartItemAsync(cartItem);
-            return added ? Result.SuccessWithObject(new { Mess = "Add successfully" }) : Result.Failure(Error.Failure("ADD_FAILED", "Failed to add item to cart"));
+            if (existingCartItem != null)
+            {
+                // Nếu sản phẩm đã tồn tại, cập nhật số lượng
+                existingCartItem.Quantity += quantity;
+                var updated = await _unitOfWork.CartRepository.UpdateCartItemQuantityAsync(existingCartItem.Id, existingCartItem.Quantity);
+                return updated
+                    ? Result.SuccessWithObject(new { Mess = "Quantity updated successfully" })
+                    : Result.Failure(Error.Failure("UPDATE_FAILED", "Failed to update item quantity"));
+            }
+            else
+            {
+                // Nếu sản phẩm chưa tồn tại, thêm mới CartItem
+                var cartItem = new CartItem
+                {
+                    CartId = cart.Id,
+                    ProductId = productId,
+                    Quantity = quantity,
+                    IsDeleted = false
+                };
+
+                var added = await _unitOfWork.CartRepository.AddCartItemAsync(cartItem);
+                return added
+                    ? Result.SuccessWithObject(new { Mess = "Item added successfully" })
+                    : Result.Failure(Error.Failure("ADD_FAILED", "Failed to add item to cart"));
+            }
         }
 
         public async Task<Result> UpdateCartItemAsync(Guid userId, Guid cartItemId, int quantity)
