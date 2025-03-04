@@ -10,6 +10,7 @@ namespace Seed.Infrastructure.DB
         public SeedContext(DbContextOptions<SeedContext> options) : base(options) { }
         #region DBSet
         public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
@@ -39,10 +40,12 @@ namespace Seed.Infrastructure.DB
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
             modelBuilder.ApplyConfiguration(new SetConfiguration());
             modelBuilder.ApplyConfiguration(new SetProductConfiguration());
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
 
             #endregion
             #region Table Mappings
             modelBuilder.Entity<User>().ToTable("User");
+            modelBuilder.Entity<Role>().ToTable("Role");
             modelBuilder.Entity<EmailTemplate>().ToTable("EmailTemplate");
             modelBuilder.Entity<UserEmail>().ToTable("UserEmail");
             modelBuilder.Entity<Product>().ToTable("Product");
