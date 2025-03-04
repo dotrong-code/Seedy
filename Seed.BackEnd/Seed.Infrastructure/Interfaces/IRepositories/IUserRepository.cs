@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Seed.Domain.Entities;
+﻿using Seed.Domain.Entities;
 using Seed.Infrastructure.DTOs.User.Get;
 using Seed.Infrastructure.Interfaces.IRepositories.IGeneric;
 
@@ -26,5 +21,7 @@ namespace Seed.Infrastructure.Interfaces.IRepositories
         Task<User> GetUserByIdAsync(Guid id);
         Task<List<Role>> GetAllRolesAsync();
         Task<int> DeleteUserAsync(Guid id);
+
+        Task<List<User>> GetUsers();
     }
 }

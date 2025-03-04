@@ -83,6 +83,7 @@ namespace Seed.Host.Starup
             services.AddTransient<IViettelPostService, ViettelPostService>();
             services.AddTransient<IPaymentService, PaymentService>();
             services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IAdminService, AdminService>();
             #endregion
             #region Repositories
             services.AddTransient<IUserRepository, UserRepository>();

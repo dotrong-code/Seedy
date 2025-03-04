@@ -106,5 +106,10 @@ namespace Seed.Infrastructure.Implement.Repositories
             _context.Users.Update(user);
             return await _context.SaveChangesAsync();
         }
+        public async Task<List<User>> GetUsers()
+        {
+            return await _context.Users.ToListAsync();
+        }
+
     }
 }

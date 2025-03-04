@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Seed.Domain.Entities;
 using Seed.Infrastructure.DB;
 using Seed.Infrastructure.Implement.Repositories.Generic;
@@ -56,6 +51,10 @@ namespace Seed.Infrastructure.Implement.Repositories
                 .ThenInclude(oi => oi.Product)
                 .Where(o => o.UserID == userId)
                 .ToListAsync();
+        }
+        public async Task<List<Order>> GetOrders()
+        {
+            return await _context.Orders.ToListAsync();
         }
     }
 }
