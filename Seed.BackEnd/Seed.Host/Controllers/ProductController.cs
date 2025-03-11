@@ -27,7 +27,8 @@ namespace Seed.Host.Controllers
         [HttpGet("{id}")]
         public async Task<IResult> GetProductById(Guid id)
         {
-            var result = await _productService.GetProductByIdAsync(id);
+            //var result = await _productService.GetProductByIdAsync(id);
+            var result = await _productService.GetProductDetail(id);
             return result.IsSuccess
                 ? ResultExtensions.ToSuccessDetails(result, "Products retrieved successfully")
                 : ResultExtensions.ToProblemDetails(result);

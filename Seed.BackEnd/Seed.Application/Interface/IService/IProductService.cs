@@ -13,5 +13,6 @@ namespace Seed.Application.Interface.IService
         Task<Result> GetProductByIdAsync(Guid id);
         Task<Result> GetProductsAsync(SearchProductRequest request);
         Task<Result> GetAllProduct();
+        Task<Result> GetProductDetail(Guid productId);
     }
 }

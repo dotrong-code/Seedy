@@ -184,5 +184,16 @@ namespace Seed.Application.Implement.Service
             return Result.SuccessWithObject(list);
 
         }
+
+        public async Task<Result> GetProductDetail(Guid productId)
+        {
+            var product = await _unitOfWork.ProductRepository.GetByIdAsync(productId);
+            if (product == null)
+            {
+                return Result.Failure(ProductErrorMessage.ProductNotExist());
+            }
+            return Result.SuccessWithObject(product);
+
+        }
     }
 }
