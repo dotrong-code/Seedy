@@ -5,7 +5,6 @@ using Seed.Application.Common.Result;
 using Seed.Application.DTOs.Common;
 using Seed.Application.Interface.IService;
 using Seed.Infrastructure.DTOs.Order;
-using System.Security.Claims;
 
 namespace Seed.Host.Controllers
 {

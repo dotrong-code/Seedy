@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentValidation;
-using Seed.Application.Common.Result;
+﻿using Seed.Application.Common.Result;
 using Seed.Application.DTOs.Common;
 using Seed.Application.Interface.IService;
 using Seed.Domain.Entities;
@@ -17,14 +11,14 @@ namespace Seed.Application.Implement.Service
     public class OrderService : IOrderService
     {
         private readonly IUnitOfWork _unitOfWork;
-        
+
         public OrderService(
             IUnitOfWork unitOfWork
-            
+
         )
         {
             _unitOfWork = unitOfWork;
-            
+
         }
 
         public async Task<Result> CreateOrderAsync(CreateOrderRequest createOrderRequest)
@@ -38,8 +32,11 @@ namespace Seed.Application.Implement.Service
                 ReceiverPhone = createOrderRequest.ReceiverPhone,
                 ReceiverEmail = createOrderRequest.ReceiverEmail,
                 ReceiverWard = createOrderRequest.ReceiverWard,
+                WardName = createOrderRequest.WardName,
                 ReceiverDistrict = createOrderRequest.ReceiverDistrict,
+                DistrictName = createOrderRequest.DistrictName,
                 ReceiverProvince = createOrderRequest.ReceiverProvince,
+                ProvinceName = createOrderRequest.ProvinceName,
                 TotalPrice = createOrderRequest.TotalPrice,
                 ShippingFee = createOrderRequest.ShippingFee,
                 OrderService = createOrderRequest.OrderService,
@@ -96,7 +93,7 @@ namespace Seed.Application.Implement.Service
             return Result.SuccessWithObject(order);
         }
 
-        
+
         public async Task<Result> GetOrdersByUserIdAsync(Guid userId)
         {
             var orders = await _unitOfWork.OrderRepository.GetOrdersByUserIdAsync(userId);

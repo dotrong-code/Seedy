@@ -27,6 +27,9 @@ namespace Seed.Application.Implement.Service
                 o.TotalPrice,
                 o.ReceiverFullName,
                 o.ReceiverAddress,
+                o.DistrictName,
+                o.ProvinceName,
+                o.WardName,
 
             }).ToList();
             return Result.SuccessWithObject(list);
