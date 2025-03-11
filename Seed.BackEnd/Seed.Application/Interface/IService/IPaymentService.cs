@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Seed.Application.Common.Result;
+﻿using Seed.Application.Common.Result;
 using Seed.Infrastructure.DTOs.Order;
 
 namespace Seed.Application.Interface.IService

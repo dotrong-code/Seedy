@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Seed.Domain.Entities;
 using Seed.Infrastructure.DB;
 using Seed.Infrastructure.Implement.Repositories.Generic;
@@ -25,6 +20,12 @@ namespace Seed.Infrastructure.Implement.Repositories
             return await _context.Payments
                 .OrderByDescending(p => p.TransactionDate) // Sort by latest transaction
                 .ToListAsync();
+        }
+        public async Task<List<Payment>> GetPaymentsByMonth(int month, int year)
+        {
+            return await _context.Payments
+                .Where(p => p.TransactionDate.Month == month && p.TransactionDate.Year == year)
+        .ToListAsync();
         }
     }
 }

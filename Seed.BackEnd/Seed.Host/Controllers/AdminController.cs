@@ -9,9 +9,11 @@ namespace Seed.Host.Controllers
     public class AdminController : ControllerBase
     {
         private readonly IAdminService _adminService;
-        public AdminController(IAdminService adminService)
+        private readonly IPaymentService _paymentService;
+        public AdminController(IAdminService adminService, IPaymentService paymentService)
         {
             _adminService = adminService;
+            _paymentService = paymentService;
         }
 
         [HttpGet("users")]
@@ -36,6 +38,14 @@ namespace Seed.Host.Controllers
             var result = await _adminService.GetOrders();
             return result.IsSuccess
                 ? ResultExtensions.ToSuccessDetails(result, "Get successfully")
+                : ResultExtensions.ToProblemDetails(result);
+        }
+        [HttpGet("payments")]
+        public async Task<IResult> GetAllPayments()
+        {
+            var result = await _paymentService.GetAllPaymentsAsync();
+            return result.IsSuccess
+                ? ResultExtensions.ToSuccessDetails(result, "Payments retrieved successfully")
                 : ResultExtensions.ToProblemDetails(result);
         }
 
