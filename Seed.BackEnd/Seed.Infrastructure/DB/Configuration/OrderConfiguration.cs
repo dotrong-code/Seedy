@@ -18,8 +18,11 @@ namespace Seed.Infrastructure.DB.Configuration
                      ReceiverPhone = "0987654321",
                      ReceiverEmail = "quocthangjk@gmail.com",
                      ReceiverWard = 5,
+                     WardName = "Ward 5", // New Field
                      ReceiverDistrict = 2,
+                     DistrictName = "District 2", // New Field
                      ReceiverProvince = 1,
+                     ProvinceName = "Province 1", // New Field
                      TotalPrice = 500000,
                      ShippingFee = 10000,
                      OrderService = "Express Delivery",
@@ -35,15 +38,17 @@ namespace Seed.Infrastructure.DB.Configuration
                      ReceiverPhone = "0987654321",
                      ReceiverEmail = "quocthangjk@gmail.com",
                      ReceiverWard = 5,
+                     WardName = "Ward 5", // New Field
                      ReceiverDistrict = 2,
+                     DistrictName = "District 2", // New Field
                      ReceiverProvince = 1,
+                     ProvinceName = "Province 1", // New Field
                      TotalPrice = 400000,
                      ShippingFee = 15000,
                      OrderService = "Express Delivery",
                      OrderNote = "Please handle with care",
                      MoneyCollection = 597000
                  }
-
                 );
         }
     }

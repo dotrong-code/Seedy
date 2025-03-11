@@ -14,8 +14,11 @@ namespace Seed.Infrastructure.DTOs.Order
         public string ReceiverPhone { get; set; }
         public string ReceiverEmail { get; set; }
         public int ReceiverWard { get; set; }
+        public string WardName { get; set; }
         public int ReceiverDistrict { get; set; }
+        public string DistrictName { get; set; }
         public int ReceiverProvince { get; set; }
+        public string ProvinceName { get; set; }
         public decimal TotalPrice { get; set; }
         public decimal ShippingFee { get; set; }
         public string OrderService { get; set; }
