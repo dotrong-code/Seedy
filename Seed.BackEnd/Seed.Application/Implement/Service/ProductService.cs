@@ -30,57 +30,79 @@ namespace Seed.Application.Implement.Service
         }
         public async Task<Result> AddProductAsync(AddProductRequest addProductRequest)
         {
-            // Validate the AddProductRequest
-            var validate = await _addProductRequestValidator.ValidateAsync(addProductRequest);
-            if (!validate.IsValid)
+            try
             {
-                var errors = validate.Errors
-                    .Select(e => (Error)e.CustomState)
-                    .ToList();
-                return Result.Failures(errors);
+                var validate = await _addProductRequestValidator.ValidateAsync(addProductRequest);
+                if (!validate.IsValid)
+                {
+                    var errors = validate.Errors.Select(e => (Error)e.CustomState).ToList();
+                    return Result.Failures(errors);
+                }
+
+                var productExists = await _unitOfWork.ProductRepository.ProductNameExistsAsync(addProductRequest.Name);
+                if (productExists)
+                {
+                    return Result.Failure(ProductErrorMessage.ProductNameIsExist());
+                }
+
+                string mainImageUrl = null;
+                if (addProductRequest.ImageFile != null)
+                {
+                    var imageRequest = new AddImageRequest(addProductRequest.ImageFile, "Products");
+                    var uploadImageResult = await _unitOfWork.FirebaseRepository.UploadImageAsync(imageRequest);
+                    if (!uploadImageResult.Success)
+                    {
+                        return Result.Failure(uploadImageResult.Error);
+                    }
+                    mainImageUrl = uploadImageResult.FilePath;
+                }
+
+                var product = new Product
+                {
+                    Note = addProductRequest.Note,
+                    Name = addProductRequest.Name,
+                    Price = addProductRequest.Price,
+                    Description = addProductRequest.Description,
+                    ProductCategoryId = addProductRequest.ProductCategoryId,
+                    OccasionId = addProductRequest.OccasionId,
+                    StockQuantity = addProductRequest.StockQuantity,
+                    ImageUrl = mainImageUrl,
+                    ProductImages = new List<ProductImage>()
+                };
+
+                if (addProductRequest.AdditionalImageFiles != null && addProductRequest.AdditionalImageFiles.Any())
+                {
+                    foreach (var additionalImage in addProductRequest.AdditionalImageFiles)
+                    {
+                        var additionalImageRequest = new AddImageRequest(additionalImage, "Products");
+                        var uploadResult = await _unitOfWork.FirebaseRepository.UploadImageAsync(additionalImageRequest);
+                        if (!uploadResult.Success)
+                        {
+                            return Result.Failure(uploadResult.Error);
+                        }
+                        product.ProductImages.Add(new ProductImage { ImageUrl = uploadResult.FilePath });
+                    }
+                }
+
+                var createResult = await _unitOfWork.ProductRepository.CreateProductAsync(product);
+                if (createResult == 0)
+                {
+                    return Result.Failure(ProductErrorMessage.ProductNameIsExist());
+                }
+
+                return Result.SuccessWithObject(createResult);
             }
-
-            // Check if product name already exists
-            var productExists = await _unitOfWork.ProductRepository.ProductNameExistsAsync(addProductRequest.Name);
-            if (productExists)
+            catch (Exception ex)
             {
-                return Result.Failure(ProductErrorMessage.ProductNameIsExist());
+                // Log lỗi và trả về chi tiết
+                Console.WriteLine($"Error in AddProductAsync: {ex.Message}");
+                return Result.Failure(ProductErrorMessage.ProductNotCreated());
             }
-
-            // Upload the image and get the result
-            AddImageRequest imageRequest = new AddImageRequest(addProductRequest.ImageFile, "Products");
-
-            var uploadImageResult = await _unitOfWork.FirebaseRepository.UploadImageAsync(imageRequest); // Assuming 'Image' is the property in AddProductRequest for the image file
-
-            if (!uploadImageResult.Success)
-            {
-                return Result.Failure(uploadImageResult.Error); // Return the error from image upload
-            }
-
-            // Create a new product entity
-            var product = new Product
-            {
-                Name = addProductRequest.Name,
-                Price = addProductRequest.Price,
-                Description = addProductRequest.Description,
-                ProductCategoryId = addProductRequest.ProductCategoryId, // Assuming this is in the request
-                StockQuantity = addProductRequest.StockQuantity, // Assuming this is in the request, set to 0 if no stock data is provided
-                ImageUrl = uploadImageResult.FilePath // Optional, but set if available
-            };
-
-            // Add the product to the database
-            var createResult = await _unitOfWork.ProductRepository.CreateProductAsync(product);
-            if (createResult == 0) // Adjust according to your repository's CreateAsync method return type
-            {
-                return Result.Failure(ProductErrorMessage.ProductNameIsExist());
-            }
-
-            return Result.SuccessWithObject(createResult);
         }
         // Read (Retrieve a product by ID)
         public async Task<Result> GetProductByIdAsync(Guid productId)
         {
-            var product = await _unitOfWork.ProductRepository.GetProductByIdAsync(productId);
+            var product = await _unitOfWork.ProductRepository.GetProductByIdAsync(productId, include: p => p.ProductImages);
             if (product == null)
             {
                 return Result.Failure(ProductErrorMessage.ProductNotExist());
@@ -92,7 +114,20 @@ namespace Seed.Application.Implement.Service
             {
                 return Result.Failure(imageResult.Error); // Handle image retrieval failure
             }
-
+            var productImageUrls = new List<string>();
+            if (product.ProductImages != null && product.ProductImages.Any())
+            {
+                foreach (var productImage in product.ProductImages)
+                {
+                    var additionalImageRequest = new GetImageRequest(productImage.ImageUrl);
+                    var additionalImageResult = await _unitOfWork.FirebaseRepository.GetImageAsync(additionalImageRequest);
+                    if (additionalImageResult != null && !string.IsNullOrEmpty(additionalImageResult.ImageUrl))
+                    {
+                        productImageUrls.Add(additionalImageResult.ImageUrl);
+                    }
+                    // Nếu không lấy được URL cho ảnh phụ, có thể bỏ qua hoặc log lỗi tùy yêu cầu
+                }
+            }
             var productResponse = new GetProductResponse
             {
                 Id = product.Id,
@@ -103,6 +138,7 @@ namespace Seed.Application.Implement.Service
                 StockQuantity = product.StockQuantity,
                 ImageStream = imageResult.ImageUrl,   // Store image data in MemoryStream
                 //ProductCategoryName = product.ProductCategory?.Name // Optional: Category name, if available
+                ProductImageUrls = productImageUrls // Danh sách URL của ảnh phụ
             };
             return Result.SuccessWithObject(productResponse);
         }
@@ -148,6 +184,7 @@ namespace Seed.Application.Implement.Service
             if (updateProductRequest.ImageUrl != null)
                 product.ImageUrl = updateProductRequest.ImageUrl;
 
+            
             var updateResult = await _unitOfWork.ProductRepository.UpdateProductAsync(product);
             return updateResult == 0
                 ? Result.Failure(ProductErrorMessage.ProductUpdateFailed())
@@ -174,25 +211,55 @@ namespace Seed.Application.Implement.Service
             {
                 return Result.Failure(ProductErrorMessage.ProductNotFound());
             }
-            var list = products.Select(p => new
+            var productList = new List<object>();
+            foreach (var product in products)
             {
-                p.Id,
-                p.Name,
-                p.Price,
-                p.ImageUrl
-            }).ToList();
-            return Result.SuccessWithObject(list);
+                // Lấy URL của ảnh chính từ Firebase
+                string imageUrl = null;
+                if (!string.IsNullOrEmpty(product.ImageUrl))
+                {
+                    var getImageRequest = new GetImageRequest(product.ImageUrl);
+                    var imageResult = await _unitOfWork.FirebaseRepository.GetImageAsync(getImageRequest);
+                    if (imageResult != null && !string.IsNullOrEmpty(imageResult.ImageUrl))
+                    {
+                        imageUrl = imageResult.ImageUrl;
+                    }
+                }
+
+                productList.Add(new
+                {
+                    product.Id,
+                    product.Name,
+                    product.Price,
+                    ImageUrl = imageUrl // URL từ Firebase
+                });
+            }
+
+            return Result.SuccessWithObject(productList);
 
         }
 
         public async Task<Result> GetProductDetail(Guid productId)
         {
-            var product = await _unitOfWork.ProductRepository.GetByIdAsync(productId);
+            var product = await _unitOfWork.ProductRepository.GetByIdAsync(productId, p => p.ProductImages);
             if (product == null)
             {
                 return Result.Failure(ProductErrorMessage.ProductNotExist());
             }
-            return Result.SuccessWithObject(product);
+
+            var productResponse = new GetProductResponse
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+                Description = product.Description,
+                ProductCategoryId = product.ProductCategoryId,
+                StockQuantity = product.StockQuantity,
+                ImageStream = product.ImageUrl, // Ảnh chính
+                ProductImageUrls = product.ProductImages?.Select(pi => pi.ImageUrl).ToList() ?? new List<string>() // Danh sách ảnh phụ
+            };
+
+            return Result.SuccessWithObject(productResponse);
 
         }
     }

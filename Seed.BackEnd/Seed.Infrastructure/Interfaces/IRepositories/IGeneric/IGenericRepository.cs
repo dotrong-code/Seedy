@@ -27,7 +27,7 @@ namespace Seed.Infrastructure.Interfaces.IRepositories.IGeneric
 
         Task<T> GetByAsync(string type, string value);
 
-
+        Task<T> GetByIdAsync(Guid id, params Expression<Func<T, object>>[] includes);
         int Save();
         Task<int> SaveAsync();
     }

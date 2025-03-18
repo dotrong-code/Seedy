@@ -10,10 +10,13 @@ namespace Seed.Infrastructure.DTOs.Product.Create
     public class AddProductRequest
     {
         public Guid ProductCategoryId { get; set; }
+        public Guid? OccasionId { get; set; }
+        public string Note { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int StockQuantity { get; set; }
         public IFormFile? ImageFile { get; set; }
+        public List<IFormFile>? AdditionalImageFiles { get; set; }
     }
 }

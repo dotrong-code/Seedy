@@ -18,5 +18,6 @@ namespace Seed.Infrastructure.DTOs.Product.Read
 
         // Property to hold the image data as MemoryStream
         public string? ImageStream { get; set; }
+        public List<string> ProductImageUrls { get; set; }
     }
 }

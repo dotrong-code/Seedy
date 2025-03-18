@@ -20,7 +20,7 @@ namespace Seed.Infrastructure.Implement.Repositories
         {
             return await _context.Orders
                 .Include(o => o.OrderItems)
-                    .ThenInclude(oi => oi.Product) // ✅ Load luôn thông tin sản phẩm
+                    .ThenInclude(oi => oi.Product) 
                 .FirstOrDefaultAsync(o => o.Id == orderId);
         }
 

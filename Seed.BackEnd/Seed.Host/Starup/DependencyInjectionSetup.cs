@@ -102,6 +102,7 @@ namespace Seed.Host.Starup
             services.AddTransient<IGenericRepository<User>, GenericRepository<User>>();
             services.AddTransient<IGenericRepository<Product>, GenericRepository<Product>>();
             services.AddTransient<IGenericRepository<Cart>, GenericRepository<Cart>>();
+            services.AddTransient<IGenericRepository<ProductImage>, GenericRepository<ProductImage>>();
             services
                 .AddTransient<IGenericRepository<ProductCategoryRepository>,
                     GenericRepository<ProductCategoryRepository>>();

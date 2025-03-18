@@ -26,7 +26,7 @@ namespace Seed.Infrastructure.DB
         public DbSet<SetProduct> SetProducts { get; set; }
         public DbSet<Set> Sets { get; set; }
         public DbSet<Occasion> Occasions { get; set; }
-
+        public DbSet<ProductImage> ProductImages { get; set; } // New DbSet for Product Images
 
         #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -37,8 +37,9 @@ namespace Seed.Infrastructure.DB
             modelBuilder.ApplyConfiguration(new OccasionConfiguration());
             modelBuilder.ApplyConfiguration(new ProductCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductImageConfiguration());
             modelBuilder.ApplyConfiguration(new SetConfiguration());
-            modelBuilder.ApplyConfiguration(new SetProductConfiguration());
+            //modelBuilder.ApplyConfiguration(new SetProductConfiguration());
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
             modelBuilder.ApplyConfiguration(new OrderConfiguration());
             modelBuilder.ApplyConfiguration(new OrderItemConfiguration());
@@ -63,7 +64,7 @@ namespace Seed.Infrastructure.DB
             modelBuilder.Entity<SetProduct>().ToTable("SetProduct");
             modelBuilder.Entity<Set>().ToTable("Set");
             modelBuilder.Entity<Occasion>().ToTable("Occasion");
-
+            modelBuilder.Entity<ProductImage>().ToTable("ProductImage"); // New table mapping
             #endregion
             #region Relationships and Additional Configuration
             //UserEmail
@@ -166,6 +167,12 @@ namespace Seed.Infrastructure.DB
                 .WithMany(o => o.Products)
                 .HasForeignKey(p => p.OccasionId)
                 .OnDelete(DeleteBehavior.SetNull);
+            modelBuilder.Entity<Product>()
+                .HasMany(p => p.ProductImages)
+                .WithOne(pi => pi.Product)
+                .HasForeignKey(pi => pi.ProductId)
+                .OnDelete(DeleteBehavior.Cascade);
+        
 
             #endregion
         }

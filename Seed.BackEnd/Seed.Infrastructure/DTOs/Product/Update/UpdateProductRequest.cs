@@ -15,5 +15,6 @@ namespace Seed.Infrastructure.DTOs.Product.Update
         public string? Description { get; set; }
         public int? StockQuantity { get; set; }
         public string? ImageUrl { get; set; }
+        public List<string>? AdditionalImageUrls { get; set; }
     }
 }

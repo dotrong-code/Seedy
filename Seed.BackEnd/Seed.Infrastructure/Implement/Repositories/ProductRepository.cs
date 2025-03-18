@@ -26,8 +26,17 @@ namespace Seed.Infrastructure.Implement.Repositories
         // Create new product
         public async Task<int> CreateProductAsync(Product product)
         {
-            _context.Products.Add(product);
-            return await _context.SaveChangesAsync();
+            try
+            {
+                _context.Products.Add(product);
+                return await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi chi tiết
+                Console.WriteLine($"Error in CreateProductAsync: {ex.Message}");
+                throw; // Ném lại để ProductService xử lý
+            }
         }
 
         // Get product by ID
@@ -35,6 +44,18 @@ namespace Seed.Infrastructure.Implement.Repositories
         {
             return await _context.Products.FindAsync(productId);
         }
+
+
+        public async Task<Product> GetProductByIdAsync(Guid productId, Expression<Func<Product, object>> include = null)
+        {
+            var query = _context.Products.AsQueryable();
+            if (include != null)
+            {
+                query = query.Include(include);
+            }
+            return await query.FirstOrDefaultAsync(p => p.Id == productId);
+        }
+
 
         // Get all products
         public async Task<List<Product>> GetAllProductsAsync()

@@ -42,13 +42,25 @@ namespace Seed.Infrastructure.DB.Configuration
                 new Occasion
                 {
                     Id = new Guid("479dba09-053a-4491-a770-210fb578375f"),
-                    OccasionName = "Woman Day",
+                    OccasionName = "8-3",
                     Description = "Description"
                 },
                 new Occasion
                 {
                     Id = new Guid("479dca09-053b-4491-a880-210fb578375a"),
-                    OccasionName = "None",
+                    OccasionName = "TẾT",
+                    Description = "Description"
+                },
+                new Occasion
+                {
+                    Id = new Guid("05baa743-b4c3-450c-8b98-ae9b9e78df8c"),
+                    OccasionName = "SEEDY BÌNH THƯỜNG",
+                    Description = "Description"
+                },
+                new Occasion
+                {
+                    Id = new Guid("6d92495e-b82d-44a0-8f56-4e9fe6f4a156"),
+                    OccasionName = "VIỆT PATTERN",
                     Description = "Description"
                 }
 

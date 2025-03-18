@@ -100,7 +100,15 @@ namespace Seed.Infrastructure.Implement.Repositories.Generic
         {
             return await _context.Set<T>().FindAsync(code);
         }
-
+        public async Task<T> GetByIdAsync(Guid id, params Expression<Func<T, object>>[] includes)
+        {
+            IQueryable<T> query = _context.Set<T>();
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+            return await query.FirstOrDefaultAsync(e => EF.Property<Guid>(e, "Id") == id);
+        }
         public int Save()
         {
             return _context.SaveChanges();

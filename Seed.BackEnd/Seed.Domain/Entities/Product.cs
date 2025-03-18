@@ -15,5 +15,6 @@
         public ICollection<OrderItem> OrderItems { get; set; }
         public ICollection<CartItem> CartItems { get; set; } // Add this navigation property
         public ProductCategory ProductCategory { get; set; } // Navigation property for relationship
+        public ICollection<ProductImage> ProductImages { get; set; } // New relationship for multiple images
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Google.Cloud.Storage.V1;
+using Microsoft.Extensions.Logging;
 using Seed.Infrastructure.DB;
 using Seed.Infrastructure.Implement.Repositories;
 using Seed.Infrastructure.Interfaces;
@@ -9,6 +10,7 @@ namespace Seed.Infrastructure.Common
     public class UnitOfWork : IUnitOfWork
     {
         private readonly SeedContext _context;
+        private readonly ILogger<UnitOfWork> _logger; // Thêm logger
 
         public IUserRepository UserRepository { get; private set; }
 
@@ -30,9 +32,10 @@ namespace Seed.Infrastructure.Common
         }
 
 
-        public UnitOfWork(SeedContext context, StorageClient storageClient)
+        public UnitOfWork(SeedContext context, StorageClient storageClient, ILogger<UnitOfWork> logger)
         {
             _context = context;
+            _logger = logger;
             UserRepository = new UserRepository(_context);
             CartRepository = new CartRepository(_context);
             CartItemRepository = new CartItemRepository(_context);
@@ -54,7 +57,14 @@ namespace Seed.Infrastructure.Common
         }
         public void Dispose()
         {
-            _context.Dispose();
+            try
+            {
+                _context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error disposing context");
+            }
         }
     }
 }

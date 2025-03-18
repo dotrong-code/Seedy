@@ -131,15 +131,32 @@ namespace Seed.Application.Implement.Service
                 OrderNote = order.OrderNote,
                 ShippingFee = order.ShippingFee,
                 OrderService = order.OrderService,
-                Items = order.OrderItems.Select(oi => new OrderItemDetailResponse
+                Items = new List<OrderItemDetailResponse>() // Khởi tạo danh sách rỗng
+            };
+
+            // Duyệt qua từng OrderItem để lấy URL ảnh từ Firebase
+            foreach (var oi in order.OrderItems)
+            {
+                string productImageUrl = "/default-product.jpg"; // Giá trị mặc định
+                if (oi.Product != null && !string.IsNullOrEmpty(oi.Product.ImageUrl))
+                {
+                    var getImageRequest = new GetImageRequest(oi.Product.ImageUrl);
+                    var imageResult = await _unitOfWork.FirebaseRepository.GetImageAsync(getImageRequest);
+                    if (imageResult != null && !string.IsNullOrEmpty(imageResult.ImageUrl))
+                    {
+                        productImageUrl = imageResult.ImageUrl;
+                    }
+                }
+
+                orderDetails.Items.Add(new OrderItemDetailResponse
                 {
                     ProductId = oi.ProductId ?? Guid.Empty,
                     ProductName = oi.Product?.Name ?? "Unknown Product",
-                    ImageUrl = oi.Product?.ImageUrl ?? "/default-product.jpg",
+                    ProductImageUrl = productImageUrl, // Sử dụng URL từ Firebase hoặc mặc định
                     Price = oi.Price,
                     Quantity = oi.Quantity
-                }).ToList()
-            };
+                });
+            }
 
             return Result.SuccessWithObject(orderDetails);
         }
@@ -148,20 +165,44 @@ namespace Seed.Application.Implement.Service
             // Lấy danh sách đơn hàng từ repository, bao gồm OrderItems và Product
             var orders = await _unitOfWork.OrderRepository.GetOrdersWithDetailsByUserIdAsync(userId);
 
-            // Chuyển đổi sang DTO để định dạng dữ liệu cho FE
-            var orderDtos = orders.Select(o => new OrderDto
+            var orderDtos = new List<OrderDto>();
+
+            // Duyệt qua từng đơn hàng
+            foreach (var o in orders)
             {
-                Id = o.Id,
-                CreatedDate = o.CreatedDate,
-                OrderItems = o.OrderItems.Select(oi => new OrderItemDto
+                var orderDto = new OrderDto
                 {
-                    ProductId = oi.ProductId ?? Guid.Empty,
-                    ProductName = oi.Product.Name,
-                    ProductImageUrl = oi.Product.ImageUrl,
-                    Quantity = oi.Quantity,
-                    Price = oi.Price
-                }).ToList()
-            }).ToList();
+                    Id = o.Id,
+                    CreatedDate = o.CreatedDate,
+                    OrderItems = new List<OrderItemDto>() // Khởi tạo danh sách rỗng
+                };
+
+                // Duyệt qua từng OrderItem để lấy URL ảnh từ Firebase
+                foreach (var oi in o.OrderItems)
+                {
+                    string productImageUrl = "/default-product.jpg"; // Giá trị mặc định
+                    if (oi.Product != null && !string.IsNullOrEmpty(oi.Product.ImageUrl))
+                    {
+                        var getImageRequest = new GetImageRequest(oi.Product.ImageUrl);
+                        var imageResult = await _unitOfWork.FirebaseRepository.GetImageAsync(getImageRequest);
+                        if (imageResult != null && !string.IsNullOrEmpty(imageResult.ImageUrl))
+                        {
+                            productImageUrl = imageResult.ImageUrl;
+                        }
+                    }
+
+                    orderDto.OrderItems.Add(new OrderItemDto
+                    {
+                        ProductId = oi.ProductId ?? Guid.Empty,
+                        ProductName = oi.Product?.Name ?? "Unknown Product",
+                        ProductImageUrl = productImageUrl, // Sử dụng URL từ Firebase hoặc mặc định
+                        Quantity = oi.Quantity,
+                        Price = oi.Price
+                    });
+                }
+
+                orderDtos.Add(orderDto);
+            }
 
             return Result.SuccessWithObject(orderDtos);
         }

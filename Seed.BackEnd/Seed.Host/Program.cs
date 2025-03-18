@@ -16,7 +16,11 @@ using System.Text.Json.Serialization;
 var builder = WebApplication.CreateBuilder(args);
 
 CommonObject.Initialize(builder.Configuration);
-
+builder.Services.AddLogging(logging =>
+{
+    logging.AddConsole(); // Log ra console
+    logging.AddDebug();   // Log cho debug
+});
 builder.Services.AddDbContext<SeedContext>(opt =>
 {
     // Set up your database connection string
