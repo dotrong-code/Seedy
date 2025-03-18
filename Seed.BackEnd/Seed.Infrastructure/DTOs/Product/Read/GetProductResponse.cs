@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Seed.Infrastructure.DTOs.Product.Read
+﻿namespace Seed.Infrastructure.DTOs.Product.Read
 {
     public class GetProductResponse
     {
         public Guid Id { get; set; }            // Unique identifier for the product
         public string? Name { get; set; }        // Name of the product
         public string? Description { get; set; } // Description of the product
+        public string? OccasionName { get; set; }
         public decimal Price { get; set; }      // Price of the product
         public int StockQuantity { get; set; }  // Stock quantity of the product
         public Guid ProductCategoryId { get; set; } // Product's category identifier

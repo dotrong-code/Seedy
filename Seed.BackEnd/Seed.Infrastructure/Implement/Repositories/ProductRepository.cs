@@ -46,13 +46,18 @@ namespace Seed.Infrastructure.Implement.Repositories
         }
 
 
-        public async Task<Product> GetProductByIdAsync(Guid productId, Expression<Func<Product, object>> include = null)
+        public async Task<Product> GetProductByIdAsync(Guid productId, params Expression<Func<Product, object>>[] includes)
         {
             var query = _context.Products.AsQueryable();
-            if (include != null)
+
+            if (includes != null)
             {
-                query = query.Include(include);
+                foreach (var include in includes)
+                {
+                    query = query.Include(include);
+                }
             }
+
             return await query.FirstOrDefaultAsync(p => p.Id == productId);
         }
 
@@ -60,7 +65,7 @@ namespace Seed.Infrastructure.Implement.Repositories
         // Get all products
         public async Task<List<Product>> GetAllProductsAsync()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products.Include(p => p.ProductCategory).ToListAsync();
         }
 
         // Update product
