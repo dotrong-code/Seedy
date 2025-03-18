@@ -39,7 +39,6 @@
   <ItemGroup>
     <Folder Include="DTOs\ProductCategory\Read\" />
     <Folder Include="DTOs\ProductCategory\Update\" />
-    <Folder Include="DTOs\Product\Read\" />
     <Folder Include="DTOs\Product\Update\" />
   </ItemGroup>
 

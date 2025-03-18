@@ -46,7 +46,16 @@ namespace Seed.Infrastructure.Implement.Repositories
             var cartItem = await _context.CartItems.FindAsync(cartItemId);
             if (cartItem == null) return false;
             cartItem.Quantity = quantity;
-            return await _context.SaveChangesAsync() > 0;
+            try
+            {
+                int changes = await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving changes: {ex.Message}");
+                return false;
+            }
         }
 
         public async Task<bool> RemoveCartItemAsync(Guid cartItemId)

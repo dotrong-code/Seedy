@@ -63,6 +63,54 @@ namespace Seed.Infrastructure.Implement.Repositories
             return await _context.Products.ToListAsync();
         }
 
+
+
+
+
+        public async Task<List<Product>> GetSortedProductsAsync(GetSortedProductsRequest request)
+        {
+            var query = _context.Products
+                .Include(p => p.ProductImages)
+                .AsQueryable();
+
+            // Bước 1: Lấy sản phẩm với OccasionId (nếu có)
+            List<Product> result = new List<Product>();
+            Guid? targetCategoryId = null;
+
+            if (request.OccasionId.HasValue)
+            {
+                var occasionProducts = await query
+                    .Where(p => p.OccasionId == request.OccasionId.Value)
+                    .Take(request.MaxProducts) // Giới hạn tối đa
+                    .ToListAsync();
+
+                result.AddRange(occasionProducts);
+
+                // Lấy productCategoryId từ sản phẩm đầu tiên (nếu có)
+                if (occasionProducts.Any())
+                {
+                    targetCategoryId = occasionProducts.First().ProductCategoryId;
+                }
+            }
+
+            // Bước 2: Nếu không đủ MaxProducts, lấy thêm sản phẩm từ cùng productCategoryId
+            if (result.Count < request.MaxProducts && targetCategoryId.HasValue)
+            {
+                int remaining = request.MaxProducts - result.Count;
+
+                var additionalProducts = await query
+                    .Where(p => p.ProductCategoryId == targetCategoryId.Value
+                             && p.OccasionId != request.OccasionId) // Loại trừ sản phẩm đã lấy
+                    .Take(remaining) // Chỉ lấy số lượng cần thiết
+                    .ToListAsync();
+
+                result.AddRange(additionalProducts);
+            }
+
+            // Bước 3: Trả về danh sách đã được giới hạn
+            return result.Take(request.MaxProducts).ToList();
+        }
+
         // Update product
         public async Task<int> UpdateProductAsync(Product product)
         {

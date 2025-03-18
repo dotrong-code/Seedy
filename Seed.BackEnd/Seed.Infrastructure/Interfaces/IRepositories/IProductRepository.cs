@@ -16,5 +16,6 @@ namespace Seed.Infrastructure.Interfaces.IRepositories
         Task<bool> RemoveProductAsync(Product product);
         Task<bool> RemoveProductByIdAsync(Guid productId);
         Task<SearchProductResponse> GetProductsAsync(SearchProductRequest productName);
+        Task<List<Product>> GetSortedProductsAsync(GetSortedProductsRequest request);
     }
 }

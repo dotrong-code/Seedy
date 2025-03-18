@@ -29,7 +29,7 @@ namespace Seed.Application.Implement.Service
 
             foreach (var item in cart.CartItems.Where(item => !item.IsDeleted && item.Product != null))
             {
-                string imageUrl = null;
+                string imageUrl = item.Product.ImageUrl;
                 //item.Product.Images;
 
                 // Ensure Product Image URL is not empty before requesting from Firebase
@@ -131,14 +131,14 @@ namespace Seed.Application.Implement.Service
 
             cartItem.Quantity = quantity;
             var updated = await _unitOfWork.CartRepository.UpdateCartItemQuantityAsync(cartItemId, quantity);
-            return updated ? Result.Success() : Result.Failure(Error.Failure("UPDATE_FAILED", "Failed to update cart item"));
+            return updated ? Result.SuccessWithObject(new { Message = "Update Cart successfully" }) : Result.Failure(Error.Failure("UPDATE_FAILED", "Failed to update cart item"));
         }
 
 
         public async Task<Result> RemoveCartItemAsync(Guid cartItemId)
         {
             var removed = await _unitOfWork.CartRepository.RemoveCartItemAsync(cartItemId);
-            return removed ? Result.Success() : Result.Failure(Error.Failure("REMOVE_FAILED", "Failed to remove cart item"));
+            return removed ? Result.SuccessWithObject(new { Message = "Delete Product in cart successfully" }) : Result.Failure(Error.Failure("REMOVE_FAILED", "Failed to remove cart item"));
         }
 
         public async Task<Result> ClearCartAsync(Guid userId)
