@@ -44,6 +44,16 @@ namespace Seed.Host.Controllers
 
         }
 
+
+        [HttpPost("sorted")]
+        public async Task<IResult> GetSortedProducts([FromBody] GetSortedProductsRequest request)
+        {
+            var result = await _productService.GetSortedProductsAsync(request);
+            return result.IsSuccess
+                ? ResultExtensions.ToSuccessDetails(result, "Sorted products retrieved successfully")
+                : ResultExtensions.ToProblemDetails(result);
+        }
+
         // Get products with search criteria
         [HttpPost("search")]
         public async Task<IResult> GetProducts([FromBody] SearchProductRequest request)

@@ -1,4 +1,5 @@
 ﻿using Seed.Application.Common.Result;
+using Seed.Domain.Entities;
 using Seed.Infrastructure.DTOs.Product.Create;
 using Seed.Infrastructure.DTOs.Product.Read;
 using Seed.Infrastructure.DTOs.Product.Update;
@@ -14,5 +15,7 @@ namespace Seed.Application.Interface.IService
         Task<Result> GetProductsAsync(SearchProductRequest request);
         Task<Result> GetAllProduct();
         Task<Result> GetProductDetail(Guid productId);
+        Task<Result> GetSortedProductsAsync(GetSortedProductsRequest request);
+        
     }
 }

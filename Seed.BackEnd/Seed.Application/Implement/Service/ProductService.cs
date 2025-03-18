@@ -133,6 +133,7 @@ namespace Seed.Application.Implement.Service
                 Id = product.Id,
                 Name = product.Name,
                 OccasionName = product.Occasion.OccasionName,
+                OccasionId = product.Occasion.Id,
                 Price = product.Price,
                 Description = product.Description,
                 ProductCategoryId = product.ProductCategoryId,
@@ -240,7 +241,48 @@ namespace Seed.Application.Implement.Service
             return Result.SuccessWithObject(productList);
 
         }
+        public async Task<Result> GetSortedProductsAsync(GetSortedProductsRequest request)
+        {
+            try
+            {
+                var products = await _unitOfWork.ProductRepository.GetSortedProductsAsync(request);
+                if (products == null || !products.Any())
+                {
+                    return Result.Failure(ProductErrorMessage.ProductNotFound());
+                }
 
+                var productList = new List<object>();
+                foreach (var product in products)
+                {
+                    // Lấy URL ảnh chính từ Firebase
+                    string imageUrl = null;
+                    if (!string.IsNullOrEmpty(product.ImageUrl))
+                    {
+                        var getImageRequest = new GetImageRequest(product.ImageUrl);
+                        var imageResult = await _unitOfWork.FirebaseRepository.GetImageAsync(getImageRequest);
+                        if (imageResult != null && !string.IsNullOrEmpty(imageResult.ImageUrl))
+                        {
+                            imageUrl = imageResult.ImageUrl;
+                        }
+                    }
+
+                    productList.Add(new
+                    {
+                        product.Id,
+                        product.Name,
+                        product.Price,
+                        ImageUrl = imageUrl // URL từ Firebase
+                    });
+                }
+
+                return Result.SuccessWithObject(productList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in GetSortedProductsAsync: {ex.Message}");
+                return Result.Failure(ProductErrorMessage.ProductNotFound());
+            }
+        }
         public async Task<Result> GetProductDetail(Guid productId)
         {
             var product = await _unitOfWork.ProductRepository.GetByIdAsync(productId, p => p.ProductImages);

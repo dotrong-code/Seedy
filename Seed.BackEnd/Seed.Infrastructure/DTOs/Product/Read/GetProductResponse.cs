@@ -7,7 +7,8 @@
         public string? Description { get; set; } // Description of the product
         public string? OccasionName { get; set; }
         public decimal Price { get; set; }      // Price of the product
-        public int StockQuantity { get; set; }  // Stock quantity of the product
+        public int StockQuantity { get; set; }
+        public Guid OccasionId { get; set; } // Stock quantity of the product
         public Guid ProductCategoryId { get; set; } // Product's category identifier
         //public string? ProductCategoryName { get; set; } // Optional: category name
 

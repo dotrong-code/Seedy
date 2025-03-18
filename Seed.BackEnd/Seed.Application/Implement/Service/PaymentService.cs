@@ -85,16 +85,50 @@ namespace Seed.Application.Implement.Service
             try
             {
                 _logger.LogInformation($"Creating COD order for amount: {orderRequest.Amount}");
-                var createOrderRequest = MapToCreateOrderRequest(orderRequest, userId);
-                var orderResult = await _orderService.CreateOrderAsync(createOrderRequest);
 
-                return orderResult.IsSuccess
-                    ? Result.SuccessWithObject(new { Message = "COD order created successfully" })
-                    : Result.Failure(Error.Failure("CREATE_COD_FAILED", "Failed to create COD order."));
+                // Map OrderRequest sang CreateOrderRequest
+                var createOrderRequest = MapToCreateOrderRequest(orderRequest, userId);
+
+                // Tạo đơn hàng
+                var orderResult = await _orderService.CreateOrderAsync(createOrderRequest);
+                if (!orderResult.IsSuccess)
+                {
+                    _logger.LogError("Failed to create COD order: {0}", orderResult);
+                    return Result.Failure(Error.Failure("CREATE_COD_FAILED", "Failed to create COD order."));
+                }
+
+                // Tạo payment cho COD
+                var payment = new Payment
+                {
+                    UserId = userId,
+                    Email = orderRequest.Receiver.Email,
+                    PaymentMethod = "COD",
+                    Status = "Pending", // Chưa thu tiền
+                    Amount = orderRequest.Amount,
+                    CreatedDate = DateTime.UtcNow,
+                    // Các trường Online Banking để null
+                    TransactionId = null,
+                    BankBrandName = null,
+                    AccountNumber = null,
+                    TransactionContent = null,
+                    TransactionDate = DateTime.UtcNow,
+                    ReferenceNumber = null
+                };
+
+                await _unitOfWork.PaymentRepository.CreatePaymentAsync(payment);
+                await _unitOfWork.SaveChangesAsync();
+
+                _logger.LogInformation("COD order and payment created successfully.");
+                return Result.SuccessWithObject(new
+                {
+                    Message = "COD order created successfully",
+                    OrderId = orderResult,
+                    PaymentId = payment.Id
+                });
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Server error: {ex.Message}");
+                _logger.LogError($"Error creating COD order: {ex.Message}");
                 return Result.Failure(Error.Failure("CREATE_COD_FAILED", $"Internal Server Error: {ex.Message}"));
             }
         }
@@ -150,7 +184,9 @@ namespace Seed.Application.Implement.Service
                         var payment = new Payment
                         {
                             UserId = userId,
-                            Email = "",
+                            Email = orderRequest?.Receiver.Email ?? "",
+                            PaymentMethod = "OnlineBanking",
+                            Status = "Completed", // Đã xác nhận giao dịch
                             TransactionId = transaction["id"]?.ToString(),
                             BankBrandName = transaction["bank_brand_name"]?.ToString(),
                             AccountNumber = transactionAccount,
