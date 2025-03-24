@@ -8,6 +8,7 @@ using Seed.Application.Common.Result;
 using Seed.Application.DTOs.User.Login;
 using Seed.Application.DTOs.User.Register;
 using Seed.Domain.Entities;
+using Seed.Infrastructure.DTOs.User;
 
 namespace Seed.Application.Interface.IService
 {
@@ -18,5 +19,8 @@ namespace Seed.Application.Interface.IService
         Task<Result> ConfirmEmail(Guid userId);
         public string GenerateJwtToken(string email, int Role, double expirationMinutes);
         public Task<User> FindOrCreateUser(GoogleJsonWebSignature.Payload payload);
+        Task<Result> ForgetPassword(ForgetPasswordRequest forgetPasswordRequest);
+        Task<Result> ResetPassword(ResetPasswordRequest resetPasswordRequest);
     }
 }
+

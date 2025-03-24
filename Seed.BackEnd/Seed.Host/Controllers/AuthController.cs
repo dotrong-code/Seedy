@@ -6,6 +6,7 @@ using Seed.Application.Common.Result;
 using Seed.Application.DTOs.User.Login;
 using Seed.Application.DTOs.User.Register;
 using Seed.Application.Interface.IService;
+using Seed.Infrastructure.DTOs.User;
 
 namespace Seed.Host.Controllers
 {
@@ -49,7 +50,23 @@ namespace Seed.Host.Controllers
             return (IActionResult)ResultExtensions.ToProblemDetails(result);
         }
 
+        [HttpPost("reset-password")]
+        public async Task<IResult> ResetPassword([FromBody] ResetPasswordRequest resetPasswordRequest)
+        {
+            Result result = await _authService.ResetPassword(resetPasswordRequest);
+            return result.IsSuccess
+                ? ResultExtensions.ToSuccessDetails(result, "Password reset successfully")
+                : ResultExtensions.ToProblemDetails(result);
+        }
 
+        [HttpPost("forget-password")]
+        public async Task<IResult> ForgetPassword([FromBody] ForgetPasswordRequest forgetPasswordRequest)
+        {
+            Result result = await _authService.ForgetPassword(forgetPasswordRequest);
+            return result.IsSuccess
+                ? ResultExtensions.ToSuccessDetails(result, "Reset password email sent successfully")
+                : ResultExtensions.ToProblemDetails(result);
+        }
 
 
         [HttpPost("google-sign-in")]

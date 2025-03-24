@@ -11,6 +11,7 @@ using Seed.Application.DTOs.User.Register;
 using Seed.Application.Interface.IService;
 using Seed.Domain.Entities;
 using Seed.Infrastructure.DTOs.Common.Message;
+using Seed.Infrastructure.DTOs.User;
 using Seed.Infrastructure.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -237,5 +238,71 @@ namespace Seed.Application.Implement.Service
             }
             return user;
         }
+
+
+        public async Task<Result> ForgetPassword(ForgetPasswordRequest forgetPasswordRequest)
+        {
+            // Kiểm tra xem email có tồn tại không
+            var user = await _unitOfWork.UserRepository.GetByAsync("Email", forgetPasswordRequest.Email);
+            if (user == null)
+            {
+                return Result.Failure(Error.NotFound("UserNotFound", "Email does not exist."));
+            }
+
+            // Tạo mã token hoặc liên kết đặt lại mật khẩu (tạm thời dùng Guid làm token)
+            var resetToken = Guid.NewGuid().ToString();
+            var resetLink = $"{CommonObject.Domain}/api/Auth/reset-password?token={resetToken}&email={user.Email}";
+
+            user.ResetPasswordToken = resetToken;
+            await _unitOfWork.UserRepository.UpdateAsync(user);
+
+            // Tạo email với template "ChangePassword"
+            var emailBodyResult = await _emailTemplateService.GenerateEmailWithActivationLink("ChangePassword", resetLink);
+            if (emailBodyResult.IsFailure)
+            {
+                return Result.Failure(Error.Failure("EmailGenerationFailed", "Failed to generate the email body."));
+            }
+            var emailBody = emailBodyResult.Object as string;
+
+            // Tạo đối tượng email
+            var mailObject = new MailObject
+            {
+                ToMailIds = new List<string> { user.Email },
+                Subject = "Reset Your Password",
+                Body = emailBody,
+                IsBodyHtml = true
+            };
+
+            // Gửi email
+            var sendResult = await _emailTemplateService.SendMail(mailObject);
+            if (!sendResult.IsSuccess)
+            {
+                return Result.Failure(Error.Failure("EmailSendFailed", "Failed to send reset password email."));
+            }
+
+            return Result.SuccessWithObject(new { Message = "Reset password link has been sent to your email!" });
+        }
+        public async Task<Result> ResetPassword(ResetPasswordRequest resetPasswordRequest)
+        {
+            var user = await _unitOfWork.UserRepository.GetByAsync("Email", resetPasswordRequest.Email);
+            if (user == null)
+            {
+                return Result.Failure(Error.NotFound("UserNotFound", "User not found."));
+            }
+
+            
+            if (user.ResetPasswordToken != resetPasswordRequest.Token)
+            {
+                 return Result.Failure(Error.NotFound("Token wrong", "Token not found."));
+            }
+
+            
+            user.PasswordHash = HashPassword(resetPasswordRequest.NewPassword);
+            user.ResetPasswordToken = null; 
+            await _unitOfWork.UserRepository.UpdateAsync(user);
+
+            return Result.SuccessWithObject(new { Message = "Password has been reset successfully!" });
+        }
+
     }
 }

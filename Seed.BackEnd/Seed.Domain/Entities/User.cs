@@ -16,6 +16,9 @@
         public bool? IsRegister { get; set; }
         public int? Role { get; set; }//1 admin, 2 staff, 3 customer
 
+        public string? ResetPasswordToken { get; set; }
+
+
         // Relationships
         public ICollection<Order>? Orders { get; set; } // Nullable relationship
         public ICollection<Cart>? Carts { get; set; } // Nullable relationship
