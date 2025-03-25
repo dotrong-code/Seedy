@@ -13,6 +13,17 @@ namespace Seed.Application.Implement.Service
             _unitOfWork = unitOfWork;
 
         }
+
+        public async Task<Result> GetDashboardRevenue()
+        {
+            var revenue = await _unitOfWork.DashboardRepository.GetDashboardRevenue();
+            if (revenue == null)
+            {
+                return Result.Failure(OrderErrorMessage.OrderNotFound());
+            }
+            return Result.SuccessWithObject(revenue);
+        }
+
         public async Task<Result> GetOrders()
         {
             var orders = await _unitOfWork.OrderRepository.GetOrders();
@@ -34,6 +45,27 @@ namespace Seed.Application.Implement.Service
             }).ToList();
             return Result.SuccessWithObject(list);
 
+        }
+
+        public async Task<Result> GetPayments()
+        {
+            var payments = await _unitOfWork.PaymentRepository.GetAllPaymentsAsync();
+            if (payments == null)
+            {
+                return Result.Failure(OrderErrorMessage.OrderNotFound());
+            }
+            var list = payments.Select(p => new
+            {
+                p.Id,
+                UserName = p.User.Username,
+                p.Email,
+                p.TransactionDate,
+                p.Status,
+                p.Amount,
+                p.PaymentMethod,
+
+            }).ToList();
+            return Result.SuccessWithObject(list);
         }
 
         public async Task<Result> GetProducts()

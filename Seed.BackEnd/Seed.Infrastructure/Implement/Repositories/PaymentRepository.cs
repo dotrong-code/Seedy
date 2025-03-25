@@ -18,6 +18,7 @@ namespace Seed.Infrastructure.Implement.Repositories
         public async Task<List<Payment>> GetAllPaymentsAsync()
         {
             return await _context.Payments
+                .Include(p => p.User)
                 .OrderByDescending(p => p.TransactionDate) // Sort by latest transaction
                 .ToListAsync();
         }
