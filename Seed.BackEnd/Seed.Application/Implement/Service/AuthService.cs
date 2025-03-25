@@ -65,6 +65,7 @@ namespace Seed.Application.Implement.Service
                 // Handle errors as needed, e.g., return them in a Result object
                 return Result.Failures(errors);
             }
+
             var userLogin = await _unitOfWork.UserRepository.GetUserByEmailAndPasswordAsync(loginRequest.Email, loginRequest.Password);
 
             if (userLogin == null)
@@ -114,7 +115,7 @@ namespace Seed.Application.Implement.Service
                 return Result.Failures(errors);
             }
 
-            var passwordHash = HashPassword(registerRequest.Password);
+            
             User newUser = new User
             {
                 Id = Guid.NewGuid(),
@@ -251,7 +252,7 @@ namespace Seed.Application.Implement.Service
 
             // Tạo mã token hoặc liên kết đặt lại mật khẩu (tạm thời dùng Guid làm token)
             var resetToken = Guid.NewGuid().ToString();
-            var resetLink = $"{CommonObject.Domain}/api/Auth/reset-password?token={resetToken}&email={user.Email}";
+            var resetLink = $"{CommonObject.Domain}/forgetpassword?token={resetToken}&email={user.Email}";
 
             user.ResetPasswordToken = resetToken;
             await _unitOfWork.UserRepository.UpdateAsync(user);
@@ -297,7 +298,7 @@ namespace Seed.Application.Implement.Service
             }
 
             
-            user.PasswordHash = HashPassword(resetPasswordRequest.NewPassword);
+            user.PasswordHash = resetPasswordRequest.NewPassword;
             user.ResetPasswordToken = null; 
             await _unitOfWork.UserRepository.UpdateAsync(user);
 

@@ -60,7 +60,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("75966b29-8f9f-49c6-b366-42c245696a2f"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7914),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3979),
                             Email = "quocthangjk@gmail.com",
                             IsDeleted = false,
                             UserID = new Guid("bfa4ee73-f13b-487c-8fd4-0e074725d2dd")
@@ -155,143 +155,143 @@ namespace Seed.Infrastructure.Migrations
                             EmailTemplateId = new Guid("fe3df183-1f42-4301-a1fb-35e6211c8816"),
                             Body = "\r\n                <!DOCTYPE html>\r\n\r\n<html lang=\"en\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:v=\"urn:schemas-microsoft-com:vml\">\r\n<head>\r\n<title></title>\r\n<meta content=\"text/html; charset=utf-8\" http-equiv=\"Content-Type\"/>\r\n<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\"/><!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><!--[if !mso]><!-->\r\n<link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900\" rel=\"stylesheet\" type=\"text/css\"/><!--<![endif]-->\r\n<style>\r\n		* {\r\n			box-sizing: border-box;\r\n		}\r\n\r\n		body {\r\n			margin: 0;\r\n			padding: 0;\r\n		}\r\n\r\n		a[x-apple-data-detectors] {\r\n			color: inherit !important;\r\n			text-decoration: inherit !important;\r\n		}\r\n\r\n		#MessageViewBody a {\r\n			color: inherit;\r\n			text-decoration: none;\r\n		}\r\n\r\n		p {\r\n			line-height: inherit\r\n		}\r\n\r\n		.desktop_hide,\r\n		.desktop_hide table {\r\n			mso-hide: all;\r\n			display: none;\r\n			max-height: 0px;\r\n			overflow: hidden;\r\n		}\r\n\r\n		.image_block img+div {\r\n			display: none;\r\n		}\r\n\r\n		sup,\r\n		sub {\r\n			font-size: 75%;\r\n			line-height: 0;\r\n		}\r\n\r\n		@media (max-width:660px) {\r\n\r\n			.desktop_hide table.icons-inner,\r\n			.social_block.desktop_hide .social-table {\r\n				display: inline-block !important;\r\n			}\r\n\r\n			.icons-inner {\r\n				text-align: center;\r\n			}\r\n\r\n			.icons-inner td {\r\n				margin: 0 auto;\r\n			}\r\n\r\n			.image_block div.fullWidth {\r\n				max-width: 100% !important;\r\n			}\r\n\r\n			.mobile_hide {\r\n				display: none;\r\n			}\r\n\r\n			.row-content {\r\n				width: 100% !important;\r\n			}\r\n\r\n			.stack .column {\r\n				width: 100%;\r\n				display: block;\r\n			}\r\n\r\n			.mobile_hide {\r\n				min-height: 0;\r\n				max-height: 0;\r\n				max-width: 0;\r\n				overflow: hidden;\r\n				font-size: 0px;\r\n			}\r\n\r\n			.desktop_hide,\r\n			.desktop_hide table {\r\n				display: table !important;\r\n				max-height: none !important;\r\n			}\r\n		}\r\n	</style><!--[if mso ]><style>sup, sub { font-size: 100% !important; } sup { mso-text-raise:10% } sub { mso-text-raise:-10% }</style> <![endif]-->\r\n</head>\r\n<body class=\"body\" style=\"background-color: #f8f8f9; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"nl-container\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f8f8f9;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #1aa19c;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #1aa19c; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 4px solid #1AA19C;\"><span style=\"word-break: break-word;\"> </span></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-2\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-3\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f8f8f9; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n<table border=\"0\" cellpadding=\"20\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-4\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\" style=\"padding-bottom:12px;padding-top:60px;\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"image_block block-2\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\" style=\"padding-left:40px;padding-right:40px;width:100%;\">\r\n<div align=\"center\" class=\"alignment\" style=\"line-height:10px\">\r\n<div class=\"fullWidth\" style=\"max-width: 352px;\"><img alt=\"I'm an image\" height=\"auto\" src=\"{Img1_2x}\" style=\"display: block; height: auto; border: 0; width: 100%;\" title=\"I'm an image\" width=\"352\"/></div>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-3\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\" style=\"padding-top:50px;\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"paragraph_block block-4\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;\" width=\"100%\">\r\n	<tr>\r\n	<td class=\"pad\" style=\"padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:10px;\">\r\n	<div style=\"color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:30px;line-height:120%;text-align:center;mso-line-height-alt:36px;\">\r\n	<p style=\"margin: 0; word-break: break-word;\"><span style=\"word-break: break-word; color: #2b303a;\"><strong>Verify Your Email Account</strong></span></p>\r\n	</div>\r\n	</td>\r\n	</tr>\r\n	</table>\r\n	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"paragraph_block block-5\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;\" width=\"100%\">\r\n	<tr>\r\n	<td class=\"pad\" style=\"padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:10px;\">\r\n	<div style=\"color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:15px;line-height:150%;text-align:center;mso-line-height-alt:22.5px;\">\r\n	<p style=\"margin: 0; word-break: break-word;\">\r\n	<span style=\"word-break: break-word; color: #808389;\">\r\n	We're so glad you're here. To start accessing our Koi care services, please verify your email. It only takes a moment!\r\n	</span>\r\n	</p>\r\n	<p style=\"margin: 0; word-break: break-word;\">\r\n	<span style=\"word-break: break-word; color: #808389;\">\r\n	Simply click the link below to confirm your email and unlock full access to our platform.\r\n	</span>\r\n	</p>\r\n	</div>\r\n	</td>\r\n	</tr>\r\n	</table>\r\n	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"button_block block-6\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n	<tr>\r\n	<td class=\"pad\" style=\"padding-left:10px;padding-right:10px;padding-top:15px;text-align:center;\">\r\n	<div align=\"center\" class=\"alignment\"><!--[if mso]>\r\n	<v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" style=\"height:62px;width:222px;v-text-anchor:middle;\" arcsize=\"97%\" stroke=\"false\" fillcolor=\"#1aa19c\">\r\n	<w:anchorlock/>\r\n	<v:textbox inset=\"0px,0px,0px,0px\">\r\n	<center dir=\"false\" style=\"color:#ffffff;font-family:Tahoma, sans-serif;font-size:16px\">\r\n	<![endif]-->\r\n	<div style=\"background-color:#1aa19c;border-radius:60px;color:#ffffff;display:inline-block;font-family:Montserrat, sans-serif;font-size:16px;padding:15px 30px;text-align:center;text-decoration:none;\">\r\n		<a href=\"{VerifyURL}\" style=\"color: #ffffff; text-decoration: none; display: inline-block; line-height: 32px;\">\r\n			<strong>Confirm Your Email</strong>\r\n		</a>\r\n	</div>\r\n	<!--[if mso]></center></v:textbox></v:roundrect><![endif]-->\r\n	</div>\r\n	</td>\r\n	</tr>\r\n	</table>\r\n	\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-7\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\" style=\"padding-bottom:12px;padding-top:60px;\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-5\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f8f8f9; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n<table border=\"0\" cellpadding=\"20\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-6\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #2b303a; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 4px solid #1AA19C;\"><span style=\"word-break: break-word;\"> </span></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"image_block block-2\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\" style=\"width:100%;\">\r\n<div align=\"center\" class=\"alignment\" style=\"line-height:10px\">\r\n<div style=\"max-width: 640px;\"><img alt=\"I'm an image\" height=\"auto\" src=\"{footer}\" style=\"display: block; height: auto; border: 0; width: 100%;\" title=\"I'm an image\" width=\"640\"/></div>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"social_block block-4\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\" style=\"padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:28px;text-align:center;\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"social-table\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block;\" width=\"208px\">\r\n<tr>\r\n<td style=\"padding:0 10px 0 10px;\"><a href=\"https://www.facebook.com\" target=\"_blank\"><img alt=\"Facebook\" height=\"auto\" src=\"{facebook2x}\" style=\"display: block; height: auto; border: 0;\" title=\"Facebook\" width=\"32\"/></a></td>\r\n<td style=\"padding:0 10px 0 10px;\"><a href=\"https://www.twitter.com\" target=\"_blank\"><img alt=\"Twitter\" height=\"auto\" src=\"{twitter2x}\" style=\"display: block; height: auto; border: 0;\" title=\"Twitter\" width=\"32\"/></a></td>\r\n<td style=\"padding:0 10px 0 10px;\"><a href=\"https://www.instagram.com\" target=\"_blank\"><img alt=\"Instagram\" height=\"auto\" src=\"{instagram2x}\" style=\"display: block; height: auto; border: 0;\" title=\"Instagram\" width=\"32\"/></a></td>\r\n<td style=\"padding:0 10px 0 10px;\"><a href=\"https://www.linkedin.com\" target=\"_blank\"><img alt=\"LinkedIn\" height=\"auto\" src=\"{linkedin2x}\" style=\"display: block; height: auto; border: 0;\" title=\"LinkedIn\" width=\"32\"/></a></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-6\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\" style=\"padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:25px;\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 1px solid #555961;\"><span style=\"word-break: break-word;\"> </span></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-7\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"icons_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: center; line-height: 0;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\" style=\"vertical-align: middle; color: #1e0e4b; font-family: 'Inter', sans-serif; font-size: 15px; padding-bottom: 5px; padding-top: 5px; text-align: center;\"><!--[if vml]><table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"display:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;\"><![endif]-->\r\n<!--[if !vml]><!-->\r\n</td>\r\n</tr>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table><!-- End -->\r\n</body>\r\n</html>",
                             CreateBy = "System",
-                            CreateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6325),
+                            CreateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2586),
                             ImageMappingsJson = "{\"facebook2x\":\"EmailTemplate/e1fbe444-69f1-43f1-ac5a-5ce3e42a1e05_facebook2x.png\",\"footer\":\"EmailTemplate/305d75fc-b361-464e-937e-a495da6e4040_footer.png\",\"Img1_2x\":\"EmailTemplate/3b589f60-80a7-482c-9190-671f68b4a072_Img1_2x.jpg\",\"instagram2x\":\"EmailTemplate/39dd2a42-10b4-4449-a17e-cc5652ca7866_instagram2x.png\",\"linkedin2x\":\"EmailTemplate/54a2a542-a077-4d05-9c7a-e04c5335bf4d_linkedin2x.png\",\"twitter2x\":\"EmailTemplate/2564da8a-64ff-4fab-956e-dc0dd15c3b02_twitter2x.png\"}",
                             IsDelete = false,
                             Subject = "Account Activation",
                             Type = "VerifyEmail",
                             UpdateBy = "System",
-                            UpdateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6339)
+                            UpdateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2601)
                         },
                         new
                         {
                             EmailTemplateId = new Guid("b4a72a2f-77b9-4fa7-8a87-bb1ef61f2446"),
                             Body = "\r\n                <!DOCTYPE html>\r\n\r\n<html lang=\"en\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:v=\"urn:schemas-microsoft-com:vml\">\r\n<head>\r\n<title></title>\r\n<meta content=\"text/html; charset=utf-8\" http-equiv=\"Content-Type\"/>\r\n<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\"/><!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><!--[if !mso]><!-->\r\n<link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900\" rel=\"stylesheet\" type=\"text/css\"/><!--<![endif]-->\r\n<style>\r\n		* {\r\n			box-sizing: border-box;\r\n		}\r\n\r\n		body {\r\n			margin: 0;\r\n			padding: 0;\r\n		}\r\n\r\n		a[x-apple-data-detectors] {\r\n			color: inherit !important;\r\n			text-decoration: inherit !important;\r\n		}\r\n\r\n		#MessageViewBody a {\r\n			color: inherit;\r\n			text-decoration: none;\r\n		}\r\n\r\n		p {\r\n			line-height: inherit\r\n		}\r\n\r\n		.desktop_hide,\r\n		.desktop_hide table {\r\n			mso-hide: all;\r\n			display: none;\r\n			max-height: 0px;\r\n			overflow: hidden;\r\n		}\r\n\r\n		.image_block img+div {\r\n			display: none;\r\n		}\r\n\r\n		sup,\r\n		sub {\r\n			font-size: 75%;\r\n			line-height: 0;\r\n		}\r\n\r\n		@media (max-width:660px) {\r\n\r\n			.desktop_hide table.icons-inner,\r\n			.social_block.desktop_hide .social-table {\r\n				display: inline-block !important;\r\n			}\r\n\r\n			.icons-inner {\r\n				text-align: center;\r\n			}\r\n\r\n			.icons-inner td {\r\n				margin: 0 auto;\r\n			}\r\n\r\n			.image_block div.fullWidth {\r\n				max-width: 100% !important;\r\n			}\r\n\r\n			.mobile_hide {\r\n				display: none;\r\n			}\r\n\r\n			.row-content {\r\n				width: 100% !important;\r\n			}\r\n\r\n			.stack .column {\r\n				width: 100%;\r\n				display: block;\r\n			}\r\n\r\n			.mobile_hide {\r\n				min-height: 0;\r\n				max-height: 0;\r\n				max-width: 0;\r\n				overflow: hidden;\r\n				font-size: 0px;\r\n			}\r\n\r\n			.desktop_hide,\r\n			.desktop_hide table {\r\n				display: table !important;\r\n				max-height: none !important;\r\n			}\r\n		}\r\n	</style><!--[if mso ]><style>sup, sub { font-size: 100% !important; } sup { mso-text-raise:10% } sub { mso-text-raise:-10% }</style> <![endif]-->\r\n</head>\r\n<body class=\"body\" style=\"background-color: #f8f8f9; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"nl-container\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f8f8f9;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #1aa19c;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #1aa19c; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 4px solid #1AA19C;\"><span style=\"word-break: break-word;\"> </span></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-2\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-3\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f8f8f9; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n<table border=\"0\" cellpadding=\"20\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-4\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n	<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n		<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n			<tr>\r\n				<td class=\"pad\" style=\"padding-bottom:12px;padding-top:60px;\">\r\n					<div align=\"center\" class=\"alignment\">\r\n						<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n							<tr>\r\n								<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n							</tr>\r\n						</table>\r\n					</div>\r\n				</td>\r\n			</tr>\r\n		</table>\r\n		<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"image_block block-2\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n			<tr>\r\n				<td class=\"pad\" style=\"padding-left:40px;padding-right:40px;width:100%;\">\r\n					<div align=\"center\" class=\"alignment\" style=\"line-height:10px\">\r\n						<div class=\"fullWidth\" style=\"max-width: 352px;\"><img alt=\"I'm an image\" height=\"auto\" src=\"{Img1_2x}\" style=\"display: block; height: auto; border: 0; width: 100%;\" title=\"I'm an image\" width=\"352\" /></div>\r\n					</div>\r\n				</td>\r\n			</tr>\r\n		</table>\r\n		<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-3\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n			<tr>\r\n				<td class=\"pad\" style=\"padding-top:50px;\">\r\n					<div align=\"center\" class=\"alignment\">\r\n						<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n							<tr>\r\n								<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n							</tr>\r\n						</table>\r\n					</div>\r\n				</td>\r\n			</tr>\r\n		</table>\r\n		<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"paragraph_block block-4\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;\" width=\"100%\">\r\n			<tr>\r\n				<td class=\"pad\" style=\"padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:10px;\">\r\n					<div style=\"color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:30px;line-height:120%;text-align:center;mso-line-height-alt:36px;\">\r\n						<p style=\"margin: 0; word-break: break-word;\"><span style=\"word-break: break-word; color: #2b303a;\"><strong>Appointment Confirmation</strong></span></p>\r\n					</div>\r\n				</td>\r\n			</tr>\r\n		</table>\r\n\r\n		<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"paragraph_block block-5\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;\" width=\"100%\">\r\n			<tr>\r\n				<td class=\"pad\" style=\"padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:10px;\">\r\n					<div style=\"color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:15px;line-height:150%;text-align:center;mso-line-height-alt:22.5px;\">\r\n						<p style=\"margin: 0; word-break: break-word;\">\r\n							<span style=\"word-break: break-word; color: #808389;\">\r\n								Hello {Name},\r\n							</span>\r\n						</p>\r\n						<p style=\"margin: 0; word-break: break-word;\">\r\n							<span style=\"word-break: break-word; color: #808389;\">\r\n								We’re confirming your appointment with us for our Koi care service. Please review the details below and click the button to view the appointment information.\r\n							</span>\r\n						</p>\r\n					</div>\r\n				</td>\r\n			</tr>\r\n		</table>\r\n\r\n		<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"paragraph_block block-6\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;\" width=\"100%\">\r\n			<tr>\r\n				<td class=\"pad\" style=\"padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:10px;\">\r\n					<div style=\"color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:15px;line-height:150%;text-align:left;mso-line-height-alt:22.5px;\">\r\n						<p style=\"margin: 0; word-break: break-word;\">\r\n							<span style=\"word-break: break-word; color: #808389;\"><strong>Appointment Date:</strong> {AppointmentDate}</span>\r\n						</p>\r\n						<p style=\"margin: 0; word-break: break-word;\">\r\n							<span style=\"word-break: break-word; color: #808389;\"><strong>Time:</strong> {AppointmentTime}</span>\r\n						</p>\r\n						<p style=\"margin: 0; word-break: break-word;\">\r\n							<span style=\"word-break: break-word; color: #808389;\"><strong>Service:</strong> {ServiceName}</span>\r\n						</p>\r\n						<p style=\"margin: 0; word-break: break-word;\">\r\n							<span style=\"word-break: break-word; color: #808389;\"><strong>Pet:</strong> {PetName}</span>\r\n						</p>\r\n					</div>\r\n				</td>\r\n			</tr>\r\n		</table>\r\n\r\n		<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"button_block block-7\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n			<tr>\r\n				<td class=\"pad\" style=\"padding-left:10px;padding-right:10px;padding-top:15px;text-align:center;\">\r\n					<div align=\"center\" class=\"alignment\">\r\n						<!--[if mso]>\r\n					<v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" style=\"height:62px;width:222px;v-text-anchor:middle;\" arcsize=\"97%\" stroke=\"false\" fillcolor=\"#1aa19c\">\r\n					<w:anchorlock/>\r\n					<v:textbox inset=\"0px,0px,0px,0px\">\r\n					<center dir=\"false\" style=\"color:#ffffff;font-family:Tahoma, sans-serif;font-size:16px\">\r\n					<![endif]-->\r\n						<div style=\"background-color:#1aa19c;border-radius:60px;color:#ffffff;display:inline-block;font-family:Montserrat, sans-serif;font-size:16px;padding:15px 30px;text-align:center;text-decoration:none;\">\r\n							<a href=\"{AppointmentDetailURL}\" style=\"color: #ffffff; text-decoration: none; display: inline-block; line-height: 32px;\">\r\n								<strong>View Appointment Details</strong>\r\n							</a>\r\n						</div>\r\n						<!--[if mso]></center></v:textbox></v:roundrect><![endif]-->\r\n					</div>\r\n				</td>\r\n			</tr>\r\n		</table>\r\n\r\n		<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-8\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n			<tr>\r\n				<td class=\"pad\" style=\"padding-bottom:12px;padding-top:60px;\">\r\n					<div align=\"center\" class=\"alignment\">\r\n						<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n							<tr>\r\n								<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n							</tr>\r\n						</table>\r\n					</div>\r\n				</td>\r\n			</tr>\r\n		</table>\r\n\r\n\r\n		<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-7\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n			<tr>\r\n				<td class=\"pad\" style=\"padding-bottom:12px;padding-top:60px;\">\r\n					<div align=\"center\" class=\"alignment\">\r\n						<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n							<tr>\r\n								<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n							</tr>\r\n						</table>\r\n					</div>\r\n				</td>\r\n			</tr>\r\n		</table>\r\n	</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-5\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f8f8f9; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n<table border=\"0\" cellpadding=\"20\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-6\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #2b303a; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 4px solid #1AA19C;\"><span style=\"word-break: break-word;\"> </span></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"image_block block-2\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\" style=\"width:100%;\">\r\n<div align=\"center\" class=\"alignment\" style=\"line-height:10px\">\r\n<div style=\"max-width: 640px;\"><img alt=\"I'm an image\" height=\"auto\" src=\"{footer}\" style=\"display: block; height: auto; border: 0; width: 100%;\" title=\"I'm an image\" width=\"640\"/></div>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"social_block block-4\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\" style=\"padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:28px;text-align:center;\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"social-table\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block;\" width=\"208px\">\r\n<tr>\r\n<td style=\"padding:0 10px 0 10px;\"><a href=\"https://www.facebook.com\" target=\"_blank\"><img alt=\"Facebook\" height=\"auto\" src=\"{facebook2x}\" style=\"display: block; height: auto; border: 0;\" title=\"Facebook\" width=\"32\"/></a></td>\r\n<td style=\"padding:0 10px 0 10px;\"><a href=\"https://www.twitter.com\" target=\"_blank\"><img alt=\"Twitter\" height=\"auto\" src=\"{twitter2x}\" style=\"display: block; height: auto; border: 0;\" title=\"Twitter\" width=\"32\"/></a></td>\r\n<td style=\"padding:0 10px 0 10px;\"><a href=\"https://www.instagram.com\" target=\"_blank\"><img alt=\"Instagram\" height=\"auto\" src=\"{instagram2x}\" style=\"display: block; height: auto; border: 0;\" title=\"Instagram\" width=\"32\"/></a></td>\r\n<td style=\"padding:0 10px 0 10px;\"><a href=\"https://www.linkedin.com\" target=\"_blank\"><img alt=\"LinkedIn\" height=\"auto\" src=\"{linkedin2x}\" style=\"display: block; height: auto; border: 0;\" title=\"LinkedIn\" width=\"32\"/></a></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-6\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\" style=\"padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:25px;\">\r\n<div align=\"center\" class=\"alignment\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n<tr>\r\n<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 1px solid #555961;\"><span style=\"word-break: break-word;\"> </span></td>\r\n</tr>\r\n</table>\r\n</div>\r\n</td>\r\n</tr>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-7\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff;\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n<tbody>\r\n<tr>\r\n<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"icons_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: center; line-height: 0;\" width=\"100%\">\r\n<tr>\r\n<td class=\"pad\" style=\"vertical-align: middle; color: #1e0e4b; font-family: 'Inter', sans-serif; font-size: 15px; padding-bottom: 5px; padding-top: 5px; text-align: center;\"><!--[if vml]><table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"display:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;\"><![endif]-->\r\n<!--[if !vml]><!-->\r\n</td>\r\n</tr>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table><!-- End -->\r\n</body>\r\n</html>",
                             CreateBy = "System",
-                            CreateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6344),
+                            CreateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2606),
                             ImageMappingsJson = "{\"facebook2x\":\"EmailTemplate/c387781f-57b2-4daa-8dbb-74ae478b3527_facebook2x.png\",\"footer\":\"EmailTemplate/8d6faaac-8b6f-4ec9-a169-af2c3fdf0a1f_footer.png\",\"Img1_2x\":\"EmailTemplate/63acd16b-f91d-4158-957d-a0f873fd9bd0_Img1_2x.png\",\"instagram2x\":\"EmailTemplate/b0c0fa7e-ee9b-45d7-a804-07f37d96008b_instagram2x.png\",\"linkedin2x\":\"EmailTemplate/202c8e61-533b-4ffb-9639-a038de869c0c_linkedin2x.png\",\"twitter2x\":\"EmailTemplate/e576f46a-a7de-4ad3-81dd-7297fbde391d_twitter2x.png\"}",
                             IsDelete = false,
                             Subject = "Appointment Booking Notification",
                             Type = "MakeAppointment",
                             UpdateBy = "System",
-                            UpdateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6344)
+                            UpdateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2607)
                         },
                         new
                         {
                             EmailTemplateId = new Guid("fe241b67-9fb5-49d4-94ec-7801a8e71e9a"),
                             Body = "\r\n                <html>\r\n                <body>\r\n                    <p>Hello {{UserName}},</p>\r\n                    <p>Your password has been successfully reset. You can now log in with your new password.</p>\r\n                    <p>If you did not request this change, please contact our support team immediately.</p>\r\n                    <p>Best regards,<br>Koi Veterinary Service Center</p>\r\n                </body>\r\n                </html>",
                             CreateBy = "System",
-                            CreateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6348),
+                            CreateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2610),
                             ImageMappingsJson = "{}",
                             IsDelete = false,
                             Subject = "Your Password Has Been Reset",
                             Type = "ResetPassword",
                             UpdateBy = "System",
-                            UpdateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6348)
+                            UpdateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2611)
                         },
                         new
                         {
                             EmailTemplateId = new Guid("e42c3d1a-2e1c-4b2a-92f2-33d1cf2fdc2b"),
                             Body = "\r\n                <html>\r\n                <body>\r\n                    <p>Hello {{UserName}},</p>\r\n                    <p>Thank you for registering with the Koi Veterinary Service Center. Please confirm your account by clicking the link below:</p>\r\n                    <p><a href='{{ConfirmationLink}}'>Confirm Account</a></p>\r\n                    <p>If you did not register, please ignore this email.</p>\r\n                    <p>Best regards,<br>Koi Veterinary Service Center</p>\r\n                </body>\r\n                </html>",
                             CreateBy = "System",
-                            CreateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6351),
+                            CreateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2613),
                             ImageMappingsJson = "{}",
                             IsDelete = false,
                             Subject = "Account Confirmation",
                             Type = "ConfirmationAccount",
                             UpdateBy = "System",
-                            UpdateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6351)
+                            UpdateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2614)
                         },
                         new
                         {
                             EmailTemplateId = new Guid("c2f45678-1a3d-4012-b4c1-234d5d7f8cde"),
                             Body = "\r\n                <html>\r\n                <body>\r\n                    <p>Hello {{UserName}},</p>\r\n                    <p>We regret to inform you that your appointment for koi services has been rejected for the following reason:</p>\r\n                    <p>{{RejectionReason}}</p>\r\n                    <p>Best regards,<br>Koi Veterinary Service Center</p>\r\n                </body>\r\n                </html>",
                             CreateBy = "System",
-                            CreateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6353),
+                            CreateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2616),
                             ImageMappingsJson = "{}",
                             IsDelete = false,
                             Subject = "Appointment Rejection Notification",
                             Type = "RejectAppointment",
                             UpdateBy = "System",
-                            UpdateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6354)
+                            UpdateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2617)
                         },
                         new
                         {
                             EmailTemplateId = new Guid("94e2d05c-fbf9-4f1f-bf89-d2298f8b6b4b"),
                             Body = "\r\n                <html>\r\n                <body>\r\n                    <p>Hello {{UserName}},</p>\r\n                    <p>We are pleased to inform you that your appointment for koi fish care has been approved.</p>\r\n                    <p>Best regards,<br>Koi Veterinary Service Center</p>\r\n                </body>\r\n                </html>",
                             CreateBy = "System",
-                            CreateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6356),
+                            CreateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2619),
                             ImageMappingsJson = "{}",
                             IsDelete = false,
                             Subject = "Appointment Approval Notification",
                             Type = "ApproveAppointment",
                             UpdateBy = "System",
-                            UpdateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6357)
+                            UpdateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2620)
                         },
                         new
                         {
                             EmailTemplateId = new Guid("ef3455b2-3a6e-4cb5-9c6d-a432d9f1c7ab"),
                             Body = "\r\n                <html>\r\n                <body>\r\n                    <p>Hello {{UserName}},</p>\r\n                    <p>Your account has been successfully activated. You can now log in and start using our koi veterinary services.</p>\r\n                    <p>Best regards,<br>Koi Veterinary Service Center</p>\r\n                </body>\r\n                </html>",
                             CreateBy = "System",
-                            CreateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6359),
+                            CreateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2622),
                             ImageMappingsJson = "{}",
                             IsDelete = false,
                             Subject = "Ac",
                             Type = "ActivateUser",
                             UpdateBy = "System",
-                            UpdateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6359)
+                            UpdateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2623)
                         },
                         new
                         {
                             EmailTemplateId = new Guid("46db13e8-7899-432b-ae8c-febc15d0f1b2"),
                             Body = "\r\n                <html>\r\n                <body>\r\n                    <p>Hello {{UserName}},</p>\r\n                    <p>Your account has been deactivated. If you think this is a mistake, please contact our support team.</p>\r\n                    <p>Best regards,<br>Koi Veterinary Service Center</p>\r\n                </body>\r\n                </html>",
                             CreateBy = "System",
-                            CreateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6362),
+                            CreateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2625),
                             ImageMappingsJson = "{}",
                             IsDelete = false,
                             Subject = "Account Deactivation",
                             Type = "DeactivateUser",
                             UpdateBy = "System",
-                            UpdateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6363)
+                            UpdateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2626)
                         },
                         new
                         {
                             EmailTemplateId = new Guid("f1d7a678-87b5-4c12-b5f2-ae9e4a3d9b8a"),
                             Body = "\r\n                <html>\r\n                <body>\r\n                    <p>Dear {{UserName}},</p>\r\n                    <p>Your requested koi service titled '{{ServiceTitle}}' has been successfully updated.</p>\r\n                    <p>If you have any questions or need further assistance, please feel free to reach out to us.</p>\r\n                    <p>Best regards,<br>Koi Veterinary Service Center</p>\r\n                </body>\r\n                </html>",
                             CreateBy = "System",
-                            CreateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6365),
+                            CreateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2632),
                             ImageMappingsJson = "{}",
                             IsDelete = false,
                             Subject = "Service Update Notification",
                             Type = "UpdateService",
                             UpdateBy = "System",
-                            UpdateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6365)
+                            UpdateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2633)
                         },
                         new
                         {
                             EmailTemplateId = new Guid("1f7d6a3c-523d-44b6-b9c5-6f3d3c9874f1"),
                             Body = "\r\n                <html>\r\n                <body>\r\n                    <p>Hello {{UserName}},</p>\r\n                    <p>Your service titled '{{ServiceTitle}}' has been deactivated for the following reason:</p>\r\n                    <p>{{DeactivationReason}}</p>\r\n                    <p>Best regards,<br>Koi Veterinary Service Center</p>\r\n                </body>\r\n                </html>",
                             CreateBy = "System",
-                            CreateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6368),
+                            CreateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2635),
                             ImageMappingsJson = "{}",
                             IsDelete = false,
                             Subject = "Service Deactivation Notification",
                             Type = "DeactivateService",
                             UpdateBy = "System",
-                            UpdateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6368)
+                            UpdateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2635)
                         },
                         new
                         {
                             EmailTemplateId = new Guid("be3df183-1f42-4301-a1fb-35e6211c8817"),
                             Body = "\r\n                \r\n<!DOCTYPE html>\r\n\r\n<html lang=\"en\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:v=\"urn:schemas-microsoft-com:vml\">\r\n<head>\r\n	<title></title>\r\n	<meta content=\"text/html; charset=utf-8\" http-equiv=\"Content-Type\" />\r\n	<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\" /><!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><!--[if !mso]><!-->\r\n	<link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900\" rel=\"stylesheet\" type=\"text/css\" /><!--<![endif]-->\r\n	<style>\r\n		* {\r\n			box-sizing: border-box;\r\n		}\r\n\r\n		body {\r\n			margin: 0;\r\n			padding: 0;\r\n		}\r\n\r\n		a[x-apple-data-detectors] {\r\n			color: inherit !important;\r\n			text-decoration: inherit !important;\r\n		}\r\n\r\n		#MessageViewBody a {\r\n			color: inherit;\r\n			text-decoration: none;\r\n		}\r\n\r\n		p {\r\n			line-height: inherit\r\n		}\r\n\r\n		.desktop_hide,\r\n		.desktop_hide table {\r\n			mso-hide: all;\r\n			display: none;\r\n			max-height: 0px;\r\n			overflow: hidden;\r\n		}\r\n\r\n		.image_block img+div {\r\n			display: none;\r\n		}\r\n\r\n		sup,\r\n		sub {\r\n			font-size: 75%;\r\n			line-height: 0;\r\n		}\r\n\r\n		@media (max-width:660px) {\r\n\r\n			.desktop_hide table.icons-inner,\r\n			.social_block.desktop_hide .social-table {\r\n				display: inline-block !important;\r\n			}\r\n\r\n			.icons-inner {\r\n				text-align: center;\r\n			}\r\n\r\n			.icons-inner td {\r\n				margin: 0 auto;\r\n			}\r\n\r\n			.image_block div.fullWidth {\r\n				max-width: 100% !important;\r\n			}\r\n\r\n			.mobile_hide {\r\n				display: none;\r\n			}\r\n\r\n			.row-content {\r\n				width: 100% !important;\r\n			}\r\n\r\n			.stack .column {\r\n				width: 100%;\r\n				display: block;\r\n			}\r\n\r\n			.mobile_hide {\r\n				min-height: 0;\r\n				max-height: 0;\r\n				max-width: 0;\r\n				overflow: hidden;\r\n				font-size: 0px;\r\n			}\r\n\r\n			.desktop_hide,\r\n			.desktop_hide table {\r\n				display: table !important;\r\n				max-height: none !important;\r\n			}\r\n		}\r\n	</style><!--[if mso ]><style>sup, sub { font-size: 100% !important; } sup { mso-text-raise:10% } sub { mso-text-raise:-10% }</style> <![endif]-->\r\n</head>\r\n<body class=\"body\" style=\"background-color: #f8f8f9; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;\">\r\n	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"nl-container\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f8f8f9;\" width=\"100%\">\r\n		<tbody>\r\n			<tr>\r\n				<td>\r\n					<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #1aa19c;\" width=\"100%\">\r\n						<tbody>\r\n							<tr>\r\n								<td>\r\n									<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #1aa19c; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n										<tbody>\r\n											<tr>\r\n												<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n													<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\">\r\n																<div align=\"center\" class=\"alignment\">\r\n																	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n																		<tr>\r\n																			<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 4px solid #1AA19C;\"><span style=\"word-break: break-word;\"> </span></td>\r\n																		</tr>\r\n																	</table>\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n												</td>\r\n											</tr>\r\n										</tbody>\r\n									</table>\r\n								</td>\r\n							</tr>\r\n						</tbody>\r\n					</table>\r\n					<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-2\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff;\" width=\"100%\">\r\n						<tbody>\r\n							<tr>\r\n								<td>\r\n									<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n										<tbody>\r\n											<tr>\r\n												<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n												</td>\r\n											</tr>\r\n										</tbody>\r\n									</table>\r\n								</td>\r\n							</tr>\r\n						</tbody>\r\n					</table>\r\n					<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-3\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n						<tbody>\r\n							<tr>\r\n								<td>\r\n									<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f8f8f9; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n										<tbody>\r\n											<tr>\r\n												<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n													<table border=\"0\" cellpadding=\"20\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\">\r\n																<div align=\"center\" class=\"alignment\">\r\n																	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n																		<tr>\r\n																			<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n																		</tr>\r\n																	</table>\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n												</td>\r\n											</tr>\r\n										</tbody>\r\n									</table>\r\n								</td>\r\n							</tr>\r\n						</tbody>\r\n					</table>\r\n					<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-4\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n						<tbody>\r\n							<tr>\r\n								<td>\r\n									<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n										<tbody>\r\n											<tr>\r\n												<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n													<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\" style=\"padding-bottom:12px;padding-top:60px;\">\r\n																<div align=\"center\" class=\"alignment\">\r\n																	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n																		<tr>\r\n																			<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n																		</tr>\r\n																	</table>\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n													<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"image_block block-2\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\" style=\"padding-left:40px;padding-right:40px;width:100%;\">\r\n																<div align=\"center\" class=\"alignment\" style=\"line-height:10px\">\r\n																	<div class=\"fullWidth\" style=\"max-width: 352px;\"><img alt=\"I'm an image\" height=\"auto\" src=\"{Img1_2x}\" style=\"display: block; height: auto; border: 0; width: 100%;\" title=\"I'm an image\" width=\"352\" /></div>\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n													<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-3\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\" style=\"padding-top:50px;\">\r\n																<div align=\"center\" class=\"alignment\">\r\n																	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n																		<tr>\r\n																			<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n																		</tr>\r\n																	</table>\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n													<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"paragraph_block block-4\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\" style=\"padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:10px;\">\r\n																<div style=\"color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:30px;line-height:120%;text-align:center;mso-line-height-alt:36px;\">\r\n																	<p style=\"margin: 0; word-break: break-word;\"><span style=\"word-break: break-word; color: #2b303a;\"><strong>Reset Your Password</strong></span></p>\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n													<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"paragraph_block block-5\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\" style=\"padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:10px;\">\r\n																<div style=\"color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:15px;line-height:150%;text-align:center;mso-line-height-alt:22.5px;\">\r\n																	<p style=\"margin: 0; word-break: break-word;\">\r\n																		<span style=\"word-break: break-word; color: #808389;\">\r\n																			You’ve requested to reset your password. No worries — it happens to the best of us.\r\n																		</span>\r\n																	</p>\r\n																	<p style=\"margin: 0; word-break: break-word;\">\r\n																		<span style=\"word-break: break-word; color: #808389;\">\r\n																			Click the button below to create a new password and regain access to your account.\r\n																		</span>\r\n																	</p>\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n													<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"button_block block-6\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\" style=\"padding-left:10px;padding-right:10px;padding-top:15px;text-align:center;\">\r\n																<div align=\"center\" class=\"alignment\">\r\n																	<!--[if mso]>\r\n																	<v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" style=\"height:62px;width:222px;v-text-anchor:middle;\" arcsize=\"97%\" stroke=\"false\" fillcolor=\"#1aa19c\">\r\n																	<w:anchorlock/>\r\n																	<v:textbox inset=\"0px,0px,0px,0px\">\r\n																	<center dir=\"false\" style=\"color:#ffffff;font-family:Tahoma, sans-serif;font-size:16px\">\r\n																	<![endif]-->\r\n																	<div style=\"background-color:#1aa19c;border-radius:60px;color:#ffffff;display:inline-block;font-family:Montserrat, sans-serif;font-size:16px;padding:15px 30px;text-align:center;text-decoration:none;\">\r\n																		<a href=\"{VerifyURL}\" style=\"color: #ffffff; text-decoration: none; display: inline-block; line-height: 32px;\">\r\n																			<strong>Reset Password</strong>\r\n																		</a>\r\n																	</div>\r\n																	<!--[if mso]></center></v:textbox></v:roundrect><![endif]-->\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n\r\n													<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-7\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\" style=\"padding-bottom:12px;padding-top:60px;\">\r\n																<div align=\"center\" class=\"alignment\">\r\n																	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n																		<tr>\r\n																			<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n																		</tr>\r\n																	</table>\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n												</td>\r\n											</tr>\r\n										</tbody>\r\n									</table>\r\n								</td>\r\n							</tr>\r\n						</tbody>\r\n					</table>\r\n					<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-5\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n						<tbody>\r\n							<tr>\r\n								<td>\r\n									<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f8f8f9; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n										<tbody>\r\n											<tr>\r\n												<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n													<table border=\"0\" cellpadding=\"20\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\">\r\n																<div align=\"center\" class=\"alignment\">\r\n																	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n																		<tr>\r\n																			<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 0px solid #BBBBBB;\"><span style=\"word-break: break-word;\"> </span></td>\r\n																		</tr>\r\n																	</table>\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n												</td>\r\n											</tr>\r\n										</tbody>\r\n									</table>\r\n								</td>\r\n							</tr>\r\n						</tbody>\r\n					</table>\r\n					<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-6\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n						<tbody>\r\n							<tr>\r\n								<td>\r\n									<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #2b303a; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n										<tbody>\r\n											<tr>\r\n												<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n													<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\">\r\n																<div align=\"center\" class=\"alignment\">\r\n																	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n																		<tr>\r\n																			<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 4px solid #1AA19C;\"><span style=\"word-break: break-word;\"> </span></td>\r\n																		</tr>\r\n																	</table>\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n													<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"image_block block-2\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\" style=\"width:100%;\">\r\n																<div align=\"center\" class=\"alignment\" style=\"line-height:10px\">\r\n																	<div style=\"max-width: 640px;\"><img alt=\"I'm an image\" height=\"auto\" src=\"{footer}\" style=\"display: block; height: auto; border: 0; width: 100%;\" title=\"I'm an image\" width=\"640\" /></div>\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n													<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"social_block block-4\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\" style=\"padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:28px;text-align:center;\">\r\n																<div align=\"center\" class=\"alignment\">\r\n																	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"social-table\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block;\" width=\"208px\">\r\n																		<tr>\r\n																			<td style=\"padding:0 10px 0 10px;\"><a href=\"https://www.facebook.com\" target=\"_blank\"><img alt=\"Facebook\" height=\"auto\" src=\"{facebook2x}\" style=\"display: block; height: auto; border: 0;\" title=\"Facebook\" width=\"32\" /></a></td>\r\n																			<td style=\"padding:0 10px 0 10px;\"><a href=\"https://www.twitter.com\" target=\"_blank\"><img alt=\"Twitter\" height=\"auto\" src=\"{twitter2x}\" style=\"display: block; height: auto; border: 0;\" title=\"Twitter\" width=\"32\" /></a></td>\r\n																			<td style=\"padding:0 10px 0 10px;\"><a href=\"https://www.instagram.com\" target=\"_blank\"><img alt=\"Instagram\" height=\"auto\" src=\"{instagram2x}\" style=\"display: block; height: auto; border: 0;\" title=\"Instagram\" width=\"32\" /></a></td>\r\n																			<td style=\"padding:0 10px 0 10px;\"><a href=\"https://www.linkedin.com\" target=\"_blank\"><img alt=\"LinkedIn\" height=\"auto\" src=\"{linkedin2x}\" style=\"display: block; height: auto; border: 0;\" title=\"LinkedIn\" width=\"32\" /></a></td>\r\n																		</tr>\r\n																	</table>\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n													<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"divider_block block-6\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\" style=\"padding-bottom:10px;padding-left:40px;padding-right:40px;padding-top:25px;\">\r\n																<div align=\"center\" class=\"alignment\">\r\n																	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\" width=\"100%\">\r\n																		<tr>\r\n																			<td class=\"divider_inner\" style=\"font-size: 1px; line-height: 1px; border-top: 1px solid #555961;\"><span style=\"word-break: break-word;\"> </span></td>\r\n																		</tr>\r\n																	</table>\r\n																</div>\r\n															</td>\r\n														</tr>\r\n													</table>\r\n												</td>\r\n											</tr>\r\n										</tbody>\r\n									</table>\r\n								</td>\r\n							</tr>\r\n						</tbody>\r\n					</table>\r\n					<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-7\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff;\" width=\"100%\">\r\n						<tbody>\r\n							<tr>\r\n								<td>\r\n									<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row-content stack\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; color: #000000; width: 640px; margin: 0 auto;\" width=\"640\">\r\n										<tbody>\r\n											<tr>\r\n												<td class=\"column column-1\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\" width=\"100%\">\r\n													<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"icons_block block-1\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: center; line-height: 0;\" width=\"100%\">\r\n														<tr>\r\n															<td class=\"pad\" style=\"vertical-align: middle; color: #1e0e4b; font-family: 'Inter', sans-serif; font-size: 15px; padding-bottom: 5px; padding-top: 5px; text-align: center;\">\r\n																<!--[if vml]><table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"display:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;\"><![endif]-->\r\n																<!--[if !vml]><!-->\r\n															</td>\r\n														</tr>\r\n													</table>\r\n												</td>\r\n											</tr>\r\n										</tbody>\r\n									</table>\r\n								</td>\r\n							</tr>\r\n						</tbody>\r\n					</table>\r\n				</td>\r\n			</tr>\r\n		</tbody>\r\n	</table><!-- End -->\r\n</body>\r\n</html>",
                             CreateBy = "System",
-                            CreateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6371),
+                            CreateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2638),
                             ImageMappingsJson = "{\"facebook2x\":\"EmailTemplate/e1fbe444-69f1-43f1-ac5a-5ce3e42a1e05_facebook2x.png\",\"footer\":\"EmailTemplate/305d75fc-b361-464e-937e-a495da6e4040_footer.png\",\"Img1_2x\":\"EmailTemplate/3b589f60-80a7-482c-9190-671f68b4a072_Img1_2x.jpg\",\"instagram2x\":\"EmailTemplate/39dd2a42-10b4-4449-a17e-cc5652ca7866_instagram2x.png\",\"linkedin2x\":\"EmailTemplate/54a2a542-a077-4d05-9c7a-e04c5335bf4d_linkedin2x.png\",\"twitter2x\":\"EmailTemplate/2564da8a-64ff-4fab-956e-dc0dd15c3b02_twitter2x.png\"}",
                             IsDelete = false,
                             Subject = "Change Password",
                             Type = "ChangePassword",
                             UpdateBy = "System",
-                            UpdateDate = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6371)
+                            UpdateDate = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2638)
                         });
                 });
 
@@ -332,7 +332,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("3c051805-0729-4b08-a47e-0bc5eaf4eeee"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6774),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(2952),
                             Description = "Description",
                             IsDeleted = false,
                             OccasionName = "Spring"
@@ -340,7 +340,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("a7619a43-a697-45b2-814c-fd8fbfdfea44"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6778),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(2953),
                             Description = "Description",
                             IsDeleted = false,
                             OccasionName = "Summer"
@@ -348,7 +348,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("97595211-a421-4a99-9840-5e795a2b3eef"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6779),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(2955),
                             Description = "Description",
                             IsDeleted = false,
                             OccasionName = "Autumn"
@@ -356,7 +356,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("7698f44c-4710-4e9a-98c0-8e6f80cc9d4d"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6781),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(2956),
                             Description = "Description",
                             IsDeleted = false,
                             OccasionName = "Winter"
@@ -364,7 +364,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("20f929a6-8236-42aa-adfa-d532f817e1a2"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6782),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(2958),
                             Description = "Description",
                             IsDeleted = false,
                             OccasionName = "Valentine"
@@ -372,7 +372,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("479dba09-053a-4491-a770-210fb578375f"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6785),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(2961),
                             Description = "Description",
                             IsDeleted = false,
                             OccasionName = "8-3"
@@ -380,7 +380,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("479dca09-053b-4491-a880-210fb578375a"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6786),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(2962),
                             Description = "Description",
                             IsDeleted = false,
                             OccasionName = "TẾT"
@@ -388,7 +388,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("05baa743-b4c3-450c-8b98-ae9b9e78df8c"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6788),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(2964),
                             Description = "Description",
                             IsDeleted = false,
                             OccasionName = "SEEDY BÌNH THƯỜNG"
@@ -396,7 +396,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("6d92495e-b82d-44a0-8f56-4e9fe6f4a156"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6789),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(2965),
                             Description = "Description",
                             IsDeleted = false,
                             OccasionName = "VIỆT PATTERN"
@@ -491,7 +491,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("7bed677a-0413-4d17-9a3d-4c7c09e43dcb"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7693),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3792),
                             DistrictName = "District 2",
                             IsDeleted = false,
                             MoneyCollection = 597000m,
@@ -513,7 +513,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("582802e3-ff45-453b-acea-2219784402a9"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7702),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3807),
                             DistrictName = "District 2",
                             IsDeleted = false,
                             MoneyCollection = 597000m,
@@ -578,8 +578,8 @@ namespace Seed.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("fc7b92b7-9551-459b-a939-7f06da745e54"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7784),
+                            Id = new Guid("83448f49-1120-43cd-88b0-b11e1d569cd0"),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3889),
                             IsDeleted = false,
                             OrderId = new Guid("7bed677a-0413-4d17-9a3d-4c7c09e43dcb"),
                             Price = 29000.0m,
@@ -588,8 +588,8 @@ namespace Seed.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4090522c-7d67-4e9e-a6b9-d7e0bb18b299"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7790),
+                            Id = new Guid("566c9a77-5a4a-4a8a-9adc-d53ad2175716"),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3896),
                             IsDeleted = false,
                             OrderId = new Guid("582802e3-ff45-453b-acea-2219784402a9"),
                             Price = 25000.0m,
@@ -810,7 +810,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("d0aea562-6c4b-4d0c-baa7-323c53e2440e"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7069),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3212),
                             Description = "THIỆP “GIỐNG\"",
                             ImageUrl = "Products/11f4ac06-a779-47c3-bdea-18933735e4cd_Artboard 25.png",
                             IsDeleted = false,
@@ -824,7 +824,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("b2350554-3af3-4cef-8ecf-36bfa03b51bf"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7082),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3222),
                             Description = "THIỆP “LÁ\"",
                             ImageUrl = "Products/cb261d95-24e9-4ccf-9abf-34309e80dbf3_Artboard 27.png",
                             IsDeleted = false,
@@ -838,7 +838,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("d5f5a53c-2bad-420f-aa89-38ad16a09a09"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7085),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3225),
                             Description = "THIỆP “YÊU-THƯƠNG\"",
                             ImageUrl = "Products/4df4ada5-234e-42e0-bdad-4f3aed1857c2_yêu thương trước.png",
                             IsDeleted = false,
@@ -852,7 +852,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("07f7734f-d798-490f-8eef-4b2aba587549"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7090),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3228),
                             Description = "Thiệp Chở Che",
                             ImageUrl = "Products/daa4afda-e1b3-4c7f-bea3-3f9a89bd05a6_chở che trước_1.png",
                             IsDeleted = false,
@@ -866,7 +866,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("3571d2b3-f6c2-44ae-bfbf-545a15ad7a87"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7095),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3231),
                             Description = "Thiệp Thầm Lặng",
                             ImageUrl = "Products/f45f3fee-140b-404c-ad42-9bc011605f45_thầm lặng trước_1.png",
                             IsDeleted = false,
@@ -880,7 +880,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("d02a195c-3bf2-4053-a285-65b0e6ca98cd"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7098),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3276),
                             Description = "THIỆP “MẦM\"",
                             ImageUrl = "Products/d7b03ba1-7a15-432c-8dda-be2354b061d3_Artboard 23.png",
                             IsDeleted = false,
@@ -894,7 +894,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("1799b139-50cb-4902-8fbd-66930ecc1731"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7101),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3280),
                             Description = "THIỆP “HOA\"",
                             ImageUrl = "Products/662e6d9a-f541-47ad-bc50-21744a0a4261_Artboard 29.png",
                             IsDeleted = false,
@@ -908,7 +908,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("e2f69055-e491-432d-9877-8520e0ca0109"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7107),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3286),
                             Description = "THIỆP “CHIẾU\"",
                             ImageUrl = "Products/5a1c70dc-a009-408b-9ffb-6e11c2f1356a_chiếu card.png",
                             IsDeleted = false,
@@ -922,7 +922,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("ec5e79aa-b509-4f72-9075-8b4f23c86f21"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7110),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3289),
                             Description = "THIỆP “GẠCH\"",
                             ImageUrl = "Products/a28b909d-12d3-4450-a442-a222392e79d9_Artboard 10.png",
                             IsDeleted = false,
@@ -936,7 +936,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("21a71714-6ec9-4579-bcd3-9ba27fbba6fe"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7113),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3293),
                             Description = "THIỆP “TẦN-TẢO\"",
                             ImageUrl = "Products/4120b43d-4ee3-4443-8a30-f3c3ee15b0ed_tần tảo trước_1.png",
                             IsDeleted = false,
@@ -950,7 +950,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("066ae684-4188-4baf-b85f-9f443fd9bb62"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7116),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3296),
                             Description = "THIỆP “GỐM\"",
                             ImageUrl = "Products/88f895a2-a98f-4bc8-a630-654efbb89dc8_Artboard 8.png",
                             IsDeleted = false,
@@ -964,7 +964,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("8b5ae518-6461-4c6b-b986-ad3279faf659"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7120),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3300),
                             Description = "THIỆP “CHỦ BÀI\" (NÂU)",
                             ImageUrl = "Products/238995e1-a939-44a5-b75d-ce77d7333dc1_nâu k chữ.png",
                             IsDeleted = false,
@@ -978,7 +978,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("25a9e67b-9be0-402c-98b2-b8042d93e481"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7122),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3303),
                             Description = "THIỆP “UỐNG TRÀ\"",
                             ImageUrl = "Products/6e567943-6b33-4565-9b09-14008bd7f08a_sưa ăn bánh.png",
                             IsDeleted = false,
@@ -992,7 +992,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("634b6cbb-d493-40aa-a367-c5cbc2fa78b9"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7125),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3306),
                             Description = "THIỆP “BÀN ĂN\"",
                             ImageUrl = "Products/a23f270f-cc8f-437b-8a59-b8e29b59e2c3_ sửa gà cúng có_.png",
                             IsDeleted = false,
@@ -1006,7 +1006,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("3f19972b-0733-419e-b399-da4460325c5c"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7210),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3309),
                             Description = "THIỆP “THỔ CẨM\"",
                             ImageUrl = "Products/8ed961ee-6447-4f4d-a081-72d87b0eda30_Artboard 2.png",
                             IsDeleted = false,
@@ -1020,7 +1020,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("ebbfdcb4-c57d-4250-86dc-e0be0e74adbc"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7216),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3315),
                             Description = "THIỆP “DỌN NHÀ\"",
                             ImageUrl = "Products/b14c2366-c8db-4286-a100-bd1f6df929a7_lau nhà.png",
                             IsDeleted = false,
@@ -1034,7 +1034,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("e5a1e140-5a9a-40f5-8b9f-f0430fe7192e"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7221),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3317),
                             Description = "THIỆP “CHỦ BÀI\" (HỒNG)",
                             ImageUrl = "Products/e1f08a7c-4a8d-44b3-b7a2-501c8682247d_hồng k chữ.png",
                             IsDeleted = false,
@@ -1048,7 +1048,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("8a1ecef0-3eca-40ae-8d4c-fb3ac8f0c53c"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7226),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3320),
                             Description = "THIỆP “CỬA\"",
                             ImageUrl = "Products/d3623b3f-2090-45ff-92cd-ec923d0ca2ec_mẫu 2 mặt trước.png",
                             IsDeleted = false,
@@ -1097,7 +1097,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c381e083-c6e4-4296-b841-365906c0c9b2"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6878),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3059),
                             Description = "Description",
                             IsDeleted = false,
                             Name = "notebook"
@@ -1105,7 +1105,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("8939d435-f544-4a28-93e4-06b2682545b9"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6881),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3062),
                             Description = "Description",
                             IsDeleted = false,
                             Name = "postcard"
@@ -1113,7 +1113,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("1139d453-c217-4c9a-bfa1-c027de0cdb10"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6883),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3064),
                             Description = "Description",
                             IsDeleted = false,
                             Name = "sticker"
@@ -1121,7 +1121,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("930b74db-458f-4f4b-9928-c0490141cb7e"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6884),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3065),
                             Description = "Description",
                             IsDeleted = false,
                             Name = "evelope"
@@ -1129,7 +1129,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("f38dd865-ac0b-4a04-8187-aa596e948deb"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6887),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3068),
                             Description = "Description",
                             IsDeleted = false,
                             Name = "plantpot"
@@ -1174,7 +1174,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("550e8400-e29b-41d4-a716-323c53e2440e"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7371),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3444),
                             ImageUrl = "Products/35a5fb45-b0a3-4ac6-8fa1-32ff24439b94_Artboard 26.png",
                             IsDeleted = false,
                             ProductId = new Guid("d0aea562-6c4b-4d0c-baa7-323c53e2440e")
@@ -1182,7 +1182,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("f47ac10b-58cc-4372-a567-0e02b2c3d479"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7376),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3448),
                             ImageUrl = "Products/ec4fb698-fc32-4a56-888d-7a1a9065ecf5_Artboard 28.png",
                             IsDeleted = false,
                             ProductId = new Guid("b2350554-3af3-4cef-8ecf-36bfa03b51bf")
@@ -1190,7 +1190,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("a1b2c3d4-e5f6-4a7b-8c9d-0f1e2d3c4b5a"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7379),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3451),
                             ImageUrl = "Products/bc7740b8-c23a-47cf-9174-90d154ac2e3f_yêu thương sau_1.png",
                             IsDeleted = false,
                             ProductId = new Guid("d5f5a53c-2bad-420f-aa89-38ad16a09a09")
@@ -1198,7 +1198,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("b9d8e7f0-1234-5678-9abc-def012345678"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7382),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3453),
                             ImageUrl = "Products/e85ee9ef-1cca-4036-9620-c6c8564874d8_chở che sau_1.png",
                             IsDeleted = false,
                             ProductId = new Guid("07f7734f-d798-490f-8eef-4b2aba587549")
@@ -1206,7 +1206,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c4d3e2f1-9a8b-4c6d-7e5f-0a1b2c3d4e5f"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7384),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3456),
                             ImageUrl = "Products/aeb23ec9-f5c3-4b9a-a35c-da81939f3c9c_thầm lặng sau_1.png",
                             IsDeleted = false,
                             ProductId = new Guid("3571d2b3-f6c2-44ae-bfbf-545a15ad7a87")
@@ -1214,7 +1214,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("d7e6f5a0-2b3c-4d1e-8f9a-0b1c2d3e4f5a"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7389),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3460),
                             ImageUrl = "Products/14b7653e-076b-41d2-a769-424824263671_Artboard 24.png",
                             IsDeleted = false,
                             ProductId = new Guid("d02a195c-3bf2-4053-a285-65b0e6ca98cd")
@@ -1222,7 +1222,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("e9f8a7b6-3c2d-4e1f-9b0a-1c2d3e4f5a6b"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7391),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3462),
                             ImageUrl = "Products/07591f17-aab2-4815-ba95-cbcd3ce306b8_Artboard 30.png",
                             IsDeleted = false,
                             ProductId = new Guid("1799b139-50cb-4902-8fbd-66930ecc1731")
@@ -1230,7 +1230,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("f0b1c2d3-4e5f-6a7b-8c9d-0e1f2a3b4c5d"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7394),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3465),
                             ImageUrl = "Products/8c684f0b-fc3c-4044-bca7-f01efb13c4c1_sau 3.png",
                             IsDeleted = false,
                             ProductId = new Guid("e2f69055-e491-432d-9877-8520e0ca0109")
@@ -1238,7 +1238,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("a2b3c4d5-6e7f-8a9b-0c1d-2e3f4a5b6c7d"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7397),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3467),
                             ImageUrl = "Products/91afe37b-5cd7-4df4-8371-44a48b8f783a_Artboard 11.png",
                             IsDeleted = false,
                             ProductId = new Guid("ec5e79aa-b509-4f72-9075-8b4f23c86f21")
@@ -1246,7 +1246,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("b4c5d6e7-8f9a-0b1c-2d3e-4f5a6b7c8d9e"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7399),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3469),
                             ImageUrl = "Products/83964db1-a01a-425f-834c-44c1e795f1f5_tần tảo sau_1.png",
                             IsDeleted = false,
                             ProductId = new Guid("21a71714-6ec9-4579-bcd3-9ba27fbba6fe")
@@ -1254,7 +1254,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c6d7e8f9-0a1b-2c3d-4e5f-6a7b8c9d0e1f"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7402),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3472),
                             ImageUrl = "Products/a3004b4e-9d7f-41e3-8964-7f623e964f0f_Artboard 9.png",
                             IsDeleted = false,
                             ProductId = new Guid("066ae684-4188-4baf-b85f-9f443fd9bb62")
@@ -1262,7 +1262,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("d8e9f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7404),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3474),
                             ImageUrl = "Products/60a3267b-9e5e-45dd-b4a9-b00075b5e4a1_mặt sau nâu.png",
                             IsDeleted = false,
                             ProductId = new Guid("8b5ae518-6461-4c6b-b986-ad3279faf659")
@@ -1270,7 +1270,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("e0f1a2b3-4c5d-6e7f-8a9b-0c1d2e3f4a5b"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7408),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3478),
                             ImageUrl = "Products/f4872771-ed5c-4991-a373-a6b03c2aad74_sau 4.png",
                             IsDeleted = false,
                             ProductId = new Guid("25a9e67b-9be0-402c-98b2-b8042d93e481")
@@ -1278,7 +1278,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7412),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3483),
                             ImageUrl = "Products/7069fe84-4a1b-4b92-a444-2330328dd24e_sau 1.png",
                             IsDeleted = false,
                             ProductId = new Guid("634b6cbb-d493-40aa-a367-c5cbc2fa78b9")
@@ -1286,7 +1286,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("a4b5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7414),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3485),
                             ImageUrl = "Products/8566252f-0e12-4d74-bcf2-8137f1488b02_Artboard 3.png",
                             IsDeleted = false,
                             ProductId = new Guid("3f19972b-0733-419e-b399-da4460325c5c")
@@ -1294,7 +1294,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("b6c7d8e9-0f1a-2b3c-4d5e-6f7a8b9c0d1e"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7417),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3489),
                             ImageUrl = "Products/a3f74131-88f7-4775-991e-c87aa6f1836d_mặt sau dọn lòng.png",
                             IsDeleted = false,
                             ProductId = new Guid("ebbfdcb4-c57d-4250-86dc-e0be0e74adbc")
@@ -1302,7 +1302,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c8d9e0f1-2a3b-4c5d-6e7f-8a9b0c1d2e3f"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7419),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3491),
                             ImageUrl = "Products/96d4f760-afc2-4ce2-a2bd-3d2c4ea71f2d_mặt sau hồng.png",
                             IsDeleted = false,
                             ProductId = new Guid("e5a1e140-5a9a-40f5-8b9f-f0430fe7192e")
@@ -1310,7 +1310,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7422),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3495),
                             ImageUrl = "Products/74575966-fa81-4ad0-9da9-b416401f38a2_mẫu 2 mặt sau.png",
                             IsDeleted = false,
                             ProductId = new Guid("8a1ecef0-3eca-40ae-8d4c-fb3ac8f0c53c")
@@ -1406,7 +1406,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("77be9079-5750-488b-9831-d637d2383e38"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7519),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3592),
                             Description = "Peach blossom - the symbol of spring and beginning. \"Khoi\" carries the meaning of a start, where ideas bloom, bringing hope and new promises.",
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/koiveterinaryservicecent-925db.appspot.com/o/ProductImage%2FNoteBook%2Fkhoi_notebook.png?alt=media&token=175005bb-bcbd-48f0-ae3a-769fdf921249",
                             IsDeleted = false,
@@ -1419,7 +1419,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("a0ccbec3-474b-45bf-89f8-59fb306b3428"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(7528),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(3603),
                             Description = "Flamboyant red of the flamboyant tree – the vibrant color of passion and energy. 'Thuc' marks the awakening, when you are filled with a strong will to face great challenges.",
                             ImageUrl = "https://firebasestorage.googleapis.com/v0/b/koiveterinaryservicecent-925db.appspot.com/o/ProductImage%2FNoteBook%2Fthuc_notebook.png?alt=media&token=05133546-cbc2-4eba-bf96-e8d3f3a653eb",
                             IsDeleted = false,
@@ -1515,8 +1515,8 @@ namespace Seed.Infrastructure.Migrations
                         {
                             Id = new Guid("85966b29-9f9f-49c6-b366-420245696c2f"),
                             Address = "Admin",
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6639),
-                            DateOfBirth = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6647),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(2836),
+                            DateOfBirth = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2842),
                             Email = "admin@gmail.com",
                             FullName = "Admin",
                             IsDeleted = false,
@@ -1532,8 +1532,8 @@ namespace Seed.Infrastructure.Migrations
                         {
                             Id = new Guid("bfa4ee73-f13b-487c-8fd4-0e074725d2dd"),
                             Address = "Userrr",
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6655),
-                            DateOfBirth = new DateTime(2025, 3, 24, 11, 38, 26, 309, DateTimeKind.Local).AddTicks(6658),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(2848),
+                            DateOfBirth = new DateTime(2025, 3, 25, 11, 2, 34, 68, DateTimeKind.Local).AddTicks(2850),
                             Email = "quocthangjk@gmail.com",
                             FullName = "User_1",
                             IsDeleted = false,
@@ -1548,7 +1548,7 @@ namespace Seed.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("04bc7428-8f38-466e-864d-3518a70be851"),
-                            CreatedDate = new DateTime(2025, 3, 24, 4, 38, 26, 309, DateTimeKind.Utc).AddTicks(6660),
+                            CreatedDate = new DateTime(2025, 3, 25, 4, 2, 34, 68, DateTimeKind.Utc).AddTicks(2852),
                             Email = "pqt2802@gmail.com",
                             IsDeleted = false,
                             IsEmailConfirmed = false,
