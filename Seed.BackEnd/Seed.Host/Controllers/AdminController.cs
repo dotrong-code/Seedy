@@ -43,9 +43,18 @@ namespace Seed.Host.Controllers
         [HttpGet("payments")]
         public async Task<IResult> GetAllPayments()
         {
-            var result = await _paymentService.GetAllPaymentsAsync();
+            //var result = await _paymentService.GetAllPaymentsAsync();
+            var result = await _adminService.GetPayments();
             return result.IsSuccess
                 ? ResultExtensions.ToSuccessDetails(result, "Payments retrieved successfully")
+                : ResultExtensions.ToProblemDetails(result);
+        }
+        [HttpGet("revenues")]
+        public async Task<IResult> GetAllRevenue()
+        {
+            var result = await _adminService.GetDashboardRevenue();
+            return result.IsSuccess
+                ? ResultExtensions.ToSuccessDetails(result, "Revenue retrieved successfully")
                 : ResultExtensions.ToProblemDetails(result);
         }
 

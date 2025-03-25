@@ -7,5 +7,7 @@ namespace Seed.Application.Interface.IService
         Task<Result> GetOrders();
         Task<Result> GetProducts();
         Task<Result> GetUsers();
+        Task<Result> GetDashboardRevenue();
+        Task<Result> GetPayments();
     }
 }

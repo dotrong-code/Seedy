@@ -102,7 +102,7 @@ namespace Seed.Application.Implement.Service
         // Read (Retrieve a product by ID)
         public async Task<Result> GetProductByIdAsync(Guid productId)
         {
-            var product = await _unitOfWork.ProductRepository.GetProductByIdAsync(productId, include: p => p.ProductImages);
+            var product = await _unitOfWork.ProductRepository.GetProductByIdAsync(productId, p => p.ProductImages, p => p.Occasion);
             if (product == null)
             {
                 return Result.Failure(ProductErrorMessage.ProductNotExist());
@@ -132,6 +132,8 @@ namespace Seed.Application.Implement.Service
             {
                 Id = product.Id,
                 Name = product.Name,
+                OccasionName = product.Occasion.OccasionName,
+                OccasionId = product.Occasion.Id,
                 Price = product.Price,
                 Description = product.Description,
                 ProductCategoryId = product.ProductCategoryId,
@@ -184,7 +186,7 @@ namespace Seed.Application.Implement.Service
             if (updateProductRequest.ImageUrl != null)
                 product.ImageUrl = updateProductRequest.ImageUrl;
 
-            
+
             var updateResult = await _unitOfWork.ProductRepository.UpdateProductAsync(product);
             return updateResult == 0
                 ? Result.Failure(ProductErrorMessage.ProductUpdateFailed())
@@ -206,7 +208,7 @@ namespace Seed.Application.Implement.Service
 
         public async Task<Result> GetAllProduct()
         {
-            var products = await _unitOfWork.ProductRepository.GetAllAsync();
+            var products = await _unitOfWork.ProductRepository.GetAllProductsAsync();
             if (products == null)
             {
                 return Result.Failure(ProductErrorMessage.ProductNotFound());
@@ -231,6 +233,7 @@ namespace Seed.Application.Implement.Service
                     product.Id,
                     product.Name,
                     product.Price,
+                    category = product.ProductCategory.Name,
                     ImageUrl = imageUrl // URL từ Firebase
                 });
             }

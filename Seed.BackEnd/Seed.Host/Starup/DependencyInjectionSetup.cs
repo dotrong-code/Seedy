@@ -96,6 +96,7 @@ namespace Seed.Host.Starup
             services.AddTransient<ISetRepository, SetRepository>();
 
             services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IDashboardRepository, DashboardRepository>();
 
             #endregion
             #region GenericRepositories

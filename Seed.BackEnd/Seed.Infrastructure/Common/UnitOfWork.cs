@@ -25,6 +25,7 @@ namespace Seed.Infrastructure.Common
         public IEmailTemplateRepository EmailTemplateRepository { get; private set; }
         public IFirebaseRepository FirebaseRepository { get; private set; }
         public ISetRepository SetRepository { get; private set; }
+        public IDashboardRepository DashboardRepository { get; private set; }
 
         public async Task<int> SaveChangesAsync()
         {
@@ -48,6 +49,7 @@ namespace Seed.Infrastructure.Common
             ProductCategoryRepository = new ProductCategoryRepository(_context);
             EmailTemplateRepository = new EmailTemplateRepository(_context);
             SetRepository = new SetRepository(_context);
+            DashboardRepository = new DashboardRepository(_context);
 
         }
 
