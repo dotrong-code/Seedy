@@ -18,7 +18,8 @@ namespace Seed.Infrastructure.Implement.Repositories
                 .Select(p => new RevenueOverTimeDto
                 {
                     Date = p.Key,
-                    Revenue = p.Sum(p => p.Amount)
+                    Revenue = p.Sum(p => p.Amount),
+                    TotalPayment = p.Count()
                 })
                 .ToListAsync();
             var salesByCategory = await _context.Orders

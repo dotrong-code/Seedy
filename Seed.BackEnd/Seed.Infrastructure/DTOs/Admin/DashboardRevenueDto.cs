@@ -11,6 +11,8 @@
     {
         public DateTime Date { get; set; }
         public decimal Revenue { get; set; }
+        public int TotalPayment { get; set; }
+
     }
 
     public class SalesCategoryDto
